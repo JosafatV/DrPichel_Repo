@@ -22,7 +22,7 @@ CREATE TABLE ROL (
 
 CREATE TABLE USUARIO (
 	Id INT IDENTITY(1,1),
-	Password Char (20),
+	Password Char (20) DEFAULT '12345678',
 	Cedula CHAR(11),
 	Nombre CHAR (15),
 	Apellido CHAR(15),
