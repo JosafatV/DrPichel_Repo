@@ -1,9 +1,18 @@
 /*--Header*/
 .navbar{
   margin-bottom: 0;
+  background: #052C5A;
+
 }
 .jumbotron{
   background: #052C5A;
-  color: #E64040;
+  color: #E96161;
   padding: 20px 0;
+}
+h3{
+  color: #E96161;
+}
+.finta{
+  background: #fff;
+margin-left: 0px;
 }
