@@ -1,8 +1,10 @@
-INSERT INTO ROL (Descripcion) values (Paciente);
-INSERT INTO ROL (Descripcion) values (Doctor);
-INSERT INTO ROL (Descripcion) values (Administrador);
+USE DrPhischel;
+
+INSERT INTO ROL (Descripcion) values ('Paciente');
+INSERT INTO ROL (Descripcion) values ('Doctor');
+INSERT INTO ROL (Descripcion) values ('Administrador');
 	
-	/* PACIENTES */
+/* PACIENTES */
 INSERT INTO USUARIO (Cedula,Nombre,Apellido,FechaNacimiento,Residencia,Estado) VALUES ('323453234', 'Alfred', 'Cen', '1889-01-02', 'Colorado', 'A');
 INSERT INTO USUARIO (Cedula,Nombre,Apellido,FechaNacimiento,Residencia,Estado) VALUES ('323453815', 'Kregor', 'Than', '1815-01-02', 'Jericho Reach', 'A');
 INSERT INTO USUARIO (Cedula,Nombre,Apellido,FechaNacimiento,Residencia,Estado) VALUES ('323453816', 'Khiron', 'Ruberec', '1820-01-02', 'Karybdis', 'A');
@@ -29,47 +31,50 @@ INSERT INTO USUARIO (Cedula,Nombre,Apellido,FechaNacimiento,Residencia,Estado) V
 
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (80, 2.30, 1);
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (90, 2.25, 2);
-INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (120, 2.48, 3);
-INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (115, 2.74, 4);
+INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (92, 2.48, 3);
+INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (95, 2.74, 4);
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (88, 2.65, 5);
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (84, 2.51, 6);
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (89, 2.63, 7);
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (75, 2.74, 8);
 INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (98, 2.43, 9);
-INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (130, 2.63, 10);
+INSERT INTO PACIENTE (Peso,Altura,UserId) VALUES (93, 2.63, 10);
 
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 9114064247038708, 11);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 4703870841727471, 12);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 4172747185588621, 13);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 8558862159578374, 14);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 5957837443409810, 15);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 4340981032024215, 16);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 3202421521652906, 17);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 2165290656005919, 18);
-INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', '', 5600591991140642, 19);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 5, 9114064247038708, 11);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 8, 4703870841727471, 12);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 7, 4172747185588621, 13);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 1, 8558862159578374, 14);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 4, 5957837443409810, 15);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 5, 4340981032024215, 16);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 1, 3202421521652906, 17);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 2, 2165290656005919, 18);
+INSERT INTO DOCTOR (DireccionConsultorio,Especialidad,TarjetaCredito,UserId) VALUES ('', 3, 5600591991140642, 19);
 
 INSERT INTO ADMINISTRADOR (Hired,UserId) VALUES ('1386-05-06', 20);
 INSERT INTO ADMINISTRADOR (Hired,UserId) VALUES ('1387-02-03', 21);
 
-INSERT INTO HISTORIALMEDICO (Descripcion,Estudios) VALUES ('','');
+INSERT INTO HISTORIALMEDICO (Descripcion,Estudios) VALUES ('El paciente se pesenta con dolor estomacal, palidez, deshidratación','presión normal, se le remedia suero');
+INSERT INTO HISTORIALMEDICO (Descripcion,Estudios) VALUES ('Ardor de garganta, parece normal','se le remedia bupivicaína');
+INSERT INTO HISTORIALMEDICO (Descripcion,Estudios) VALUES ('Intoxicacion, se presenta con irritacion en los ojos y deshidratación','se le medica Halothano y Bupivicaína');
+INSERT INTO HISTORIALMEDICO (Descripcion,Estudios) VALUES ('El paciente se presenta con dolor estomacal, no presenta muestras de daño físico','presión normal, sangre normal, se le medica un placebo');
 
 INSERT INTO RECETA(Imagen,Estado) VALUES ('wh456asfv.pgn', 'A');
 INSERT INTO RECETA(Imagen,Estado) VALUES ('whañsdjkf.png', 'A');
 
 /* COMPLETADAS */
-INSERT INTO CITA(Fecha,Estado) VALUES ('03/25/2016', 'C');
-INSERT INTO CITA(Fecha,Estado) VALUES ('03/15/2016', 'C');
-INSERT INTO CITA(Fecha,Estado) VALUES ('03/30/2016', 'C');
-INSERT INTO CITA(Fecha,Estado) VALUES ('03/27/2016', 'C');
+INSERT INTO CITA(Fecha,Estado) VALUES ('03/25/2016 13:30', 'C');
+INSERT INTO CITA(Fecha,Estado) VALUES ('03/15/2016 17:00', 'C');
+INSERT INTO CITA(Fecha,Estado) VALUES ('03/30/2016 14:45', 'C');
+INSERT INTO CITA(Fecha,Estado) VALUES ('03/27/2016 08:00', 'C');
 /* PERDIDAS */
-INSERT INTO CITA(Fecha,Estado) VALUES ('03/30/2016', 'M');
-INSERT INTO CITA(Fecha,Estado) VALUES ('03/27/2016', 'M');
+INSERT INTO CITA(Fecha,Estado) VALUES ('03/30/2016 07:30', 'M');
+INSERT INTO CITA(Fecha,Estado) VALUES ('03/27/2016 15:00', 'M');
 /* PENDIENTES */
-INSERT INTO CITA(Fecha,Estado) VALUES ('06/13/2016', 'P');
-INSERT INTO CITA(Fecha,Estado) VALUES ('06/21/2016', 'P');
-INSERT INTO CITA(Fecha,Estado) VALUES ('06/05/2016', 'P');
-INSERT INTO CITA(Fecha,Estado) VALUES ('07/25/2016', 'P');
-INSERT INTO CITA(Fecha,Estado) VALUES ('06/16/2016', 'P');
+INSERT INTO CITA(Fecha,Estado) VALUES ('06/13/2016 09:30', 'P');
+INSERT INTO CITA(Fecha,Estado) VALUES ('06/21/2016 07:45', 'P');
+INSERT INTO CITA(Fecha,Estado) VALUES ('06/05/2016 08:20', 'P');
+INSERT INTO CITA(Fecha,Estado) VALUES ('07/25/2016 14:00', 'P');
+INSERT INTO CITA(Fecha,Estado) VALUES ('06/16/2016 08:30', 'P');
 
 INSERT INTO ESPECIALIDADMEDICA(Nombre) VALUES ('Alergología');
 INSERT INTO ESPECIALIDADMEDICA(Nombre) VALUES ('Anestesiología');
@@ -85,52 +90,78 @@ INSERT INTO ESPECIALIDADMEDICA(Nombre) VALUES ('Oncología');
 INSERT INTO ESPECIALIDADMEDICA(Nombre) VALUES ('Toxicología');
 
 /* ROL PACIENTE */
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 1)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 2)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 3)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 4)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 5)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 6)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 7)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 8)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 9)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 10)
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 1);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 2);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 3);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 4);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 5);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 6);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 7);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 8);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 9);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (1, 10);
 /* ROL DOCTOR */
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 11)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 12)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 13)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 14)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 15)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 16)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 17)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 18)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 19)
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 11);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 12);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 13);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 14);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 15);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 16);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 17);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 18);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (2, 19);
 /* ROL ADMIN */
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (3, 20)
-INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (3, 21)
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (3, 20);
+INSERT INTO ROL_POR_USUARIO (IdRol,IdUsuario) VALUES (3, 21);
 
-INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (
+INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (1, 1);
+INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (1, 2);
+INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (2, 1);
+INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (3, 4);
+INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (4, 1);
+INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor) VALUES (4, 5);
 
 INSERT INTO HISTORIAL_POR_PACIENTE (IdPaciente,NoHistorial) VALUES (1, 1);
 INSERT INTO HISTORIAL_POR_PACIENTE (IdPaciente,NoHistorial) VALUES (1, 2);
 INSERT INTO HISTORIAL_POR_PACIENTE (IdPaciente,NoHistorial) VALUES (2, 3);
 INSERT INTO HISTORIAL_POR_PACIENTE (IdPaciente,NoHistorial) VALUES (2, 4);
 
-INSERT INTO RECETA_POR_HISTORIAL (NoHistorial,NoReceta)  VALUES (
+INSERT INTO RECETA_POR_HISTORIAL (NoHistorial,NoReceta)  VALUES (2, 1)
+INSERT INTO RECETA_POR_HISTORIAL (NoHistorial,NoReceta)  VALUES (3, 2)
 
-INSERT INTO RECETA_POR_DOCTOR (NoDoctor,NoReceta) VALUES (
+INSERT INTO RECETA_POR_DOCTOR (NoDoctor,NoReceta) VALUES (2, 2);
+INSERT INTO RECETA_POR_DOCTOR (NoDoctor,NoReceta) VALUES (1, 2);
 
-INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (3, 11);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (4, 10);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (5, 9);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (1, 8);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (4, 7);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (3, 6);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (1, 5);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (1, 4);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (2, 3);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (1, 2);
+INSERT INTO CITA_POR_PACIENTE (IdPaciente,NoCita) VALUES (2, 1);
 
-INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (1, 1);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (2, 2);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (1, 3);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (3, 4);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (1, 5);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (2, 6);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (1, 7);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (4, 8);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (5, 9);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (3, 10);
+INSERT INTO CITA_POR_DOCTOR (NoDoctor,NoCita) VALUES (2, 11);
 
-INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (
- 
- 
- 
-
-
-
-
-
-
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (1,5);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (2,8);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (3,7);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (4,1);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (5,4);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (6,5);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (7,1);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (8,2);
+INSERT INTO ESPECIALIDAD_POR_DOCTOR (NoDoctor,NoEspecialidad) values (9,3);
