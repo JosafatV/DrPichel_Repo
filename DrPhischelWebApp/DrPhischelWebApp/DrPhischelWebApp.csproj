@@ -266,14 +266,20 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="htmlPages\index.html" />
+    <Content Include="htmlPages\css\bootstrap-theme.css" />
+    <Content Include="htmlPages\css\bootstrap-theme.min.css" />
+    <Content Include="htmlPages\css\bootstrap.css" />
+    <Content Include="htmlPages\css\bootstrap.min.css" />
+    <Content Include="htmlPages\css\estilos.css" />
+    <Content Include="htmlPages\indexDrPhischel.html" />
     <Content Include="htmlPages\Menu\calendario.html" />
     <Content Include="htmlPages\Menu\menu.html" />
-    <Content Include="htmlPages\Vista_Doctor\imagenes\medicos1.jpg" />
-    <Content Include="htmlPages\Vista_Doctor\VistaDoctor.html" />
+    <Content Include="htmlPages\VistaDoctor\imagenes\medicos1.jpg" />
+    <Content Include="htmlPages\VistaDoctor\VistaDoctor.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\bootstrap.css" />
@@ -301,6 +307,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="htmlPages\css\bootstrap-theme.css.map" />
+    <Content Include="htmlPages\css\bootstrap-theme.min.css.map" />
+    <Content Include="htmlPages\css\bootstrap.css.map" />
+    <Content Include="htmlPages\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -315,7 +325,7 @@
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
     <Content Include="Scripts\WebAppScripts\initScript.js" />
-    <Content Include="Scripts\WebAppScripts\menuControllerScript.js" />
+    <Content Include="Scripts\WebAppScripts\menuDoctorControllerScript.js" />
     <Content Include="Scripts\WebAppScripts\resourceScript.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\_ViewStart.cshtml" />

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="DrPhischelApp">
+<head>
+    <title>Dr.Phischel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/angular-resource.js"></script>
+    <script src="../Scripts/WebAppScripts/initScript.js"></script>
+    <script src="../Scripts/WebAppScripts/menuDoctorControllerScript.js"></script>
+    <script src="../Scripts/WebAppScripts/resourceScript.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!--Aqui va el jumbotron-->
+        <section class="jumbotron">
+            <div class="container">
+                <h1 class="titulo-pag">Dr. Phischel </h1>
+                <p>La comunidad más grande de médicos a su disposición.</p>
+            </div>
+        </section>
+        <!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div data-ng-view></div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>
+                            2016 Dr.Phishel.inc
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <ul class="list-inline text-right">
+                            <li><a>Reclutamiento</a></li>
+                            <li><a>Terminos & Condiciones</a></li>
+                            <li><a>Preguntas Frecuentes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="http:code.jquery.com/jquery-latest.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
