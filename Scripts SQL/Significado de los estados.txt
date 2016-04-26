@@ -1,0 +1,19 @@
+SIGNIFICADO DE LOS ESTADOS
+
+A - Activo
+Este USUARIO está activo y es válido en la base de datos
+
+I - Inactivo
+Este USUARIO está "sugerido" en la base de datos y debe ser aprovado por un ADMINISTRADOR
+
+B - Borrado
+Este elemento está eliminado de la base de datos
+
+P - Pendiente
+Esta CITA no ha pasado, la fecha debe ser en el futuro
+
+M - Perdida
+Esta CITA ya paso pero no se completo, el PACIENTE perdió la cita
+
+C - Completada
+Esta CITA se completó con existe y debe ser cargada en el cobro del doctor
