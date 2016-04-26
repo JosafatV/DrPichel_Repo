@@ -10,7 +10,7 @@ angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvid
         controller: 'portadaCdfontroller'
     })
       .otherwise({
-          templateUrl: 'Menu/menu.html',
+          templateUrl: 'Vista_Doctor/VistaDoctor.html',
           controller: 'portadaController'
       })
 }]);

@@ -269,6 +269,8 @@
     <Content Include="htmlPages\index.html" />
     <Content Include="htmlPages\Menu\calendario.html" />
     <Content Include="htmlPages\Menu\menu.html" />
+    <Content Include="htmlPages\Vista_Doctor\imagenes\medicos1.jpg" />
+    <Content Include="htmlPages\Vista_Doctor\VistaDoctor.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\angular-resource.js" />

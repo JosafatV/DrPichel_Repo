@@ -39,8 +39,8 @@ CREATE TABLE USUARIO (
 /* type of users */
 CREATE TABLE PACIENTE (
 	IdPaciente INT IDENTITY(1,1),
-	Peso DECIMAL(3,2), /* kg */
-	Altura DECIMAL(1,2), /* m */
+	Peso DECIMAL(4,2), /* kg */
+	Altura DECIMAL(4,2), /* m */
 	UserId INT,
 
 	CONSTRAINT PK_PACIENTE
