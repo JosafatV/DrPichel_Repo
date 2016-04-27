@@ -41,7 +41,7 @@ CREATE TABLE PACIENTE (
 	IdPaciente INT IDENTITY(1,1),
 	Peso DECIMAL(4,2), /* kg */
 	Altura DECIMAL(4,2), /* m */
-	UserId INT,
+	UserId INT not null,
 
 	CONSTRAINT PK_PACIENTE
 		PRIMARY KEY (IdPaciente),
@@ -56,7 +56,7 @@ CREATE TABLE DOCTOR(
 	DireccionConsultorio CHAR(50),
 	Especialidad CHAR,
 	TarjetaCredito CHAR(16),
-	UserId INT,
+	UserId INT not null,
 
 	CONSTRAINT PK_DOCTOR
 		PRIMARY KEY (NoDoctor),
