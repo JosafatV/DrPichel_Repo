@@ -161,6 +161,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DataBase\CitaAccess.cs" />
     <Compile Include="DataBase\DoctorAccess.cs" />
     <Compile Include="DataBase\HistorialAccess.cs" />
     <Compile Include="DataBase\PacienteAccess.cs" />
@@ -168,6 +169,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Atencion.cs" />
+    <Compile Include="Models\Cita.cs" />
+    <Compile Include="Models\CitaPorPacienteYDoctor.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\HistorialPorPaciente.cs" />
     <Compile Include="Models\Paciente.cs" />

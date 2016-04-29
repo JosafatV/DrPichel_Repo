@@ -19,7 +19,7 @@ namespace DrPhischelWebApi.DataBase
                     +" @FechaNacimiento = '"+paciente.FechaNacimiento+"', @Residencia = '"+paciente.Residencia+"', @Estado = '"+paciente.Estado+"', @peso = '"+paciente.peso+"', @altura = '"+paciente.altura+"'"
                     , con);
                 con.Open();
-                paciente.idPaciente = cmd.ExecuteScalar().ToString(); //execute query
+                paciente.idUsuario = cmd.ExecuteScalar().ToString(); //execute query
             }
             return paciente;
         }
@@ -30,8 +30,9 @@ namespace DrPhischelWebApi.DataBase
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand(
-                    " Select p.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10),FechaNacimiento,120) as Fecha, u.Residencia, u.Estado, p.IdPaciente, p.Altura, p.Peso "
-                    + " from USUARIO as U join PACIENTE as p   ON P.UserId = U.Id ;  "
+                        "Select p.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10), FechaNacimiento, 120) as Fecha, u.Residencia, u.Estado, p.Altura, p.Peso"
+                        +" from USUARIO as U join PACIENTE as p   ON P.UserId = U.Id ;"
+                
                     , con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -43,7 +44,6 @@ namespace DrPhischelWebApi.DataBase
                     paciente.cedula = rdr["Cedula"].ToString();
                     paciente.Estado = rdr["Estado"].ToString();
                     paciente.FechaNacimiento = rdr["Fecha"].ToString();
-                    paciente.idPaciente = rdr["idPaciente"].ToString();
                     paciente.idUsuario = rdr["UserId"].ToString();
                     paciente.nombre = rdr["Nombre"].ToString();
                     paciente.peso = rdr["Peso"].ToString();

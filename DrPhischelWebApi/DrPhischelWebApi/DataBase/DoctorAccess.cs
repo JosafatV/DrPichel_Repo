@@ -22,7 +22,7 @@ namespace DrPhischelWebApi.DataBase
                    
                 , con);
                 con.Open();
-                doctor.NoDoctor = cmd.ExecuteScalar().ToString(); //execute query
+                doctor.idUsuario = cmd.ExecuteScalar().ToString(); //execute query
             }
             return doctor;
         }
@@ -33,9 +33,9 @@ namespace DrPhischelWebApi.DataBase
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand(
-"Select D.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10),FechaNacimiento,120) as Fecha , u.Residencia, u.Estado,"
-+ "  D.NoDoctor, D.DireccionConsultorio, d.Especialidad, d.TarjetaCredito"
-+"  from USUARIO as U join DOCTOR AS D  ON d.NoDoctor = U.Id;"
+"Select D.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10),FechaNacimiento,120) as Fecha, u.Residencia, u.Estado,"
++ " D.DireccionConsultorio, D.Especialidad, D.TarjetaCredito"
++"  from USUARIO as U join DOCTOR AS D  ON D.UserId = U.Id;"
                     , con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -47,7 +47,6 @@ namespace DrPhischelWebApi.DataBase
                     doctor.cedula = rdr["Cedula"].ToString();
                     doctor.Estado = rdr["Estado"].ToString();
                     doctor.FechaNacimiento = rdr["Fecha"].ToString();
-                    doctor.NoDoctor = rdr["NoDoctor"].ToString();
                     doctor.idUsuario = rdr["UserId"].ToString();
                     doctor.nombre = rdr["Nombre"].ToString();
                     doctor.Especialidad = rdr["Especialidad"].ToString();

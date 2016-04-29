@@ -4,7 +4,6 @@ namespace DrPhischelWebApi.Models
 {
     public class Doctor
     {
-        public string NoDoctor;
         public string idUsuario;
         public string cedula;
         public string password;

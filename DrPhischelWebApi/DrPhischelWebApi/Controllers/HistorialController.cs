@@ -17,7 +17,8 @@ namespace DrPhischelWebApi.Controllers
             return databaseAccess.getHistorialPorpaciente(idPAciente);
         }
 
-        public Atencion postAtencion(Atencion atencion)
+        [Route("api/Historial/Paciente/{idPaciente}")]
+        public Atencion postAtencion(Atencion atencion, idPaciente)
         {
             return databaseAccess.addAtencion(atencion);
         }
