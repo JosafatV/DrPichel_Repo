@@ -1,14 +1,18 @@
 
-angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope","$location",
+angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope","$routeParams","$location",
 
-function ($scope, JsonResource) {
+function ($scope, $routeParams, $location) {
     
+    $scope.goCrearPaciente = function () {
+        $location.path('/Item/crearPaciente');
+    };
+
     $scope.goAgregarHistorial = function () {
-        $location.path('DrPhischel/Doctor/agregarHistorial');
+        $location.path('/DrPhischel/Doctor/agregarHistorial');
     };
 
     $scope.goVerHistorial = function () {
-        $location.path('DrPhischel/Doctor/verHistorial');
+        $location.path('/DrPhischel/Doctor/verHistorial');
     };
 
     $scope.prueba = function () {

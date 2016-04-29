@@ -5,19 +5,19 @@ angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvid
 
      /*--------------------Para las vistas de los doctores------------------------------*/
 
-    .when('DrPhischel/Doctor/agregarHistorial', {
+    .when('/DrPhischel/Doctor/agregarHistorial', {
         templateUrl: 'agregarHistorial.html',
         controller: 'agregarHistorialController'
     })
-    .when('DrPhischel/Doctor/verHistorial', {
+    .when('/DrPhischel/Doctor/verHistorial', {
         templateUrl: 'verHistorial.html',
         controller: 'verHistorialController'
     })
-    .when('DrPhischel/Doctor/agregarPaciente', {
-        templateUrl: 'agregarPaciente.html',
-        controller: 'agregarPacienteController'
+    .when('/Item/crearPaciente', {
+        templateUrl: 'VistaDoctor/VistaCrearPaciente.html',
+        controller: 'menuDoctorController'
     })
-    .when('DrPhischel/Doctor/calendarioCitas', {
+    .when('/DrPhischel/Doctor/calendarioCitas', {
         templateUrl: 'calendarioCitas.html',
         controller: 'calendarioCitasController'
     })
