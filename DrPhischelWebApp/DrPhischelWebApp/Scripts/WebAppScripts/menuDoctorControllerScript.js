@@ -4,7 +4,7 @@ angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope","$r
 function ($scope, $routeParams, $location) {
     
     $scope.goCrearPaciente = function () {
-        $location.path('/Item/crearPaciente');
+        $location.path('/DrPhischel/Doctor/crearPaciente');
     };
 
     $scope.goAgregarHistorial = function () {

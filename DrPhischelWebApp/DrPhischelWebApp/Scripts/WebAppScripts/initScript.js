@@ -13,7 +13,7 @@ angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvid
         templateUrl: 'verHistorial.html',
         controller: 'verHistorialController'
     })
-    .when('/Item/crearPaciente', {
+    .when('/DrPhischel/Doctor/crearPaciente', {
         templateUrl: 'VistaDoctor/VistaCrearPaciente.html',
         controller: 'menuDoctorController'
     })
@@ -26,9 +26,9 @@ angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvid
 
 
     /*-----------------Para las vistas de los Administradores---------------------------*/
-
+            
       .otherwise({
-          templateUrl: 'VistaDoctor/VistaDoctor.html',
+          templateUrl: 'VistaDoctor.html',
           controller: 'menuDoctorController'
       })
 }]);
