@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout0">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="180.0dp"
+        p1:id="@+id/linearLayout1"
+        p1:layout_marginLeft="8.0dp" />
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout2"
+        p1:layout_marginLeft="8.0dp">
+        <TextView
+            p1:text="Usuario:"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/textView1" />
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout3"
+        p1:layout_marginLeft="8.0dp">
+        <EditText
+            p1:inputType="textPassword"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/editText1" />
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout4"
+        p1:layout_marginLeft="8.0dp">
+        <Button
+            p1:text="Login"
+            p1:layout_width="130.0dp"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/button1"
+            p1:layout_marginLeft="110.5dp"
+            p1:layout_marginRight="110.5dp" />
+    </LinearLayout>
+</LinearLayout>
