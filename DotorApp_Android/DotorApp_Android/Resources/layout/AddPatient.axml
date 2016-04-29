@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="59.5dp"
+        android:id="@+id/linearLayout2" />
+    <TextView
+        android:text="Nombre:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="35.0dp"
+        android:id="@+id/textView1"
+        android:layout_marginTop="24.0dp"
+        android:layout_marginBottom="7.5dp"
+        android:layout_marginLeft="12.5dp" />
+    <TextView
+        android:text="Apellido:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="35.0dp"
+        android:id="@+id/textView2"
+        android:layout_marginTop="16.5dp"
+        android:layout_marginBottom="7.5dp"
+        android:layout_marginLeft="14.0dp" />
+    <TextView
+        android:text="Cédula:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="35.0dp"
+        android:id="@+id/textView3"
+        android:layout_marginTop="17.0dp"
+        android:layout_marginBottom="7.5dp"
+        android:layout_marginLeft="13.0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="44.5dp"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="12.0dp">
+        <TextView
+            android:text="Altura (m)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="102.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4"
+            android:layout_marginRight="13.5dp"
+            android:layout_marginLeft="21.5dp" />
+        <TextView
+            android:text="Peso (kg)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView5"
+            android:layout_marginRight="18.0dp" />
+        <TextView
+            android:text="Género"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6" />
+    </LinearLayout>
+    <TextView
+        android:text="Fecha de Nacimiento: (mm/dd/aaaa)"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="44.0dp"
+        android:id="@+id/textView7"
+        android:layout_marginTop="13.5dp"
+        android:layout_marginBottom="7.5dp"
+        android:layout_marginLeft="12.5dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="92.5dp"
+        android:id="@+id/linearLayout4" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="65.5dp"
+        android:id="@+id/linearLayout3">
+        <Button
+            android:text="CLEAR"
+            android:layout_width="99.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button1"
+            android:layout_marginLeft="71.0dp" />
+        <Button
+            android:text="SAVE"
+            android:layout_width="105.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button2"
+            android:layout_marginLeft="45.5dp"
+            android:layout_marginRight="65.0dp" />
+    </LinearLayout>
+</LinearLayout>
