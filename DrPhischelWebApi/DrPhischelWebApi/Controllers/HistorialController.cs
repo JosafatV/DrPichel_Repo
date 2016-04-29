@@ -12,15 +12,16 @@ namespace DrPhischelWebApi.Controllers
     {
         private HistorialAccess databaseAccess = new HistorialAccess();
 
-        public List<HistorialPorPaciente> getHistorial(string idPAciente)
+        [Route("api/Historial/Paciente/{idPaciente}")]
+        public List<HistorialPorPaciente> getHistorial(string idPaciente)
         {
-            return databaseAccess.getHistorialPorpaciente(idPAciente);
+            return databaseAccess.getHistorialPorpaciente(idPaciente);
         }
 
-        [Route("api/Historial/Paciente/{idPaciente}")]
-        public Atencion postAtencion(Atencion atencion, idPaciente)
+        [Route("api/Historial/Atenciones/Paciente/{idPaciente}")]
+        public Atencion postAtencion(Atencion atencion, string idPaciente)
         {
-            return databaseAccess.addAtencion(atencion);
+            return databaseAccess.addAtencion(atencion, idPaciente);
         }
     }
 }

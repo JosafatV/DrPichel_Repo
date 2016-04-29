@@ -16,7 +16,7 @@ namespace DrPhischelWebApi.DataBase
             {
                 SqlCommand cmd = new SqlCommand(
                                             "Select h.IdPaciente, h.NoAtencion, a.Descripcion, a.Estudios, a.NoCita, CONVERT(VARCHAR(10),c.Fecha,120) as Fecha , "
-                                            + " D.UserId, (U.Nombre + u.Apellido) as Doctor"
+                                            + " D.UserId as NoDoctor , (U.Nombre + u.Apellido) as Doctor"
 
                                             + " from HISTORIAL_POR_PACIENTE AS H JOIN ATENCION AS a ON a.NoAtencion = H.NoAtencion"
                                             + " Join CITA AS c ON c.NoCita = a.NoCita  Join DOCTOR as D on c.NoDoctor = D.UserId"
@@ -49,8 +49,8 @@ namespace DrPhischelWebApi.DataBase
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand(
-                    "Insert into Atencion (Descripcion, Estudios , NoCita ) Values ('" + atencion.Descripcion + "','" + atencion.Estudios + "','" + atencion.NoCita + "') ; "
-                    + " Select Scope_identity() "
+                    "EXEC dbo.insert_atencion_paciente @Descripcion = '"+atencion.Descripcion+"', @Estudios= '"+atencion.Estudios+"' ,"
+                    +" @NoCita = '"+ atencion.NoCita +"' , @IdPaciente = '"+idPaciente+"'"
                 , con);
                 con.Open();
                 atencion.NoAtencion = cmd.ExecuteScalar().ToString(); //execute query
