@@ -8,6 +8,20 @@
             isArray: true
         },
         update: { method: 'PUT' },
+        delete: { method: 'DELETE'}
+    });
+});
+
+angular.module('DrPhischelApp').factory('pacienteResource', function ($resource) {
+    return $resource('http://localhost:8080/api/Client/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
         delete: { method: 'DELETE' }
     });
 });

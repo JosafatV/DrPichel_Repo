@@ -32,23 +32,23 @@
                 </div>
                 <div class="form-group">
                     <label for="nombre">Apellidos:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Apellidos:">
+                    <input class="form-control" id="nombre" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellidos">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Edad:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Edad:">
+                    <input class="form-control" id="nombre" type="text" placeholder="Edad:" data-ng-model="nuevoCliente.edad">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Número de Seguro Social:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Número de Seguro Social:">
+                    <input class="form-control" id="nombre" type="text" placeholder="Número de Seguro Social:" data-ng-model="nuevoCliente.nss">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Seleccione el sexo del paciente:</label><br>
-                    <input type="radio" name="opcion" id="radio1">Masculino<br>
-                    <input type="radio" name="opcion" id="radio1">Femenino
+                    <input type="radio" name="opcion" id="radio1" data-ng-click="cambieSexo('M')">Masculino<br>
+                    <input type="radio" name="opcion" id="radio1" data-ng-click="cambieSexo('F')">Femenino
                 </div>
                 <br><br>
-                <a href="#" class="btn btn-success">Guardar Paciente</a>
+                <a ng-click="enviarNuevoCliente()" class="btn btn-success">Guardar Paciente</a>
 
 
         </div>

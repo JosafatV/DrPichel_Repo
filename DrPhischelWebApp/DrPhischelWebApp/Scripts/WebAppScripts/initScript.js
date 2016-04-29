@@ -15,7 +15,7 @@ angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvid
     })
     .when('/DrPhischel/Doctor/crearPaciente', {
         templateUrl: 'VistaDoctor/VistaCrearPaciente.html',
-        controller: 'menuDoctorController'
+        controller: 'crearPacienteController'
     })
     .when('/DrPhischel/Doctor/calendarioCitas', {
         templateUrl: 'calendarioCitas.html',
