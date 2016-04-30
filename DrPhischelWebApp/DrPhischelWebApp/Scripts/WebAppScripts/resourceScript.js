@@ -11,7 +11,7 @@
         delete: { method: 'DELETE'}
     });
 });
-
+var urlPrueba = 'http://localhost:8080/api';
 angular.module('DrPhischelApp').factory('pacienteResource', function ($resource) {
     return $resource('http://localhost:8080/api/Client/:id', {}, {
         query: {

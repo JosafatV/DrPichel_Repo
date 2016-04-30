@@ -4,15 +4,28 @@
     <title>Dr.Phischel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <!-------------------------Framework of angularJS---------------------------------------->
     <script src="../Scripts/angular.js"></script>
     <script src="../Scripts/angular-route.js"></script>
     <script src="../Scripts/angular-resource.js"></script>
-    <script src="../Scripts/WebAppScripts/initScript.js"></script>
-    <script src="../Scripts/WebAppScripts/menuDoctorControllerScript.js"></script>
-    <script src="../Scripts/WebAppScripts/resourceScript.js"></script>
-    <script src="../Scripts/WebAppScripts/crearPacienteController.js"></script>
     <script src="../Scripts/jquery-1.10.2.js"></script>
     <script src="../htmlPages/VistaDoctor/js/jquery.js"></script>
+    <!-------------------------Init and global Scripts--------------------------------------->
+    <script src="../Scripts/WebAppScripts/initScript.js"></script>
+    <script src="../Scripts/WebAppScripts/resourceScript.js"></script>
+    <!-------------------------Doctor View Controllers--------------------------------------->
+    <script src="../Scripts/WebAppScripts/DoctorViewControllers/menuDoctorControllerScript.js"></script>
+    <script src="../Scripts/WebAppScripts/DoctorViewControllers/agregarHistorialController.js"></script>   
+    <script src="../Scripts/WebAppScripts/DoctorViewControllers/crearPacienteController.js"></script>
+    <!-------------------------Paciente View Controllers------------------------------------->
+    <script src="../Scripts/WebAppScripts/PacienteViewControllers/menuPacienteControllerScript.js"></script>
+    <script src="../Scripts/WebAppScripts/PacienteViewControllers/solicitarCitaController.js"></script>
+    <!-------------------------Admin View Controllers---------------------------------------->
+    <script src="../Scripts/WebAppScripts/AdminViewControllers/menuAdminController.js"></script>
+    <script src="../Scripts/WebAppScripts/AdminViewControllers/cobrosController.js"></script>
+    <script src="../Scripts/WebAppScripts/AdminViewControllers/doctoresPendientesController.js"></script>
+    <script src="../Scripts/WebAppScripts/AdminViewControllers/sincronizarMedicamentosController.js"></script>
+    <!------------------------ Para Bootstrap------------------------------------------------>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../htmlPages/css/estilos.css">
@@ -26,9 +39,7 @@
             </div>
         </section>
     <div data-ng-view></div>
-        <!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
         <footer>
- 
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">

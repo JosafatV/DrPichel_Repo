@@ -4,7 +4,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-static-top finta" role="navigation">
+        <nav class="navbar navbar-inverse navbar-static-top finta" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
@@ -19,14 +19,14 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a>Inicio</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Historial Clinico<span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Historial Clinico<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a data-ng-click="prueba()">Agregar historial clinico</a></li>
+                                <li><a data-ng-click="goAgregarHistorial()">Agregar historial clinico</a></li>
                                 <li class="divider"></li>
                                 <li><a>Ver historial clinico</a></li>
                             </ul>
                         </li>
-                        <li><a ng-click="goCrearPaciente()">Agregar Pacientes</a></li>
+                        <li><a data-ng-click="goCrearPaciente()">Agregar Pacientes</a></li>
                         <li><a href="#">Calendario de citas</a></li>
                     </ul>
                 </div>
