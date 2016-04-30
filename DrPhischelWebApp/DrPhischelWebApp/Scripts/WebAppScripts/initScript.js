@@ -3,10 +3,10 @@ angular.module('DrPhischelApp', ['ngRoute', 'ngResource']);
 angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvider) {
     $routeProvider
 
-     /*--------------------Para las vistas de los doctores------------------------------*/
+     /*--------------------For the views of the Doctors------------------------------*/
 
     .when('/DrPhischel/Doctor/agregarHistorial', {
-        templateUrl: 'agregarHistorial.html',
+        templateUrl: 'VistaDoctor/agregarHistorial.html',
         controller: 'agregarHistorialController'
     })
     .when('/DrPhischel/Doctor/verHistorial', {
@@ -14,22 +14,54 @@ angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvid
         controller: 'verHistorialController'
     })
     .when('/DrPhischel/Doctor/crearPaciente', {
-        templateUrl: 'VistaDoctor/VistaCrearPaciente.html',
+        templateUrl: 'VistaDoctor/vistaCrearPaciente.html',
         controller: 'crearPacienteController'
     })
     .when('/DrPhischel/Doctor/calendarioCitas', {
         templateUrl: 'calendarioCitas.html',
         controller: 'calendarioCitasController'
     })
+    .when('/DrPhischel/DoctorMenu', {
+        templateUrl: 'vistaDoctor.html',
+        controller: 'menuDoctorController'
+    })
 
-    /*--------------------Para las vistas de los Pacientes------------------------------*/
+    /*--------------------For the views of the Patients------------------------------*/
 
 
-    /*-----------------Para las vistas de los Administradores---------------------------*/
-            
-      .otherwise({
-          templateUrl: 'VistaDoctor.html',
-          controller: 'menuDoctorController'
-      })
+    .when('/DrPhischel/Patient/HistorialMedico', {
+        templateUrl: 'VistaPaciente/historialPaciente.html',
+        controller : 'historialPacienteController'
+    })
+    .when('/DrPhischel/Patient', {
+        templateUrl: 'VistaPaciente/vistaPaciente.html',
+        controller: 'menuPacienteController'
+    })
+    .when('/DrPhischel/Patient/SolicitarCita', {
+        templateUrl: 'VistaPaciente/solicitarCita.html',
+        controller: 'solicitarCitaController'
+    })
+
+    /*-----------------For the views of the Admin---------------------------*/
+    .when('/DrPhischel/Admin', {
+        templateUrl: 'VistaAdmin/vistaAdmi.html',
+        controller: 'menuAdminController'
+    })
+    .when('/DrPhischel/Admin/DoctoresPendientes', {
+        templateUrl: 'VistaAdmin/doctoresPendientes.html',
+        controller:  'doctoresPendientesController'
+    })
+    .when('/DrPhischel/Admin/SincronizarMedicamentos', {
+        templateUrl: 'VistaAdmin/sincronizarMedicamentos.html',
+        controller: 'sincronizarMedicamentosController'
+    })
+    .when('/DrPhischel/Admin/Cobros', {
+        templateUrl: 'VistaAdmin/cobros.html',
+        controller: 'cobrosController'
+    })
+    .otherwise({
+        templateUrl: 'VistaDoctor/vistaDoctor.html',
+        controller: 'menuDoctorController'
+    })
 }]);
 
