@@ -167,6 +167,7 @@
     <Compile Include="DataBase\HistorialAccess.cs" />
     <Compile Include="DataBase\MedicamentoSucursalAccess.cs" />
     <Compile Include="DataBase\PacienteAccess.cs" />
+    <Compile Include="DataBase\RecetaAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,9 +177,12 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\HistorialPorPaciente.cs" />
     <Compile Include="Models\Medicamento.cs" />
+    <Compile Include="Models\MedicamentoPorReceta.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\Especialidad.cs" />
+    <Compile Include="Models\Receta.cs" />
     <Compile Include="Models\Sucursal.cs" />
+    <Compile Include="Models\VistaReceta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

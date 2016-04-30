@@ -138,13 +138,6 @@ CREATE TABLE RECETA(
 	CONSTRAINT PK_RECETA
 		PRIMARY KEY (NoReceta)
 )
-		
-
-
-
-
-
-
 
 
 /* relationships */
@@ -214,6 +207,19 @@ CREATE TABLE MEDICAMENTO_EN_SUCURSAL(
 		CONSTRAINT FK_MEDICAMENTOS_SE_ENCUENTRA_EN_SUCURAL_NoSucursal
 			FOREIGN KEY (NoSucursal) REFERENCES SUCURSAL(NoSucursal) ON DELETE CASCADE ON UPDATE CASCADE 
 )
+
+
+CREATE TABLE MEDICAMENTOS_POR_RECETA(
+	NoReceta INT not null,
+	IdMedicamento varchar(10) not null,
+	Cantidad tinyint not null ,
+	primary key(NoReceta, IdMedicamento),
+	foreign key (NoReceta) References Receta(NoReceta),
+	foreign key (IdMedicamento) References Medicamento(Codigo) 
+
+)
+		
+
 
 
 
