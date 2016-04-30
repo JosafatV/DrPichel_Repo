@@ -6,25 +6,25 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using System.Collections.Generic;
+
 namespace DotorApp_Android
 {
     [Activity(Label = "DotorApp_Android", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
-
-            // Get our button from the layout resource,
-            // and attach an event to it
-            // Button button = FindViewById<Button>(Resource.Id.MyButton);  Josav edited out
-
-            //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            Button LoginButton = FindViewById<Button>(Resource.Id.btnLogin);
+            LoginButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(ActivitLogin));
+                intent.PutStringArrayListExtra("phone_numbers", phoneNumbers);
+                StartActivity(intent);
+            };
+           
         }
     }
 }
