@@ -49,18 +49,26 @@ CREATE TABLE PACIENTE (
 		FOREIGN KEY (UserId) REFERENCES USUARIO(Id)
 	)
 
+CREATE TABLE ESPECIALIDADMEDICA (
+	NoEspecialidad TINYINT IDENTITY(1,1),
+	Nombre CHAR(20),
 
+	CONSTRAINT PK_ESPECIALIDADMEDICA
+		PRIMARY KEY (NoEspecialidad)
+	)
 CREATE TABLE DOCTOR(
-	DireccionConsultorio CHAR(50),
-	Especialidad CHAR,
-	TarjetaCredito CHAR(16),
+	
 	UserId INT not null,
-
+	DireccionConsultorio CHAR(50),
+	Especialidad tinyint,
+	TarjetaCredito CHAR(16),
+	
 	CONSTRAINT PK_DOCTOR
 		PRIMARY KEY (UserId),
-	
 	CONSTRAINT FK_DOCTOR_UserId
-		FOREIGN KEY (UserId) REFERENCES USUARIO(Id)
+		FOREIGN KEY (UserId) REFERENCES USUARIO(Id),
+	Constraint fk_especialidad 
+		Foreign key (Especialidad) References EspecialidadMedica (NoEspecialidad)
 	)
 
 
@@ -137,13 +145,7 @@ CREATE TABLE RECETA(
 
 
 
-CREATE TABLE ESPECIALIDADMEDICA (
-	NoEspecialidad TINYINT IDENTITY(1,1),
-	Nombre CHAR(20),
 
-	CONSTRAINT PK_ESPECIALIDADMEDICA
-		PRIMARY KEY (NoEspecialidad)
-	)
 
 /* relationships */
 CREATE TABLE ROL_POR_USUARIO (

@@ -9,6 +9,7 @@ namespace DrPhischelWebApi.Controllers
     public class DoctorController : ApiController
     {
         private DoctorAccess databaseAccess = new DoctorAccess();
+
         public Doctor Post(Doctor doctor)
         {
             return databaseAccess.addDoctor(doctor);
@@ -16,6 +17,18 @@ namespace DrPhischelWebApi.Controllers
         public List<Doctor> getAllDoctores()
         {
             return databaseAccess.getAllDoctors();
+        }
+
+        [Route("api/Doctor/Especialidades")]
+        public List<Especialidad> getEspecialidades()
+        {
+            return databaseAccess.getAllEspecialidades();
+        }
+
+        [Route("api/Doctor/Especialidades")]
+        public Especialidad postEspecialidad(Especialidad especialidad)
+        {
+            return databaseAccess.addEspecialidad(especialidad);
         }
     }
 }
