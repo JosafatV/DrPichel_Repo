@@ -20,11 +20,20 @@ namespace DotorApp_Android
             Button LoginButton = FindViewById<Button>(Resource.Id.btnLogin);
             LoginButton.Click += (sender, e) =>
             {
-                var intent = new Intent(this, typeof(ActivitLogin));
-                intent.PutStringArrayListExtra("phone_numbers", phoneNumbers);
-                StartActivity(intent);
+                //code goes here
             };
-           
+
+            Button ClearButton = FindViewById<Button>(Resource.Id.btnClear);
+            ClearButton.Click += (sender, e) =>
+            {
+                //code goes here
+            };
+            Button submitButton = FindViewById<Button>(Resource.Id.btnSubmit);
+            submitButton.Click += (sender, e) =>
+            {
+                //code goes here
+            };
+
         }
     }
 }

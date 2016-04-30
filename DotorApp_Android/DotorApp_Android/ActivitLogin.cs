@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//import JSON library
+using Org.Json;
 
 namespace DotorApp_Android
 {
@@ -41,13 +41,21 @@ namespace DotorApp_Android
                 JSONObject jsonObject = new JSONObject();
                 JSONArray jsonArray = new JSONArray();
 
-                jsonArray.put("Username");
-                jsonArray.put("Password");
-                jsonObject.put("mk1", "mv1");
-                jsonObject.put("mk2", jsonArray);
-                parent.put("k2", jsonObject);
-                Log.d("output", parent.toString(2));
-            } catch (JSONException e) {
-                e.printStackTrace()}
+                jsonArray.Put("Username");
+                jsonArray.Put("Password");
+                jsonObject.Put("mk1", "mv1");
+                jsonObject.Put("mk2", jsonArray);
+                parent.Put("k2", jsonObject);
+                Log.d("output", parent.ToString(2));
             }
+            catch (JSONException e)
+            {
+                e.PrintStackTrace();
+            }
+
+            
         }
+    }
+}
+
+
