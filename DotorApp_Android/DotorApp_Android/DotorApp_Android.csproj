@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activo.cs" />
     <Compile Include="JSONParser.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PatientClass.cs" />
@@ -68,6 +69,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\AddCita.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Patient.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

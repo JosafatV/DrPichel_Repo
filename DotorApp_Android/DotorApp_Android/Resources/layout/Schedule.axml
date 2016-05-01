@@ -4,55 +4,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Large Text"
+        android:text="Cita 1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="50.0dp"
         android:id="@+id/textView1" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 2"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="53.0dp"
         android:id="@+id/textView2" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 3"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="54.5dp"
         android:id="@+id/textView3" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 4"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="56.0dp"
         android:id="@+id/textView4" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 5"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="50.5dp"
         android:id="@+id/textView5" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 6"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="52.0dp"
         android:id="@+id/textView6" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 7"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="50.5dp"
         android:id="@+id/textView7" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 8"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="57.0dp"
         android:id="@+id/textView8" />
     <TextView
-        android:text="Large Text"
+        android:text="Cita 9"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="59.0dp"

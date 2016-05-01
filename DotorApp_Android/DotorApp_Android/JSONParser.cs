@@ -1,56 +1,59 @@
 ﻿using System.Text;
+using Android.App;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+using System.Collections.Generic;
+
 using Org.Json;
+using DoctorApp_Android;
 
 
-namespace JSONParser
+namespace DoctorApp_Android.JSONParser
 {
-    public static class JSONParser
+    public class JSONParser
     {
         //Converts a string with the data for a patient insert
-        private static void patientToJSON(string raw)
+        private void patientToJSON(string raw)
         {
             //code
         }
 
-        private static void loginToJSON(string raw)
+        public void loginToJSON(string uname, string pwrod)
         {
-            String JSONfile = string.Empty;
-
             try
             {
                 JSONObject parent = new JSONObject();
                 JSONObject jsonObject = new JSONObject();
                 JSONArray jsonArray = new JSONArray();
 
-                jsonArray.Put("Username");
-                jsonArray.Put("Password");
-                jsonObject.Put("mk1", "mv1");
-                jsonObject.Put("mk2", jsonArray);
-                parent.Put("k2", jsonObject);
-                Log.d("output", parent.ToString(2));
+
             }
             catch (JSONException e)
             {
                 e.PrintStackTrace();
             }
+
         }
 
         //formats a JSON file into a useful string array for the schedule layout
-        private static string JSONtoCita(string JSON)
+        private string JSONtoCita(string JSON)
         {
             //code
             return JSON;
         }
 
         //formats a JSON file into a useful string array for the history layout
-        private static string JSONtoHistorial(string JSON)
+        private string JSONtoHistorial(string JSON)
         {
             //code
             return JSON;
         }
 
         //formats a JSON file into a useful string array for the patient list layout
-        private static string JSONtoPatientList(string JSON)
+        private string JSONtoPatientList(string JSON)
         {
             //code
             return JSON;

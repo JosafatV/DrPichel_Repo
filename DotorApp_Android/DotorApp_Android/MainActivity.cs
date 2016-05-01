@@ -7,6 +7,8 @@ using Android.Widget;
 using Android.OS;
 
 using System.Collections.Generic;
+using DoctorApp_Android.JSONParser;
+
 
 namespace DotorApp_Android
 {
@@ -17,8 +19,6 @@ namespace DotorApp_Android
         {
             base.OnCreate(bundle);
 
-            String ActiveUser = String.Empty;
-
             Button LoginButton = FindViewById<Button>(Resource.Id.btnLogin);
             LoginButton.Click += (sender, e) =>
             {
@@ -26,13 +26,23 @@ namespace DotorApp_Android
                 String Username = (String)FindViewById<EditText>(Resource.Id.txtUsername);
                 String Password = (String)FindViewById<EditText>(Resource.Id.txtPassword);
 
-                //
 
-                ActiveUser = "402260398";
-                if (Rol = 'D')
+                //turn credentials into JSON
+                JSONParser jsp = new JSONParser();
+                jsp.loginToJSON(Username, Password);
+
+                //send credential
+
+                //receive db credentials
+
+                //set credentials
+                Activo activeUser = new Activo();
+                
+                //proceed to appropriate rol view
+                if (activeUser.getRol().Equals("D"))
                 {
                     //go to view schedule
-                } else if (Rol='P')
+                } else if (activeUser.getRol().Equals("P"))
                 {
                     //goto view historialP
                 } else
