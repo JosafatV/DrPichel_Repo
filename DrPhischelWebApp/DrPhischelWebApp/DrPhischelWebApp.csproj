@@ -283,6 +283,8 @@
     <Content Include="htmlPages\VistaDoctor\js\bootstrap.min.js" />
     <Content Include="htmlPages\VistaDoctor\js\jquery.js" />
     <Content Include="htmlPages\VistaDoctor\js\npm.js" />
+    <Content Include="htmlPages\VistaDoctor\verHistorial.html" />
+    <Content Include="htmlPages\VistaDoctor\verHistorialClienteEspecifico.html" />
     <Content Include="htmlPages\VistaDoctor\vistaCrearPaciente.html" />
     <Content Include="htmlPages\VistaDoctor\vistaDoctor.html" />
     <Content Include="htmlPages\VistaPaciente\solicitarCita.html" />
@@ -339,9 +341,12 @@
     <Content Include="Scripts\WebAppScripts\AdminViewControllers\doctoresPendientesController.js" />
     <Content Include="Scripts\WebAppScripts\AdminViewControllers\menuAdminController.js" />
     <Content Include="Scripts\WebAppScripts\AdminViewControllers\sincronizarMedicamentosController.js" />
+    <Content Include="Scripts\WebAppScripts\configScript.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\agregarHistorialController.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\crearPacienteController.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\menuDoctorControllerScript.js" />
+    <Content Include="Scripts\WebAppScripts\DoctorViewControllers\verHistorialClienteEspecifico.js" />
+    <Content Include="Scripts\WebAppScripts\DoctorViewControllers\verHistorialController.js" />
     <Content Include="Scripts\WebAppScripts\initScript.js" />
     <Content Include="Scripts\WebAppScripts\PacienteViewControllers\menuPacienteControllerScript.js" />
     <Content Include="Scripts\WebAppScripts\PacienteViewControllers\solicitarCitaController.js" />

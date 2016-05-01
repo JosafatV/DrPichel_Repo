@@ -1,0 +1,34 @@
+<head>
+</head>
+
+<div class="form-group">
+    <h1>Clientes</h1>
+    <input type="text" class="form-control" id="search" placeholder="Buscar Clientes" data-ng-model="search" />
+    <h1>{{search}}</h1>
+</div>
+<table class="table table-bordered table-hover table-condensed ip">
+    <tbody>
+        <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Prioridad</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Residencia</th>
+        </tr>
+        <tr data-ng-repeat="item in data  | filter: search" data-ng-click="editClient($index)">
+            <td>{{item.Cedula}}</td>
+            <td>{{item.Nombre}}</td>
+            <td>{{item.Apellido}}</td>
+            <td>{{item.Prioridad}}</td>
+            <td>{{item.FechaNacimiento}}</td>
+            <td>{{item.Residencia}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="form-group">
+    <button data-ng-click="addClient()" class="btn btn-success">Agregar Cliente</button>
+    <button data-ng-click="refresh()" class="btn btn-primary">Actualizar</button>
+    <button data-ng-click="back()" class="btn btn-default">Regresar</button>
+</div>

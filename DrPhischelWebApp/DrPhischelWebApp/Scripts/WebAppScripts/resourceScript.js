@@ -1,5 +1,9 @@
-﻿angular.module('DrPhischelApp').factory('JsonResource', function ($resource) {
-    return $resource('http://localhost:8080/api/Client/:id', {}, {
+﻿
+var urlGeneric = 'http://sebastian95:8090/api/';
+var urlPaciente = 'Paciente';
+var urlHistorial = 'Historial';
+angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($resource) {
+    return $resource(urlGeneric + ':type/:extension/:id', {}, {
         query: {
             method: 'GET',
             transformResponse: function (data) {
@@ -8,12 +12,12 @@
             isArray: true
         },
         update: { method: 'PUT' },
-        delete: { method: 'DELETE'}
+        delete: { method: 'DELETE' }
     });
 });
-var urlPrueba = 'http://localhost:8080/api';
-angular.module('DrPhischelApp').factory('pacienteResource', function ($resource) {
-    return $resource('http://localhost:8080/api/Client/:id', {}, {
+
+angular.module('DrPhischelApp').factory('prueba', function ($resource) {
+    return $resource('http://sebastian95:8090/api/Paciente', {}, {
         query: {
             method: 'GET',
             transformResponse: function (data) {

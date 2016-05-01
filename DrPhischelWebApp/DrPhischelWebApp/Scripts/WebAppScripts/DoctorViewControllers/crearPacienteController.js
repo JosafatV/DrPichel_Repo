@@ -1,9 +1,9 @@
 ﻿//This controller is used to send data information about new clients to the Web API
-angular.module('DrPhischelApp').controller('crearPacienteController', ["$scope", "$routeParams", "$location",
-function ($scope, $routeParams, $location) {
-
+angular.module('DrPhischelApp').controller('crearPacienteController', ["$scope", "$routeParams", "$location", "drPhischelApiResource", "prueba",
+function ($scope, $routeParams, $location, drPhischelApiResource, prueba) {
+    //$scope.op = drPhischelApiResource.query({ type: urlPaciente });
     //This is where I define the new client to save in the database
-    $scope.nuevoCliente = {nombre : '', apellidos : '', edad : '', nss: '', sexo: ''};
+    $scope.nuevoCliente = {nombre : '', apellidos : '', sexo: '',FechaNacimiento:'',altura:'',peso:''};
 
     //Function that change the sex when the user choose Female or Male
     $scope.cambieSexo = function (nuevoSexo) {
@@ -13,6 +13,8 @@ function ($scope, $routeParams, $location) {
 
     //Function that send the client information to the database to be saved
     $scope.enviarNuevoCliente = function () {
-        alert('Esta en envia')
+       // alert(angular.toJson($scope.op));
+        //drPhischelApiResource.save({ type: urlPaciente }, $scope.nuevoCliente);
+        prueba.save({ nombre: 's', apellidos: 'a', sexo: 'F', FechaNacimiento: '2013-2-5', altura: '1', peso: '1' });
     };
 }]);
