@@ -177,7 +177,6 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\HistorialPorPaciente.cs" />
     <Compile Include="Models\Medicamento.cs" />
-    <Compile Include="Models\MedicamentoPorReceta.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\Especialidad.cs" />
     <Compile Include="Models\Receta.cs" />

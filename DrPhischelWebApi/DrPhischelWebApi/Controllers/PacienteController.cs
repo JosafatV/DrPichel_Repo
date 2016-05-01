@@ -4,6 +4,9 @@ using System.Web.Http;
 using DrPhischelWebApi.Models;
 using DrPhischelWebApi.DataBase;
 
+
+
+
 namespace DrPhischelWebApi.Controllers
 {
     public class PacienteController : ApiController
@@ -13,8 +16,11 @@ namespace DrPhischelWebApi.Controllers
         {
             return databaseAccess.addPaciente(paciente);
         }
-        public List<Paciente> getPacientes() {
+        public List<Paciente> getPacientes()
+        {
             return databaseAccess.getPacientes();
         }
+
     }
+
 }

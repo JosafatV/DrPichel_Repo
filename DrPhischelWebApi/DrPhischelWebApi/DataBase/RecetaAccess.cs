@@ -23,19 +23,35 @@ namespace DrPhischelWebApi.DataBase
             }
             return receta;
         }
-        public MedicamentoPorReceta AddMedicamentoReceta(MedicamentoPorReceta medicamento_x_receta)
+
+        public VistaReceta getReceta(string NoAtencion)
         {
+            VistaReceta receta = new VistaReceta();
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand(
-                    "insert into medicamentos_por_Receta (NoReceta, IdMedicamento, Cantidad)" 
-                    +" values('"+medicamento_x_receta.NoReceta+"','"+medicamento_x_receta.IdMedicamento+"','"+medicamento_x_receta.Cantidad+"') "
-                , con);
+                        "Select NoReceta, r.Estado, r.NoAtencion, r.NoDoctor, (u2.Nombre + u2.Apellido) as Doctor,"
+                        +" (u.Nombre + u.Apellido) as NombrePaciente, h.IdPaciente, u.Cedula"
+                        +" from RECETA AS R JOIN HISTORIAL_POR_PACIENTE AS H ON R.NoAtencion = H.NoAtencion"
+                        +" JOIN USUARIO AS U ON U.Id = H.IdPaciente JOIN USUARIO AS U2 ON R.NoDoctor = U2.Id"
+                        +" where R.NoAtencion = '"+NoAtencion+"'"
+                    , con);
                 con.Open();
-                cmd.ExecuteNonQuery(); //execute query
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read()) //si existe en la base de datos
+                {
+                    receta.Cedula = rdr["Cedula"].ToString();
+                    receta.Doctor = rdr["Doctor"].ToString();
+                    receta.Estado = rdr["Estado"].ToString();
+                    receta.IdPaciente = rdr["IdPaciente"].ToString();
+                    receta.NoAtencion = rdr["NoAtencion"].ToString();
+                    receta.NoDoctor = rdr["NoDoctor"].ToString();
+                    receta.NombrePaciente = rdr["NombrePaciente"].ToString();
+                    receta.NoReceta = rdr["NoReceta"].ToString();
+                }
             }
-            return medicamento_x_receta;
+            return receta;
         }
     }
 }

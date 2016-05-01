@@ -12,8 +12,8 @@ namespace DrPhischelWebApi.Models
         public string NoAtencion;
         public string NoDoctor;
         public string Doctor;
+        public string IdPaciente;
         public string NombrePaciente;
-        public string ApellidoPaciente;
         public string Cedula;
     }
 }
