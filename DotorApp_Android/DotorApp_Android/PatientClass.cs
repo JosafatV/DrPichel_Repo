@@ -2,7 +2,7 @@ using System;
 
 namespace DotorApp_Android
 {
-    class Patient
+    class PatientClass
     {
         String Nombre;
         String Apellido;

@@ -22,6 +22,7 @@
         p1:layout_marginLeft="8.0dp">
         <TextView
             p1:text="Usuario:"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
             p1:id="@+id/txtUsername" />
@@ -53,7 +54,7 @@
             p1:layout_width="130.0dp"
             p1:layout_height="wrap_content"
             p1:id="@+id/btnLogin"
-            p1:layout_marginLeft="110.5dp"
+            p1:layout_marginLeft="113.5dp"
             p1:layout_marginRight="110.5dp" />
     </LinearLayout>
 </LinearLayout>

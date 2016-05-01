@@ -4,24 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Text"
+        android:text="Nombre del paciente:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="33.5dp"
         android:id="@+id/txtNombrePaciente"
         android:layout_marginTop="9.0dp" />
     <TextView
-        android:text="Text"
+        android:text="Observaciones"
         android:layout_width="match_parent"
         android:layout_height="230.0dp"
         android:id="@+id/txtHistorial" />
     <TextView
-        android:text="Text"
+        android:text="Estudios"
         android:layout_width="match_parent"
         android:layout_height="215.0dp"
         android:id="@+id/txtEstudios"
         android:layout_marginBottom="9.0dp" />
     <Button
-        android:text="Button"
+        android:text="Volver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnBack" />

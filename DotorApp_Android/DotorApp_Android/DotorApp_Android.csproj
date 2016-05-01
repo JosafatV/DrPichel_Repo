@@ -49,10 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivitLogin.cs" />
-    <Compile Include="CodeFile1.cs" />
+    <Compile Include="JSONParser.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Patient.cs" />
+    <Compile Include="PatientClass.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +62,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\AddPatient.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Historial.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddCita.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

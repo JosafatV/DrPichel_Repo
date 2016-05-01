@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Org.Json;
 
 
 namespace JSONParser
@@ -9,6 +10,29 @@ namespace JSONParser
         private static void patientToJSON(string raw)
         {
             //code
+        }
+
+        private static void loginToJSON(string raw)
+        {
+            String JSONfile = string.Empty;
+
+            try
+            {
+                JSONObject parent = new JSONObject();
+                JSONObject jsonObject = new JSONObject();
+                JSONArray jsonArray = new JSONArray();
+
+                jsonArray.Put("Username");
+                jsonArray.Put("Password");
+                jsonObject.Put("mk1", "mv1");
+                jsonObject.Put("mk2", jsonArray);
+                parent.Put("k2", jsonObject);
+                Log.d("output", parent.ToString(2));
+            }
+            catch (JSONException e)
+            {
+                e.PrintStackTrace();
+            }
         }
 
         //formats a JSON file into a useful string array for the schedule layout
