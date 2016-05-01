@@ -160,14 +160,17 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HistorialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MedicamentoSucursalController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\RecetaController.cs" />
     <Compile Include="DataBase\CitaAccess.cs" />
     <Compile Include="DataBase\DoctorAccess.cs" />
     <Compile Include="DataBase\HistorialAccess.cs" />
     <Compile Include="DataBase\MedicamentoSucursalAccess.cs" />
     <Compile Include="DataBase\PacienteAccess.cs" />
     <Compile Include="DataBase\RecetaAccess.cs" />
+    <Compile Include="DataBase\UsuarioAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,6 +184,7 @@
     <Compile Include="Models\Especialidad.cs" />
     <Compile Include="Models\Receta.cs" />
     <Compile Include="Models\Sucursal.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\VistaReceta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -219,7 +223,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

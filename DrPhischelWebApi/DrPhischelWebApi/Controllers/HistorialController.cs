@@ -1,10 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Web.Http;
 using DrPhischelWebApi.Models;
 using DrPhischelWebApi.DataBase;
-using System.Net.Http;
-using System.Web.Http;
+
 
 namespace DrPhischelWebApi.Controllers
 {

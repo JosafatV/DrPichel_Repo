@@ -128,7 +128,7 @@ CREATE TABLE RECETA(
 	NoReceta INT IDENTITY(1,1),
 	Imagen VARCHAR(20),
 	Estado CHAR,
-	NoAtencion INT,
+	NoAtencion INT UNIQUE,
 	NoDoctor INT,
 
 	CONSTRAINT FK_RECETA_PACIENTE_DOCTOR_NoDoctor
@@ -209,16 +209,6 @@ CREATE TABLE MEDICAMENTO_EN_SUCURSAL(
 )
 
 
-CREATE TABLE MEDICAMENTOS_POR_RECETA(
-	NoReceta INT not null,
-	IdMedicamento varchar(10) not null,
-	Cantidad tinyint not null ,
-	primary key(NoReceta, IdMedicamento),
-	foreign key (NoReceta) References Receta(NoReceta),
-	foreign key (IdMedicamento) References Medicamento(Codigo) 
-
-)
-		
 
 
 
