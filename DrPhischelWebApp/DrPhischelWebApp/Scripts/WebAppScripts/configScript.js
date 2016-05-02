@@ -63,7 +63,7 @@
         controller: 'cobrosController'
     })
     .otherwise({
-        templateUrl: 'VistaDoctor/vistaDoctor.html',
+        templateUrl: 'VistaAdmin/vistaAdmi.html',
         controller: 'menuDoctorController'
     })
 }]);

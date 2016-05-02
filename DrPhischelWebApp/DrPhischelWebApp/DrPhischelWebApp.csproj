@@ -278,6 +278,7 @@
     <Content Include="htmlPages\VistaAdmin\sincronizarMedicamentos.html" />
     <Content Include="htmlPages\VistaAdmin\vistaAdmi.html" />
     <Content Include="htmlPages\VistaDoctor\agregarHistorial.html" />
+    <Content Include="htmlPages\VistaDoctor\añadirHistorialTabla.html" />
     <Content Include="htmlPages\VistaDoctor\imagenes\medicos1.jpg" />
     <Content Include="htmlPages\VistaDoctor\js\bootstrap.js" />
     <Content Include="htmlPages\VistaDoctor\js\bootstrap.min.js" />
