@@ -27,16 +27,24 @@
             <br />
             <form action="" class="">
                 <div class="form-group">
+                    <label for="cedula">Cedula:</label>
+                    <input class="form-control" id="cedula" type="text" placeholder="Cedula:" data-ng-model="nuevoCliente.Cedula">
+                </div>
+                <div class="form-group">
                     <label for="nombre">Nombre:</label>
                     <input class="form-control" id="nombre" type="text" placeholder="Nombre:" data-ng-model="nuevoCliente.nombre">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Apellidos:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellidos">
+                    <input class="form-control" id="nombre" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellido">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Fecha Nacimiento:</label>
                     <input class="form-control" id="nombre" type="date" placeholder="Fecha de Nacimiento:" data-ng-model="nuevoCliente.FechaNacimiento">
+                </div>
+                <div class="form-group">
+                    <label for="Residencia">Residencia:</label>
+                    <input class="form-control" id="Residencia" type="text" step="any" min="0" placeholder="Residencia:" data-ng-model="nuevoCliente.Residencia">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Altura:</label>
