@@ -9,7 +9,7 @@ angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope", "$
 
     //Changed the view to Agregate historial
     $scope.goAgregarHistorial = function () {
-        $location.path('/DrPhischel/Doctor/AgregarHistorial');
+        $location.path('/DrPhischel/Doctor/AgregarHistorialTabla');
     };
 
     //Changed the view to the historial view

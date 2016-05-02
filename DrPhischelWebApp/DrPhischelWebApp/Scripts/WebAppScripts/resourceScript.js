@@ -1,5 +1,5 @@
 ﻿
-var urlGeneric = 'http://sebastian95:8090/api/';
+var urlGeneric = 'http://sebastian95:8090/api';
 var urlPaciente = 'Paciente';
 var urlHistorial = 'Historial';
 angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($resource) {

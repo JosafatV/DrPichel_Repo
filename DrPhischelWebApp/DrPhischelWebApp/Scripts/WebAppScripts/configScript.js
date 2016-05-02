@@ -3,7 +3,7 @@
 
      /*--------------------For the views of the Doctors------------------------------*/
 
-    .when('/DrPhischel/Doctor/AgregarHistorial', {
+    .when('/DrPhischel/Doctor/AgregarHistorial/:id', {
         templateUrl: 'VistaDoctor/agregarHistorial.html',
         controller: 'agregarHistorialController'
     })
@@ -22,6 +22,10 @@
     .when('/DrPhischel/Doctor/CalendarioCitas', {
         templateUrl: 'calendarioCitas.html',
         controller: 'calendarioCitasController'
+    })
+    .when('/DrPhischel/Doctor/AgregarHistorialTabla', {
+        templateUrl: 'VistaDoctor/agregarHistorialTabla.html',
+        controller: 'agregarHistorialTablaController'
     })
     .when('/DrPhischel/DoctorMenu', {
         templateUrl: 'vistaDoctor.html',
@@ -62,8 +66,9 @@
         templateUrl: 'VistaAdmin/cobros.html',
         controller: 'cobrosController'
     })
+
     .otherwise({
-        templateUrl: 'VistaAdmin/vistaAdmi.html',
+        templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
     })
 }]);
