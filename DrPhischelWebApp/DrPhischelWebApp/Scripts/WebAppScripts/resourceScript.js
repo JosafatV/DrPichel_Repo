@@ -3,7 +3,7 @@ var urlGeneric = 'http://sebastian95:8090/api/';
 var urlPaciente = 'Paciente';
 var urlHistorial = 'Historial';
 angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($resource) {
-    return $resource(urlGeneric + '/:type/:extension/:id', {}, {
+    return $resource(urlGeneric + '/:type/:extension/:extension2/:id', {}, {
         query: {
             method: 'GET',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
