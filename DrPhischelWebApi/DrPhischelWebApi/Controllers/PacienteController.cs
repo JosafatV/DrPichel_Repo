@@ -24,6 +24,8 @@ namespace DrPhischelWebApi.Controllers
             return databaseAccess.getPacientes();
         }
 
+
+
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };

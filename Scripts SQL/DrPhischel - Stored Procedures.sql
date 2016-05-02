@@ -11,6 +11,10 @@ GO
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'TR' AND name = 'agregar_a_tabla_Paciente_por_doctor')
 	DROP trigger agregar_a_tabla_Paciente_por_doctor
 GO
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_Cobro_Doctores')
+	DROP Procedure SP_Cobro_Doctores
+GO
+
 
 
 CREATE PROCEDURE dbo.insert_paciente @cedula int , @password char(20) , @nombre char(15) , @apellido char(15) , 
@@ -18,7 +22,7 @@ CREATE PROCEDURE dbo.insert_paciente @cedula int , @password char(20) , @nombre 
 AS
 	declare @idUsuario int
 	INSERT INTO USUARIO (Password,Cedula, Nombre,Apellido, FechaNacimiento, Residencia, Estado) 
-	VALUES(@password, @cedula , @nombre ,  @apellido  , @FechaNacimiento , @Residencia ,  @Estado)
+	VALUES(@password, @cedula , @nombre ,  @apellido  , @FechaNacimiento , @Residencia ,  'A')
 
 	SELECT @idUsuario = @@IDENTITY
 	select SCOPE_IDENTITY() as LAST_ID 
@@ -33,7 +37,7 @@ CREATE PROCEDURE dbo.insert_doctor @cedula int , @password char(20) , @nombre ch
 AS
 	declare @idUsuario int
 	INSERT INTO USUARIO (Password,Cedula, Nombre,Apellido, FechaNacimiento, Residencia, Estado) 
-	VALUES(@password, @cedula , @nombre ,  @apellido  , @FechaNacimiento , @Residencia ,  @Estado)
+	VALUES(@password, @cedula , @nombre ,  @apellido  , @FechaNacimiento , @Residencia ,  'I')
 
 	SELECT @idUsuario = @@IDENTITY
 	 select SCOPE_IDENTITY() as LAST_ID
@@ -69,25 +73,41 @@ AS
 	declare @OldEstado char(1)
 	declare @doctor int
 	declare @IdPaciente int
+	declare @Fecha Date
 
 	select @OldEstado = Estado From deleted ;
 	SELECT @EstadoCita = Estado FROM inserted;
 	select @doctor = NoDoctor from inserted;
 	Select @IdPaciente = IdPaciente from inserted;
 
-	--if (@OldEstado = 'C') ---si esta completada.
-	--begin
-		--rollback
-	--end		
-	--else 
-	if EXISTS (SELECT * FROM PACIENTE_POR_DOCTOR WHERE IdPaciente = @IdPaciente AND  NoDoctor = @doctor )
+	if EXISTS (SELECT * FROM PACIENTE_POR_DOCTOR 
+	WHERE IdPaciente = @IdPaciente AND  NoDoctor = @doctor AND Month(Fecha) = Month(GETDATE()) AND YEAR(Fecha) = YEAR(GETDATE()) )
 	begin
 		print 'Ya existe este mes'
 		rollback
 	end 
-	else if (@EstadoCita = 'C' )
+	else if (@EstadoCita = 'C' AND  @OldEstado <> 'C' )
 	begin 
-		INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor ) Values (@IdPaciente , @doctor) 
+		INSERT INTO PACIENTE_POR_DOCTOR (IdPaciente,NoDoctor , Fecha) Values (@IdPaciente , @doctor , GETDATE()) 
 		print 'se agrego un paciente al doctor'
 	end
 Go
+
+
+
+CREATE PROCEDURE SP_Cobro_Doctores @DoctorId INT, @PacienteId INT , @Mes Decimal(2,0) , @Anio Decimal(4,0)
+	AS
+		SELECT NoDoctor ,  Count(IdPaciente) as NumeroPacientes, count(IdPaciente)*500 as MontoAlCobro
+		 from PACIENTE_POR_DOCTOR join USUARIO on NoDoctor = Id 
+			where IdPaciente =  @PacienteId AND NoDoctor = @DoctorId  AND Month(Fecha) = @Mes AND Year(Fecha) = @Anio
+			group by (NoDoctor)
+
+
+
+exec SP_Cobro_Doctores  @DoctorId =2 , @PacienteId =1 , @Mes=5 , @Anio = 2016
+
+
+		--declare @x decimal(2,0) 
+		--select @x = 5
+--Select Month(getdate()) as mes where Month(getdate()) = @x
+

@@ -92,7 +92,7 @@ namespace DrPhischelWebApi.DataBase
             return sucursal;
         }
 
-        public void addSucursal(string NoSucursal, string CodigoMedicamento, string cantidad)
+        public void addMedicamentoPorSucursal(string NoSucursal, string CodigoMedicamento, string cantidad)
         {
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
