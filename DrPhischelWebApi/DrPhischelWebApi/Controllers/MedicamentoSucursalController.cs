@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Web.Http;
 using DrPhischelWebApi.Models;
 using DrPhischelWebApi.DataBase;
+using System.Net.Http;
+using System.Net;
 
 
 namespace DrPhischelWebApi.Controllers
@@ -23,6 +25,10 @@ namespace DrPhischelWebApi.Controllers
             return databaseAccess.getAllMedicamentosPorSucursal(NoSucursal);
         }
 
+        public HttpResponseMessage Options()
+        {
+            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
+        }
 
     }
 }

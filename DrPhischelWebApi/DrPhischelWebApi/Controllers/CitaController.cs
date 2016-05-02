@@ -2,7 +2,8 @@
 using System.Web.Http;
 using DrPhischelWebApi.Models;
 using DrPhischelWebApi.DataBase;
-using System.Web.Http;
+using System.Net.Http;
+using System.Net;
 
 namespace DrPhischelWebApi.Controllers
 {
@@ -18,6 +19,10 @@ namespace DrPhischelWebApi.Controllers
         public Cita Post(Cita cita)
         {
             return databaseAccess.AddCita(cita);
+        }
+        public HttpResponseMessage Options()
+        {
+            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
         }
 
 
