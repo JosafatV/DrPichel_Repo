@@ -9,8 +9,15 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="59.5dp"
-        android:id="@+id/linearLayout2" />
-    <TextView
+        android:id="@+id/linearLayout2">
+        <Button
+            android:text="Ver Citas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSeeCitasfromAddPatient"
+            android:layout_marginLeft="263.0dp" />
+    </LinearLayout>
+    <EditText
         android:text="Nombre:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
@@ -19,7 +26,7 @@
         android:layout_marginTop="24.0dp"
         android:layout_marginBottom="7.5dp"
         android:layout_marginLeft="12.5dp" />
-    <TextView
+    <EditText
         android:text="Apellido:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
@@ -28,7 +35,7 @@
         android:layout_marginTop="16.5dp"
         android:layout_marginBottom="7.5dp"
         android:layout_marginLeft="14.0dp" />
-    <TextView
+    <EditText
         android:text="Cédula:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
@@ -43,7 +50,7 @@
         android:layout_height="44.5dp"
         android:id="@+id/linearLayout1"
         android:layout_marginTop="12.0dp">
-        <TextView
+        <EditText
             android:text="Altura (m)"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="102.0dp"
@@ -51,21 +58,21 @@
             android:id="@+id/txtAltura"
             android:layout_marginRight="13.5dp"
             android:layout_marginLeft="21.5dp" />
-        <TextView
+        <EditText
             android:text="Peso (kg)"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/txtPeso"
             android:layout_marginRight="18.0dp" />
-        <TextView
+        <EditText
             android:text="Género"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/txtGenero" />
     </LinearLayout>
-    <TextView
+    <EditText
         android:text="Fecha de Nacimiento: (mm/dd/aaaa)"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"

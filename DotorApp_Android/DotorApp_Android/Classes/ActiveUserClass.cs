@@ -12,20 +12,20 @@ using Android.Widget;
 
 namespace DotorApp_Android
 {
-    public class Activo
+    public class ActiveUserClass
     {
-        public String ActiveUser;
+        public String aUser;
         public String Rol;
 
         public void setActiveUser(String Username, String newRol)
         {
-            this.ActiveUser = Username;
+            this.aUser = Username;
             this.Rol = newRol;
         } 
 
         public String getUsername()
         {
-            return this.ActiveUser;
+            return this.aUser;
         }
 
         public String getRol()

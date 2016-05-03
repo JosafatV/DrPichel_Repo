@@ -20,7 +20,7 @@
         p1:layout_height="50.0dp"
         p1:id="@+id/linearLayout2"
         p1:layout_marginLeft="8.0dp">
-        <TextView
+        <EditText
             p1:text="Usuario:"
             p1:textAppearance="?android:attr/textAppearanceLarge"
             p1:layout_width="match_parent"
@@ -57,4 +57,9 @@
             p1:layout_marginLeft="113.5dp"
             p1:layout_marginRight="110.5dp" />
     </LinearLayout>
+    <TextView
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/txtLoginWarning" />
 </LinearLayout>
