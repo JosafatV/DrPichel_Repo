@@ -3,7 +3,7 @@
 
      /*--------------------For the views of the Doctors------------------------------*/
 
-    .when('/DrPhischel/Doctor/AgregarHistorial/:id', {
+    .when('/DrPhischel/Doctor/AgregarHistorial/:index', {
         templateUrl: 'VistaDoctor/agregarHistorial.html',
         controller: 'agregarHistorialController'
     })
