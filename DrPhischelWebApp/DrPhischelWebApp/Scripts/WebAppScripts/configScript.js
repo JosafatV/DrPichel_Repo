@@ -71,6 +71,11 @@
         templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
     })
+/*
+    .otherwise({
+        templateUrl: 'VistaPaciente/vistaPaciente.html',
+        controller: 'menuPacienteController'
+    })*/
 }]);
 
 angular.module('DrPhischelApp').config(function ($httpProvider) {
