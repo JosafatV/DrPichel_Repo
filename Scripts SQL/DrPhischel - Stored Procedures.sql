@@ -33,7 +33,7 @@ Go
 
 CREATE PROCEDURE dbo.insert_doctor @cedula int , @password char(20) , @nombre char(15) ,
 @apellido char(15), @FechaNacimiento Date ,  @Residencia char(45), @Estado char(1) , 
-@direccionConsultorio char(50) , @Especialidad tinyint, @tarjetaCredito char(16)
+@direccionConsultorio char(50) , @Especialidad tinyint, @tarjetaCredito char(16) , @CiudadConsultorio char(15)
 AS
 	declare @idUsuario int
 	INSERT INTO USUARIO (Password,Cedula, Nombre,Apellido, FechaNacimiento, Residencia, Estado) 
@@ -42,8 +42,8 @@ AS
 	SELECT @idUsuario = @@IDENTITY
 	 select SCOPE_IDENTITY() as LAST_ID
 
-	INSERT INTO DOCTOR (DireccionConsultorio,Especialidad, TarjetaCredito, UserId) 
-	Values (@direccionConsultorio,@Especialidad,@tarjetaCredito , @idUsuario )
+	INSERT INTO DOCTOR (DireccionConsultorio,Especialidad, TarjetaCredito, UserId, CiudadConsultorio) 
+	Values (@direccionConsultorio,@Especialidad,@tarjetaCredito , @idUsuario, @CiudadConsultorio )
 	
 
 Go

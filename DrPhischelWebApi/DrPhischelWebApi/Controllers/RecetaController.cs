@@ -11,11 +11,13 @@ namespace DrPhischelWebApi.Controllers
     {
         private RecetaAccess databaseAccess = new RecetaAccess();
 
+        [HttpPost]
         public Receta Post(Receta receta)
         {
             return databaseAccess.addReceta(receta);
         }
 
+        [HttpGet]
         [Route("api/Receta/Atencion/{NoAtencion}")]
         public VistaReceta get(string NoAtencion)
         {

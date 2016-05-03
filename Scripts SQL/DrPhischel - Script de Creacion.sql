@@ -59,6 +59,7 @@ CREATE TABLE ESPECIALIDADMEDICA (
 CREATE TABLE DOCTOR(
 	
 	UserId INT not null,
+	CiudadConsultorio Char(15),
 	DireccionConsultorio CHAR(50),
 	Especialidad tinyint,
 	TarjetaCredito CHAR(16),

@@ -29,13 +29,13 @@ insert into ROL_POR_USUARIO (IdRol, IdUsuario) values ('1','3');
 
 EXEC dbo.insert_doctor @cedula ='112312321' , @password ='234234' , @nombre = 'Sternhammer' ,
 @apellido = 'Stormfang', @FechaNacimiento = '1910-09-09' ,  @Residencia ='nowhere', @Estado = 'd' , 
-@direccionConsultorio = 'Badab Primaris' , @Especialidad = '1', @tarjetaCredito = '345345353'
+@direccionConsultorio = 'Badab Primaris' , @Especialidad = '1', @tarjetaCredito = '345345353' , @CiudadConsultorio = 'San jose'
 EXEC dbo.insert_doctor @cedula ='32423441' , @password ='234234' , @nombre = 'jaco' ,
 @apellido = 'Ulrik', @FechaNacimiento = '1991-09-09' ,  @Residencia ='nowhere', @Estado = 'd' , 
-@direccionConsultorio = 'Fenris' , @Especialidad = '4', @tarjetaCredito = '3344132'
+@direccionConsultorio = 'Fenris' , @Especialidad = '4', @tarjetaCredito = '3344132', @CiudadConsultorio = 'Heredia'
 EXEC dbo.insert_doctor @cedula ='23422342' , @password ='234234' , @nombre = 'jaco' ,
 @apellido = 'Fabrikus', @FechaNacimiento = '1990-05-09' ,  @Residencia ='nowhere', @Estado = 'd' , 
-@direccionConsultorio = 'Jericho Reach' , @Especialidad = '2', @tarjetaCredito = '345345353'
+@direccionConsultorio = 'Jericho Reach' , @Especialidad = '2', @tarjetaCredito = '345345353' , @CiudadConsultorio = 'Cartago'
 insert into ROL_POR_USUARIO (IdRol, IdUsuario) values ('2','4');
 insert into ROL_POR_USUARIO (IdRol, IdUsuario) values ('2','5');
 insert into ROL_POR_USUARIO (IdRol, IdUsuario) values ('2','6');
