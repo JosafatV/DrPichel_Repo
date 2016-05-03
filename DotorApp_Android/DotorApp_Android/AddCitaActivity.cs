@@ -25,7 +25,7 @@ namespace DotorApp_Android
             SetContentView(Resource.Layout.AddCita);
 
             // Create your application here
-            scheduleView.PutExtra("PatientView"); //send info to next view
+            //scheduleView.PutExtra("PatientView"); //send info to next view
         }
     }
 }

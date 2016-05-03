@@ -12,6 +12,7 @@ using Android.OS;
 using Java;
 
 using DoctorApp_Android.JSONParser;
+using DotorApp_Android.Client;
 
 namespace DotorApp_Android
 {
@@ -35,6 +36,7 @@ namespace DotorApp_Android
                 String Password = (String)FindViewById<EditText>(Resource.Id.txtPassword);
 
                 //send data to DB--
+                ClientService client = new ClientService();
 
                 //get this from DB
                 String Rol = "D";

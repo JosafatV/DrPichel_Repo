@@ -20,10 +20,23 @@ namespace DotorApp_Android.Client
 {
     class ClientService
     {
-        String url;
+        String url = "http://sebastian95:8090/api/Paciente";
+        Uri uri = new Uri("http://sebastian95:8090/api/Paciente");
 
-        public void Post(String json)
+
+
+        public String Post(String json)
         {
+
+            WebClient client = new WebClient();
+
+            client.UploadStringAsync(uri, json);
+
+            String response = client.DownloadString(uri);
+
+            return response;
+
+        }
             //InputStream inputStream = null;
             //String result = "";
             //try
@@ -64,7 +77,7 @@ namespace DotorApp_Android.Client
 
         }
     }
-}
+
 
 
 /*send credential
