@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Globalization;
 using System.Collections.Generic;
 using System.Web.Http;
 using DrPhischelWebApi.Models;
@@ -12,11 +12,13 @@ namespace DrPhischelWebApi.Controllers
     {
         private DoctorAccess databaseAccess = new DoctorAccess();
 
+
         [HttpPost]
         public Doctor Post(Doctor doctor)
         {
             return databaseAccess.addDoctor(doctor);
         }
+
         [HttpGet]
         public List<Doctor> getAllDoctores()
         {
@@ -28,18 +30,21 @@ namespace DrPhischelWebApi.Controllers
         {
             return databaseAccess.getDoctores(ciudad, idEspecialidad);
         }
+
         [HttpGet]
         [Route("api/Doctor/Especialidades")]
         public List<Especialidad> getEspecialidades()
         {
             return databaseAccess.getAllEspecialidades();
         }
+
         [HttpPost]
         [Route("api/Doctor/Especialidades")]
         public Especialidad postEspecialidad(Especialidad especialidad)
         {
             return databaseAccess.addEspecialidad(especialidad);
         }
+
         [HttpGet]
         [Route("api/Doctor/Ciudades")]
         public List<string> getCiudades()
@@ -47,6 +52,13 @@ namespace DrPhischelWebApi.Controllers
             return databaseAccess.getAllCiudadesConsultorio();
         }
 
+
+    /*    [HttpGet]
+        [Route("api/Doctor/Calendario")]
+        public Calendar getCalendar()
+        {
+            return new Calendar();
+        }*/
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };

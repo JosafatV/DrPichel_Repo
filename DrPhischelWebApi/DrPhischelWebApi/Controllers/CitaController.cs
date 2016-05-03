@@ -11,15 +11,27 @@ namespace DrPhischelWebApi.Controllers
     {
         CitaAccess databaseAccess = new CitaAccess();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<CitaPorPacienteYDoctor> getAllCitas()
         {
             return databaseAccess.getAllCitas();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cita"></param>
+        /// <returns></returns>
         public Cita Post(Cita cita)
         {
             return databaseAccess.AddCita(cita);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
