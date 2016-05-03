@@ -39,14 +39,14 @@ namespace DrPhischelWebApi.DataBase
                 while (rdr.Read()) //si existe en la base de datos
                 {
                     Paciente paciente = new Paciente();
-                    paciente.altura = rdr["Altura"].ToString();
+                    paciente.altura = rdr["Altura"].ToString().Replace(',','.');
                     paciente.apellido = rdr["Apellido"].ToString();
                     paciente.cedula = rdr["Cedula"].ToString();
                     paciente.Estado = rdr["Estado"].ToString();
                     paciente.FechaNacimiento = rdr["Fecha"].ToString();
                     paciente.idUsuario = rdr["UserId"].ToString();
                     paciente.nombre = rdr["Nombre"].ToString();
-                    paciente.peso = rdr["Peso"].ToString();
+                    paciente.peso = rdr["Peso"].ToString().Replace(',', '.');
                     paciente.Residencia = rdr["Residencia"].ToString();
                     listPacientes.Add(paciente);
                     
