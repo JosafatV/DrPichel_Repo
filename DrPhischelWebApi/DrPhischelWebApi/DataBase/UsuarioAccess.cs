@@ -32,5 +32,18 @@ namespace DrPhischelWebApi.DataBase
             }
             return list_usuarios;
         }
+        public void setRolUsuario(string IdUsuario, string RolId)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "insert into ROL_POR_USUARIO (IdRol, IdUsuario) values ('"+IdUsuario+"','"+RolId+"');"
+                    , con);
+                con.Open();
+                cmd.ExecuteNonQuery(); //execute query
+            }
+           
+        }
     }
 }

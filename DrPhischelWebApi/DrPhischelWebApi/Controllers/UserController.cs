@@ -8,7 +8,7 @@ using System.Net;
 
 namespace DrPhischelWebApi.Controllers
 {
-    public class LoginController : ApiController
+    public class UserController : ApiController
     {
         private UsuarioAccess databaseAccess = new UsuarioAccess();
 
@@ -16,6 +16,11 @@ namespace DrPhischelWebApi.Controllers
         public List<Usuario> getUser(string Cedula, string Password)
         {
             return databaseAccess.getUsuario(Cedula, Password);
+        }
+        [Route("api/User/{IdUsuario}/Rol/{IdRol}")]
+        public void setUserRol(string IdUsuario, string IdRol)
+        {
+            databaseAccess.setRolUsuario(IdUsuario, IdRol);
         }
         public HttpResponseMessage Options()
         {
