@@ -24,9 +24,17 @@ namespace DrPhischelWebApi.Controllers
         /// </summary>
         /// <param name="cita"></param>
         /// <returns></returns>
-        public Cita Post(Cita cita)
+        public Cita Post([FromBody]Cita cita)
+
         {
-            return databaseAccess.AddCita(cita);
+            if (!databaseAccess.ExisteCita(cita))
+            {
+                return databaseAccess.AddCita(cita);
+            }
+            else
+            {
+                return new Cita();
+           }
         }
         /// <summary>
         /// 

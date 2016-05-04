@@ -1,10 +1,11 @@
-﻿using System.Globalization;
+﻿
 using System.Collections.Generic;
 using System.Web.Http;
 using DrPhischelWebApi.Models;
 using DrPhischelWebApi.DataBase;
 using System.Net.Http;
 using System.Net;
+using System;
 
 namespace DrPhischelWebApi.Controllers
 {
@@ -53,12 +54,13 @@ namespace DrPhischelWebApi.Controllers
         }
 
 
-    /*    [HttpGet]
+        [HttpGet]
         [Route("api/Doctor/Calendario")]
-        public Calendar getCalendar()
+        public String getCalendar()
         {
-            return new Calendar();
-        }*/
+            String d = "fdsfsdf";
+            return d;
+        }
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };

@@ -178,6 +178,7 @@
     <Compile Include="Models\Cita.cs" />
     <Compile Include="Models\CitaPorPacienteYDoctor.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\DoctorCalendar.cs" />
     <Compile Include="Models\HistorialPorPaciente.cs" />
     <Compile Include="Models\Medicamento.cs" />
     <Compile Include="Models\Paciente.cs" />

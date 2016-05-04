@@ -15,7 +15,7 @@ namespace DrPhischelWebApi.DataBase
             {
                 SqlCommand cmd = new SqlCommand(
                     " Insert into CITA(NoDoctor, Fecha, Estado, IdPaciente) " 
-                    +" Values('"+cita.NoDoctor+"', '"+cita.FechaHora+"', '"+cita.Estado+"', '"+cita.idPaciente+"'); "
+                    +" Values('"+cita.NoDoctor+"', '"+cita.FechaHora+"', '"+cita.Estado+"', '"+cita.idPaciente+"') ; "
                     +" select scope_identity() ;"
                 , con);
                 con.Open();
@@ -55,6 +55,26 @@ namespace DrPhischelWebApi.DataBase
                 }
             }
             return ListCitas;
+        }
+        public bool ExisteCita(Cita cita)
+        {
+           
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand(
+                                " select  NoCita from cita where Fecha = '"+cita.FechaHora+"' and NoDoctor = '"+cita.NoDoctor+"' ;"
+                    , con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read()) //si existe en la base de datos
+                {
+                    rdr["NoCita"].ToString();
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
