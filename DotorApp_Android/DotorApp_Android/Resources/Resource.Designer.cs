@@ -60,6 +60,9 @@ namespace DotorApp_Android
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050003
+			public const int btnAddCita = 2131034115;
+			
 			// aapt resource value: 0x7f05001d
 			public const int btnAddPatient = 2131034141;
 			
@@ -89,9 +92,6 @@ namespace DotorApp_Android
 			
 			// aapt resource value: 0x7f050015
 			public const int btnVolverDeHistorial = 2131034133;
-			
-			// aapt resource value: 0x7f050003
-			public const int button1 = 2131034115;
 			
 			// aapt resource value: 0x7f050016
 			public const int linearLayout0 = 2131034134;

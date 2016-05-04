@@ -23,22 +23,27 @@ namespace DotorApp_Android
             SetContentView(Resource.Layout.Historial);
 
             // This string determines to which vew go back
-            String fromView = "DoctorView"; 
+            string fromView = "PatientsView"; //Intent.Extras.GetString("UserView");
 
             Button btnVolver = FindViewById<Button>(Resource.Id.btnVolverDeHistorial);
             btnVolver.Click += (sender, e) =>
             {
-                if (fromView.Equals("DoctorView"))
-                {
-                    var pacientesView = new Intent(this, typeof(PatientActivity));
-                    StartActivity(pacientesView);
-                }
-                else // "PaientView"
-                {
-                    var addCitaView = new Intent(this, typeof(AddCitaActivity));
-                    StartActivity(addCitaView);
-                }
+                executeVolver(fromView);
             };
+        }
+
+        void executeVolver(string fromView)
+        {
+            if (fromView.Equals("DoctorView"))
+            {
+                var pacientesView = new Intent(this, typeof(PatientActivity));
+                StartActivity(pacientesView);
+            }
+            else // "PaientView"
+            {
+                var addCitaView = new Intent(this, typeof(AddCitaActivity));
+                StartActivity(addCitaView);
+            }
         }
     }
 }

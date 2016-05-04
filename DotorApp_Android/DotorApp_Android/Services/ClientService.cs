@@ -16,11 +16,11 @@ using Android.Widget;
 using Java.IO;
 using Java.Util;
 
-namespace DotorApp_Android.Client
+namespace DoctorApp_Android.Client
 {
     class ClientService
     {
-        String url = "http://sebastian95:8090/api/Paciente";
+        //String url = "http://sebastian95:8090/api/Paciente";
         Uri uri = new Uri("http://sebastian95:8090/api/Paciente");
 
 
@@ -32,7 +32,10 @@ namespace DotorApp_Android.Client
 
             client.UploadStringAsync(uri, json);
 
-            String response = client.DownloadString(uri);
+            //get response from server
+            //String response = client.DownloadString(uri);
+
+            string response = "response";
 
             return response;
 

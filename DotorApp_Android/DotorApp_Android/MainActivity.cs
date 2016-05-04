@@ -12,7 +12,7 @@ using Android.OS;
 using Java;
 
 using DoctorApp_Android.JSONParser;
-using DotorApp_Android.Client;
+using DoctorApp_Android.Client;
 
 namespace DotorApp_Android
 {
@@ -26,40 +26,52 @@ namespace DotorApp_Android
             //Loads the main layout (login)
             SetContentView(Resource.Layout.Main);
 
-            //button assignment and action
-            Button LoginButton = FindViewById<Button>(Resource.Id.btnLogin);
-            LoginButton.Click += (sender, e) =>
+            //ui assignments
+            Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
+            EditText txtUsername = FindViewById<EditText>(Resource.Id.txtUsername);
+            EditText txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
+            TextView txtWarning = FindViewById<TextView>(Resource.Id.txtLoginWarning);
+
+
+            btnLogin.Click += (sender, e) =>
             {
-
-                //get inputed credentials
-                String Username = (String)FindViewById<EditText>(Resource.Id.txtUsername);
-                String Password = (String)FindViewById<EditText>(Resource.Id.txtPassword);
-
-                //send data to DB--
-                ClientService client = new ClientService();
-
-                //get this from DB
-                String Rol = "D";
-                String UserId = "1";
-
-                if (Rol.Equals("D"))
-                {
-                    var scheduleView = new Intent(this, typeof(ScheduleActivity));
-                    scheduleView.PutExtra(UserId, Rol); //send info to next view
-                    StartActivity(scheduleView);
-                } else if (Rol.Equals("P"))
-                {
-                    var addCitaView = new Intent(this, typeof(AddCitaActivity));
-                    addCitaView.PutExtra(UserId, Rol); //send info to next view
-                    StartActivity(addCitaView);
-                } else
-                {
-                    TextView txtWarning = FindViewById<TextView>(Resource.Id.txtLoginWarning);
-                    //txtWarning.SetText("Error iniciando sesión; Rol no identificado");
-                    txtWarning.SetText(1);
-                }
+                string Uname = txtUsername.ToString();
+                string Pword = txtPassword.ToString();
+                executeLogin(Uname, Pword);
             };
-              
+        }
+
+        void executeLogin (string Uname, string Pword) {
+
+            //turn arguments into JSON
+            JSONParser parser = new JSONParser();
+            string json = parser.loginToJSON(Uname, Pword);
+
+            //send data to DB--
+            //ClientService client = new ClientService();
+            //string response = client.Post(json);
+            
+            //get this from DB
+            String Rol = "P";
+            String UserId = "1";
+
+            //enter specific view
+            if (Rol.Equals("D"))
+            {
+                var scheduleView = new Intent(this, typeof(ScheduleActivity));
+                scheduleView.PutExtra(UserId, Rol); //send info to next view
+                StartActivity(scheduleView);
+            }
+            else if (Rol.Equals("P"))
+            {
+                var addCitaView = new Intent(this, typeof(AddCitaActivity));
+                addCitaView.PutExtra(UserId, Rol); //send info to next view
+                StartActivity(addCitaView);
+            }
+            else
+            {
+                //txtWarning.SetText("Error iniciando sesión; Rol no identificado");
+            }
         }
     }
 }
