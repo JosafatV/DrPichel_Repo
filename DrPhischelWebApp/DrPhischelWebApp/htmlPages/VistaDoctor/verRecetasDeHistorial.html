@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="DrPhischelApp">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="form-group">
+        <h1>Historial del paciente: {{pacienteActual.nombre}} {{pacienteActual.apellido}} </h1>
+        <h5>
+            <font color="black">
+                Cedula: {{pacienteActual.cedula}}
+            </font>
+        </h5>
+        <h5>
+            <font color="black">
+                Residencia: {{pacienteActual.Residencia}}
+            </font>
+        </h5>
+        <h1>Receta</h1>
+        <input type="text" class="form-control" id="search" placeholder="Buscar Medicamentos en la Receta" data-ng-model="search" />
+        <h1>{{search}}</h1>
+    </div>
+    <table class="table table-bordered table-hover table-condensed ip">
+        <tbody>
+            <tr>
+                <th>Descripcion</th>
+                <th>Estudios</th>
+                <th>Doctor</th>
+            </tr>
+            <tr data-ng-repeat="entrada in listaHistorial | filter: search" data-ng-click="goRecetasDeHistorial($index)">
+                <td>{{entrada.Descripcion}}</td>
+                <td>{{entrada.Estudios}}</td>
+                <td>{{entrada.Doctor}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <button data-ng-click="prueba()" class="btn btn-default">Regresar</button>
+    </div>
+</body>
+</html>

@@ -5,7 +5,6 @@ angular.module('DrPhischelApp').controller('verHistorialClienteEspecificoControl
         $scope.listaHistorial = drPhischelApiResource.query({ type: urlHistorial, extension: urlPaciente, id:$routeParams.index});
         $scope.goRecetasDeHistorial = function (index) {
             $scope.NoAtencion = $scope.listaHistorial[index].NoAtencion
-            alert(angular.toJson($scope.NoAtencion));
-            //alert(angular.toJson($scope.listaHistorial));
+            $location.path('/DrPhischel/Doctor/VerRecetasDeHistorial/' + $scope.NoAtencion);
         }
     }]);

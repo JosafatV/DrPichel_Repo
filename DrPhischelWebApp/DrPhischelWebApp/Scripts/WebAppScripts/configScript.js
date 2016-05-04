@@ -27,6 +27,10 @@
         templateUrl: 'VistaDoctor/agregarHistorialTabla.html',
         controller: 'agregarHistorialTablaController'
     })
+    .when('/DrPhischel/Doctor/VerRecetasDeHistorial/:index', {
+        templateUrl: 'VistaDoctor/verRecetasDeHistorial.html',
+        controller: 'verRecetasDeHistorialController'
+    })
     .when('/DrPhischel/DoctorMenu', {
         templateUrl: 'vistaDoctor.html',
         controller: 'menuDoctorController'
@@ -67,15 +71,14 @@
         controller: 'cobrosController'
     })
 
+    /*.otherwise({
+        templateUrl: 'VistaPaciente/vistaPaciente.html',
+        controller: 'menuPacienteController'
+    })*/
     .otherwise({
         templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
     })
-/*
-    .otherwise({
-        templateUrl: 'VistaPaciente/vistaPaciente.html',
-        controller: 'menuPacienteController'
-    })*/
 }]);
 
 angular.module('DrPhischelApp').config(function ($httpProvider) {

@@ -1,6 +1,6 @@
 USE DrPhischel;
 
-
+SELECT * FROM ROL
 INSERT INTO ROL (Descripcion) values ('Paciente');
 INSERT INTO ROL (Descripcion) values ('Doctor');
 INSERT INTO ROL (Descripcion) values ('Administrador');

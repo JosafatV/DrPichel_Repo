@@ -29,32 +29,24 @@
 <div class="container">
   <div class="form-group">
     <label for="option">Ciudad</label>
-          <select class="form-control" name="" id="option">
-            <option value="">Alajuela</option>
-            <option value="">Cartago</option>
-            <option value="">San José</option>
-            <option value="">Heredia</option>
-          </select>
+      <select ng-options="ciu for ciu in Ciudades" class="form-control" data-ng-model="ciuSelected" data-ng-change="cambiarCiudadActual()">      
+      </select>
     </div>
     <div class="form-group">
       <label for="option">Especialidad</label>
-            <select class="form-control" name="" id="option">
-              <option value="">Otorrinolaringólogo</option>
-              <option value="">Médico General</option>
-              <option value="">Alergólogo</option>
+            <select ng-options="espe.Nombre for espe in Especialidades"class="form-control" data-ng-model="espeSelected" data-ng-change="cambiarEspecialidadActual()">              
             </select>
       </div>
     <div class="form-group">
       <label for="option">Doctor</label>
-            <select class="form-control" name="" id="option">
-              <option value="">Ramiro Gonzalez Fernadez</option>
-              <option value="">Octavio Campos Martinez</option>
-              <option value="">Lucifer Martinez Solis</option>
-            </select>
+        <select ng-disabled="checked" ng-options="doc.nombre for doc in doctores" class="form-control" data-ng-model="docSelected" data-ng-change="cambiarDoctorActual()">
+        </select>
+        
       </div>
       <div class="form-group">
         <label for="option">Hora de Inicio</label>
-              <select class="form-control" name="" id="option">
+          <input class="form-control" required name='hora' id='hora' type="datetime-local"  step="3600" data-ng-model="dateTime"/>
+              <!--<select class="form-control" name="" id="option">
                 <option value="">8:00am</option>
                 <option value="">9:00am</option>
                 <option value="">10:00am</option>
@@ -64,9 +56,9 @@
                 <option value="">3:00pm</option>
                 <option value="">4:00pm</option>
                 <option value="">5:00pm</option>
-              </select>
+              </select>-->
         </div> <br><br>
-        <a class="btn btn-success">Solicitar Cita</a>
+        <a class="btn btn-success" data-ng-click="prueba()">Solicitar Cita</a>
 
 
 
@@ -74,9 +66,10 @@
 
 
 
-
-
-
+    <div ng-if="citaResponse == null" ng-init="alerteErrorCita()"></div>
+    <div ng-if="ciudadFlag && espeFlag" ng-init="habiliteDoctor()"></div>
+    <div ng-if="cambioAlgo&&ciudadFlag&&espeFlag" ng-init="habiliteDoctor()"></div>
+    <div ng-init="hagaFalse()"></div>
 
 
 

@@ -286,6 +286,7 @@
     <Content Include="htmlPages\VistaDoctor\js\npm.js" />
     <Content Include="htmlPages\VistaDoctor\verHistorial.html" />
     <Content Include="htmlPages\VistaDoctor\verHistorialClienteEspecifico.html" />
+    <Content Include="htmlPages\VistaDoctor\verRecetasDeHistorial.html" />
     <Content Include="htmlPages\VistaDoctor\vistaCrearPaciente.html" />
     <Content Include="htmlPages\VistaDoctor\vistaDoctor.html" />
     <Content Include="htmlPages\VistaPaciente\solicitarCita.html" />
@@ -349,6 +350,7 @@
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\verHistorialClienteEspecifico.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\verHistorialController.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\agregarHistorialTablaController.js" />
+    <Content Include="Scripts\WebAppScripts\DoctorViewControllers\verRecetasDeHistorial.js" />
     <Content Include="Scripts\WebAppScripts\initScript.js" />
     <Content Include="Scripts\WebAppScripts\PacienteViewControllers\menuPacienteControllerScript.js" />
     <Content Include="Scripts\WebAppScripts\PacienteViewControllers\solicitarCitaController.js" />
