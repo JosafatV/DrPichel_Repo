@@ -35,6 +35,10 @@
         templateUrl: 'vistaDoctor.html',
         controller: 'menuDoctorController'
     })
+    .when('/DrPhischel/Doctor/calendarioDeCitas', {
+        templateUrl: 'VistaDoctor/calendarioDeCitas.html',
+        controller: 'calendarioDeCitasController'
+    })
 
     /*--------------------For the views of the Patients------------------------------*/
 
@@ -70,6 +74,7 @@
         templateUrl: 'VistaAdmin/cobros.html',
         controller: 'cobrosController'
     })
+
 
     /*.otherwise({
         templateUrl: 'VistaPaciente/vistaPaciente.html',

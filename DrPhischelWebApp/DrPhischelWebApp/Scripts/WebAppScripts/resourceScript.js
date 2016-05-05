@@ -1,4 +1,4 @@
-﻿var urlGeneric = 'http://172.26.108.132:8090/api';
+﻿var urlGeneric = 'http://192.168.0.105:8090/api';
 //var urlGeneric = 'http://localhost:64395/api';
 var urlPaciente = 'Paciente';
 var urlHistorial = 'Historial';

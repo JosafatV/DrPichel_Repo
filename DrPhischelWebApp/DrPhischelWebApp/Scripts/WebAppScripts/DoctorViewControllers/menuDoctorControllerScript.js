@@ -16,4 +16,8 @@ angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope", "$
     $scope.goVerHistorial = function () {
         $location.path('/DrPhischel/Doctor/VerHistorial');
     };
+    //Changed the view to the calendario view
+    $scope.goVerCalendario = function () {
+        $location.path('/DrPhischel/Doctor/calendarioDeCitas');
+    };
 }]);
