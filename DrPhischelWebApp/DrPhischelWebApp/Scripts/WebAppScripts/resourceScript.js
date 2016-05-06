@@ -1,9 +1,9 @@
-﻿var urlGeneric = 'http://192.168.0.105:8090/api';
+﻿var urlGeneric = 'http://172.26.103.108:8090/api';
 //var urlGeneric = 'http://localhost:64395/api';
 var urlPaciente = 'Paciente';
 var urlHistorial = 'Historial';
 angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($resource) {
-    return $resource(urlGeneric + '/:type/:extension/:extension2/:extension3/:id', {}, {
+    return $resource(urlGeneric + '/:type/:extension/:extension2/:extension3/:extension4/:extension5/:id', {}, {
         query: {
             method: 'GET',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -23,7 +23,14 @@ angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($reso
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
-            }
+            }            
+        },
+        saveList: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            isArray: true
         },
         update: {
             method: 'PUT',
@@ -37,7 +44,7 @@ angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($reso
 
 
 angular.module('DrPhischelApp').factory('farmaticaPhischelResource', function ($resource) {
-    return $resource('http://192.168.0.105:8091/api' + '/:type/:extension/:extension2/:id', {}, {
+    return $resource('http://172.26.103.108:8091/api' + '/:type/:extension/:extension2/:id', {}, {
         query: {
             method: 'GET',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
