@@ -85,6 +85,7 @@
         templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
     })*/
+    
     .otherwise({
         templateUrl: 'VistaAdmin/vistaAdmi.html',
         controller: 'menuAdminController'

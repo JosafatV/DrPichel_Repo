@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
   <title>Dr.Phischel</title>
   <meta charset="utf-8">
@@ -37,16 +37,13 @@
         <div class="collapse navbar-collapse" id="navegacion-fp">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              <a  class="dropdown-toggle" data-toggle="dropdown" role="button">
                 Ver Sucursales <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Sucursales disponibles para sincronizar</a></li>
+                <li><a >Sucursales disponibles para sincronizar</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Alajuela Centro</a></li>
-                <li><a href="#">San Jose Av. 3</a></li>
-                <li><a href="#">Heredia Paseo de las Flores</a></li>
-                <li><a href="#">Cartago 300 sur Mercado Municipal</a></li>
+                <li data-ng-repeat="suc in listaSuc"><a data-ng-click="llameMeds(suc.NoSucursal)" >{{suc.Nombre}}</a></li>
               </ul>
             </li>
           </ul>

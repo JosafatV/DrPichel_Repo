@@ -7,7 +7,6 @@ angular.module('DrPhischelApp').controller('verRecetasDeHistorialController', ['
                 alert(angular.toJson(data));
                 $scope.listaMedicamentos = farmaticaPhischelResource.query({type:'MedicamentosPorReceta',id:data.NoReceta});
             });
-
         $scope.prueba = function () {            
             alert(angular.toJson($scope.listaMedicamentos));
         };

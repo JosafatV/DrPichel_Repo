@@ -1,7 +1,7 @@
 ﻿var usuarioActual = 1;
 angular.module('DrPhischelApp').controller('calendarioDeCitasController', ['$scope', '$routeParams', 'drPhischelApiResource',
     '$location', '$filter', function ($scope, $routeParams, drPhischelApiResource, $location, $filter) {
-        $scope.idDoctorActual = 6;
+        $scope.idDoctorActual = docActual;
         $scope.tablaCitasFlag = true;
         $scope.dateCita = ''
         $scope.citas = '';

@@ -37,7 +37,7 @@ angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($reso
 
 
 angular.module('DrPhischelApp').factory('farmaticaPhischelResource', function ($resource) {
-    return $resource('http://172.26.108.132:8091/api' + '/:type/:extension/:extension2/:id', {}, {
+    return $resource('http://192.168.0.105:8091/api' + '/:type/:extension/:extension2/:id', {}, {
         query: {
             method: 'GET',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },

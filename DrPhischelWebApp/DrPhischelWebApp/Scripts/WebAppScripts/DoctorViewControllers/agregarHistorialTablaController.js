@@ -2,7 +2,7 @@
 angular.module('DrPhischelApp').controller('agregarHistorialTablaController', ['$scope', '$routeParams',
     '$location', 'drPhischelApiResource','$filter', function ($scope, $routeParams, $location, drPhischelApiResource,$filter) {
         $scope.todayDateFiltered = $filter('date')(new Date(), 'fullDate');
-        $scope.idDoctorActual = 6;
+        $scope.idDoctorActual = docActual;
         $scope.citas = '';
 
         //Send the request for the citas

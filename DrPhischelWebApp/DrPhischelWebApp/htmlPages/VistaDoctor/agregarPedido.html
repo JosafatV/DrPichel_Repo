@@ -1,0 +1,107 @@
+﻿﻿<form>
+    <h1>Ingrese los Datos de su Pedido</h1>
+    <div ng-if="verifique == true">
+        <div ng-if="recetarioLenght == 0" ng-init="alerteTermino()"></div>
+    </div>
+    <div ng-if="boolEmpresa == true">
+        <div ng-if="empresaBool == 'Farmatica'" ng-init="cambieEmpresa('F')"></div>
+        <div ng-if="empresaBool == 'Phischel'" ng-init="cambieEmpresa('P')"></div>
+    </div>
+    <div class="container">
+
+        <div class="form-group">
+
+
+            <h4>Seleccione Sucursal de Recojo</h4>
+            <div class="btn-block">
+                <div class="btn-group" ng-class='{open: open}'>
+                    <button class="btn ras" ng-click='open=!open'>{{sucActual}}</button>
+                    <button class="btn ras  dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button><br />
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="datos in recList"><a data-ng-click="addNoSuc(datos.NoSucursal,datos.Nombre)" required>{{datos.Nombre}}</a></li>
+
+                    </ul>
+                </div>
+            </div><br /><br />
+            <h4>Seleccione la Empresa</h4>
+            <div class="btn-block">
+                <div class="btn-group" ng-class='{open: open}'>
+                    <button class="btn ras" ng-click='open=!open'>{{empSelected}}</button>
+                    <button class="btn ras dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="dato in empList"><a data-ng-click="empresaCambio(dato)" required>{{dato}}</a></li>
+                        <!-- <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>-->
+                    </ul>
+                </div>
+            </div><br />
+            <div class="form-group">
+                <h4>Seleccione un Telefono: </h4>
+                <select class="form-control" id="sel1" ng-model="phones">
+                    <option ng-repeat="x in telefonos" value="{{x.Telefono}}" selected="selected">{{x.Telefono}}</option>
+                </select>
+            </div><br><br>
+
+        </div>
+        <h1>Seleccione sus Medicamentos y Recetas</h1>
+        <div>
+            <h3>Medicamentos</h3>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputResidencia">Cantidad</label>
+                <input class="form-control" id="exampleInputCantidad" maxlength="45" placeholder="Cantidad" data-ng-model="cantidad">
+            </div> <br>
+            <div class="btn-block">
+                <div class="btn-group" ng-class='{open: open}'>
+                    <button class="btn ras">{{medActual}}</button>
+                    <button class="btn ras dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="datos in medListP"><a data-ng-click="addMedPed(cantidad,datos.codigo,datos.Nombre,datos.Costo)">{{datos.Nombre}}</a></li>
+                        <!-- <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>-->
+                    </ul>
+                </div>
+            </div>
+            <br>
+        </div><br><br>
+        <h3>Medicamentos en el pedido: </h3>
+        <table class="table table-bordered table-hover table-condensed ip">
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>CostoUnitario</th>
+                    <th></th>
+                </tr>
+                <tr data-ng-repeat="item in medListPed  | filter: search">
+                    <td>{{item.Nombre}}</td>
+                    <td>{{item.Cantidad}}</td>
+                    <td>{{item.Costo}}</td>
+                    <td><input type="button" value="Borrar" class="btn btn-danger" data-ng-click="borrarMedPed($index)" /></td>
+                </tr>
+            </tbody>
+        </table><br><br>
+        <div>
+            <div class="form-group">
+                <h4> Recetas </h4>
+
+                <button data-ng-click="goAddReceta()" class="btn btn-primary">Añadir Receta</button>
+            </div>
+        </div><br>
+        <div class="form-group">
+            <h3>Fecha y hora de recojo</h3>
+            <input class="form-control" input type="datetime-local" id="exampleInputQuantity" placeholder="0" data-ng-model="FechaR" required>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-success" data-ng-click="addPedido(FechaR,phones)"> Guardar </button>
+            <button class="btn btn-secondary" data-ng-click="cancelar()"> Cancelar </button>
+            <button class="btn btn-secondary" data-ng-click="refreshsss()">Agregar Mas </button>
+        </div>
+    </div>
+
+</form>

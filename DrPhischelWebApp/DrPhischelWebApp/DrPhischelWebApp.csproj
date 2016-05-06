@@ -280,6 +280,7 @@
     <Content Include="htmlPages\VistaAdmin\vistaAdmi.html" />
     <Content Include="htmlPages\VistaDoctor\agregarHistorial.html" />
     <Content Include="htmlPages\VistaDoctor\agregarHistorialTabla.html" />
+    <Content Include="htmlPages\VistaDoctor\agregarPedido.html" />
     <Content Include="htmlPages\VistaDoctor\calendarioDeCitas.html" />
     <Content Include="htmlPages\VistaDoctor\imagenes\medicos1.jpg" />
     <Content Include="htmlPages\VistaDoctor\js\bootstrap.js" />
@@ -347,6 +348,7 @@
     <Content Include="Scripts\WebAppScripts\AdminViewControllers\sincronizarMedicamentosController.js" />
     <Content Include="Scripts\WebAppScripts\configScript.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\agregarHistorialController.js" />
+    <Content Include="Scripts\WebAppScripts\DoctorViewControllers\agregarPedidoController.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\calendarioDeCitasController.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\crearPacienteController.js" />
     <Content Include="Scripts\WebAppScripts\DoctorViewControllers\menuDoctorControllerScript.js" />
