@@ -18,15 +18,13 @@
                 <th>Hora de Inicio</th>
                 <th>Estado</th>
             </tr>
-            <tr data-ng-repeat="cita in citas  | filter: search" data-ng-click="goVerHistorialClienteEspecifico($index)" >
+            <tr data-ng-repeat="cita in citas  | filter: search"> <!--data-ng-click="goAgregarHistorial($index)"--> 
                 <td>{{cita.NombrePaciente}} {{cita.ApellidoPaciente}}</td>
                 <td>{{cita.HoraInicio}}</td>
                 <td>{{cita.Estado}}</td>
             </tr>
         </tbody>
     </table>
-
     <a class="btn btn-success" data-ng-click="verCitas()">Ver Citas</a>
-    <a class="btn btn-success" data-ng-click="prueba2()">Ver Citas2222</a>
 </body>
 </html>

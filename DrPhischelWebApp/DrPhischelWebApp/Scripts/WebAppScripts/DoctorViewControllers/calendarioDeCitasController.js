@@ -2,13 +2,13 @@
 angular.module('DrPhischelApp').controller('calendarioDeCitasController', ['$scope', '$routeParams', 'drPhischelApiResource',
     '$location', '$filter', function ($scope, $routeParams, drPhischelApiResource, $location, $filter) {
         $scope.idDoctorActual = 6;
-        alert('Estoy en calendario de citas controller');
         $scope.tablaCitasFlag = true;
         $scope.dateCita = ''
         $scope.citas = '';
 
-        $scope.goAgregarHistorial = function () {
-            $location.path('DrPhischel/Doctor/AgregarHistorial');
+        $scope.goAgregarHistorial = function (index) {
+            $location.path('DrPhischel/Doctor/AgregarHistorial/' + $scope.citas[index].idPaciente + '/' + $scope.citas[index].NombrePaciente
+                +' ' + $scope.citas[index].ApellidoPaciente);
         };
         //Send the request for the citas
         $scope.verCitas = function () {

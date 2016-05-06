@@ -275,6 +275,7 @@
     <Content Include="htmlPages\Menu\calendario.html" />
     <Content Include="htmlPages\Menu\menu.html" />
     <Content Include="htmlPages\VistaAdmin\cobros.html" />
+    <Content Include="htmlPages\VistaAdmin\doctoresPendientes.html" />
     <Content Include="htmlPages\VistaAdmin\sincronizarMedicamentos.html" />
     <Content Include="htmlPages\VistaAdmin\vistaAdmi.html" />
     <Content Include="htmlPages\VistaDoctor\agregarHistorial.html" />

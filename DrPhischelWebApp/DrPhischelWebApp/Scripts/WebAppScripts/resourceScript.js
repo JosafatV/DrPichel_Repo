@@ -25,7 +25,12 @@ angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($reso
                 'Content-Type': 'application/json; charset=utf-8'
             }
         },
-        update: { method: 'PUT'    },
+        update: {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        },
         delete: { method: 'DELETE' }
     });
 });
