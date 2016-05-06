@@ -71,8 +71,16 @@ namespace DrPhischelWebApi.DataBase
                     "INSERT INTO MEDICAMENTO (Nombre,Prescripcion,Codigo,CasaFarmaceutica,Costo)" 
                     +" VALUES ('"+medicamento.Nombre+"', '"+medicamento.Prescripcion+"', '"+medicamento.codigo+"','"+medicamento.CasaFarmaceutica+"', '"+medicamento.Costo+"');"
                 , con);
-                con.Open();
-                cmd.ExecuteNonQuery();//execute query
+               
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();//execute query
+                }
+                catch (SqlException ex)
+                {
+                    medicamento.codigo = "Error";
+                }
             }
             return medicamento;
         }
@@ -86,8 +94,16 @@ namespace DrPhischelWebApi.DataBase
                     "INSERT INTO SUCURSAL (NoSucursal , Nombre , Direccion , Telefono)" 
                     +" VALUES ( '"+sucursal.NoSucursal+"', '"+sucursal.Nombre+"' , '"+sucursal.Direccion+"' , '"+sucursal.Telefono+"');"
                 , con);
-                con.Open();
-                cmd.ExecuteNonQuery();//execute query
+
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();//execute query
+                }
+                catch (SqlException ex)
+                {
+                    sucursal.NoSucursal = "Error";
+                }
             }
             return sucursal;
         }
@@ -100,8 +116,15 @@ namespace DrPhischelWebApi.DataBase
                 SqlCommand cmd = new SqlCommand(
                     "INSERT INTO MEDICAMENTO_EN_SUCURSAL (CodigoMedicamento,NoSucursal,Cantidad) VALUES ('"+CodigoMedicamento+"', '"+NoSucursal+"' , '"+cantidad+"'); "
                 , con);
-                con.Open();
-                cmd.ExecuteNonQuery();//execute query
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();//execute query
+                }
+                catch (SqlException ex)
+                {
+                    ;
+                }
             }
         }
 

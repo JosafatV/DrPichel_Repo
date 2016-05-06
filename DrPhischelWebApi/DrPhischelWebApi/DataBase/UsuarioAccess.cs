@@ -16,7 +16,7 @@ namespace DrPhischelWebApi.DataBase
             {
                 SqlCommand cmd = new SqlCommand(
                     "Select u.Id , u.Cedula, u.Password,r.IdRol  from USUARIO as u  join ROL_POR_USUARIO as r on u.Id = r.IdUsuario "
-                    +" where u.Password = '"+password+"' and Cedula = '"+Cedula+"'"
+                    +" where u.Password = '"+password+"' and Cedula = '"+Cedula+ "'  and u.Estado = 'A' "
                     , con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -40,8 +40,17 @@ namespace DrPhischelWebApi.DataBase
                 SqlCommand cmd = new SqlCommand(
                     "insert into ROL_POR_USUARIO (IdRol, IdUsuario) values ('"+IdUsuario+"','"+RolId+"');"
                     , con);
-                con.Open();
-                cmd.ExecuteNonQuery(); //execute query
+               
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery(); //execute query
+                }
+                catch (SqlException ex)
+                {
+                    
+                }
+                
             }
            
         }

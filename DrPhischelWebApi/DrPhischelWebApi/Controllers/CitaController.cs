@@ -11,19 +11,19 @@ namespace DrPhischelWebApi.Controllers
     {
         CitaAccess databaseAccess = new CitaAccess();
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        [HttpGet]
         public List<CitaPorPacienteYDoctor> getAllCitas()
         {
             return databaseAccess.getAllCitas();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="cita"></param>
-        /// <returns></returns>
+        [HttpGet]
+        [Route("api/Cita/FechaHora/{FechaHora}/Doctor/{NoDoctor}")]
+        public List<CitaPorPacienteYDoctor> getCitas(string NoDoctor, string FechaHora)
+        {
+            return databaseAccess.getCitas(NoDoctor, FechaHora);
+        }
+
+        [HttpPost]
         public Cita Post([FromBody]Cita cita)
 
         {
@@ -36,10 +36,21 @@ namespace DrPhischelWebApi.Controllers
                 return new Cita();
            }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        [HttpPut]
+        public Cita putCita(Cita cita)
+        {
+            return databaseAccess.updateCita(cita);
+        }
+
+        [HttpDelete]
+        [Route("api/Cita/{NoCita}")]
+        public void DeleteCita(string Nocita)
+        {
+             databaseAccess.DeleteCita(Nocita);
+        }
+
+
+
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };

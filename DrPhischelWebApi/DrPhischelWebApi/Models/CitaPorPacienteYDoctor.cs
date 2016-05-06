@@ -8,6 +8,7 @@ namespace DrPhischelWebApi.Models
     public class CitaPorPacienteYDoctor
     {
         public string NoCita;
+        public string idPaciente;
         public string NombrePaciente;
         public string ApellidoPaciente;
         public string Fecha;

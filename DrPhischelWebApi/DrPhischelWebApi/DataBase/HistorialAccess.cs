@@ -52,8 +52,16 @@ namespace DrPhischelWebApi.DataBase
                     "EXEC dbo.insert_atencion_paciente @Descripcion = '"+atencion.Descripcion+"', @Estudios= '"+atencion.Estudios+"' ,"
                     +" @NoCita = '"+ atencion.NoCita +"' , @IdPaciente = '"+idPaciente+"'"
                 , con);
-                con.Open();
-                atencion.NoAtencion = cmd.ExecuteScalar().ToString(); //execute query
+                
+                try
+                {
+                    con.Open();
+                    atencion.NoAtencion = cmd.ExecuteScalar().ToString(); //execute query
+                }
+                catch (SqlException ex)
+                {
+                    atencion.NoAtencion = "Error";
+                }
             }
             return atencion;
         }

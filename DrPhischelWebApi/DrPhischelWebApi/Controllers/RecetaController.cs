@@ -4,6 +4,8 @@ using DrPhischelWebApi.Models;
 using DrPhischelWebApi.DataBase;
 using System.Net.Http;
 using System.Net;
+using System.Web;
+
 
 namespace DrPhischelWebApi.Controllers
 {
@@ -15,6 +17,7 @@ namespace DrPhischelWebApi.Controllers
         public Receta Post(Receta receta)
         {
             return databaseAccess.addReceta(receta);
+           
         }
 
         [HttpGet]

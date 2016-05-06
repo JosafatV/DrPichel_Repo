@@ -18,8 +18,15 @@ namespace DrPhischelWebApi.DataBase
                 SqlCommand cmd = new SqlCommand(
                     "Insert into RECETA (Estado, NoAtencion, NoDoctor) Values ('"+receta.Estado+"','"+receta.NoAtencion+"','"+receta.NoDoctor+"'); select scope_identity()"
                 , con);
-                con.Open();
-                receta.NoReceta = cmd.ExecuteScalar().ToString(); //execute query
+                try
+                {
+                    con.Open();
+                    receta.NoReceta = cmd.ExecuteScalar().ToString(); //execute query
+                }
+                catch (SqlException ex)
+                {
+                    ;
+                }
             }
             return receta;
         }
@@ -35,7 +42,7 @@ namespace DrPhischelWebApi.DataBase
                         +" (u.Nombre + u.Apellido) as NombrePaciente, h.IdPaciente, u.Cedula"
                         +" from RECETA AS R JOIN HISTORIAL_POR_PACIENTE AS H ON R.NoAtencion = H.NoAtencion"
                         +" JOIN USUARIO AS U ON U.Id = H.IdPaciente JOIN USUARIO AS U2 ON R.NoDoctor = U2.Id"
-                        +" where R.NoAtencion = '"+NoAtencion+"'"
+                        +" where R.NoAtencion = '"+NoAtencion+ "'  and   r.Estado = 'A' "
                     , con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();

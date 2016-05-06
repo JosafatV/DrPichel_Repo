@@ -21,9 +21,10 @@ namespace DrPhischelWebApi.Controllers
         }
 
         [HttpGet]
-        public List<Doctor> getAllDoctores()
+        [Route("api/Doctor/Estado/{Estado}")]
+        public List<Doctor> getAllDoctores(string Estado)
         {
-            return databaseAccess.getAllDoctors();
+            return databaseAccess.getAllDoctors(Estado);
         }
         [HttpGet]
         [Route("api/Doctor/Ciudad/{ciudad}/Especialidad/{idEspecialidad}")]
@@ -54,13 +55,14 @@ namespace DrPhischelWebApi.Controllers
         }
 
 
-        [HttpGet]
-        [Route("api/Doctor/Calendario")]
-        public String getCalendar()
+        [HttpPut]
+        public Doctor putDoctor(Doctor doctor)
         {
-            String d = "fdsfsdf";
-            return d;
+            return databaseAccess.updateDoctor(doctor);
         }
+
+
+
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
