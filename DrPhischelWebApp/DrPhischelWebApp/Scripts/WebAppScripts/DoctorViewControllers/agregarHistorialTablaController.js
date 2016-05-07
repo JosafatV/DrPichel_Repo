@@ -4,7 +4,6 @@ angular.module('DrPhischelApp').controller('agregarHistorialTablaController', ['
         $scope.todayDateFiltered = $filter('date')(new Date(), 'fullDate');
         $scope.idDoctorActual = docActual;
         $scope.citas = '';
-
         //Send the request for the citas
         //Filter that filter a date as I need to send it to the web API
         $scope.todayDate = $filter('date')(new Date(), 'yyyy-MM-dd');

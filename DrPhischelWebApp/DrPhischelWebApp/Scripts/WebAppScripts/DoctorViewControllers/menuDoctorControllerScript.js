@@ -13,6 +13,10 @@ angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope", "$
         $location.path('/DrPhischel/Doctor/AgregarHistorialTabla');
     };
 
+    $scope.goAgregarPedido = function () {
+        $location.path('/DrPhischel/Doctor/AgregarPedido');
+    };
+
     //Changed the view to the historial view
     $scope.goVerHistorial = function () {
         $location.path('/DrPhischel/Doctor/VerHistorial');

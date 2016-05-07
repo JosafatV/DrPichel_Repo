@@ -2,7 +2,7 @@ angular.module('DrPhischelApp').controller('menuAdminController', ['$scope', '$r
     '$location', function ($scope, $routeParams, $location) {
         //Changed the view to the AgregarPaciente
         $scope.goAgregarPaciente = function () {
-            $location.path('/DrPhischel/Doctor/crearPaciente');
+            $location.path('/DrPhischel/Doctor/CrearPaciente');
         };
         //Changed the view to the VerDoctoresPendientes
         $scope.goVerDoctoresPendientes = function () {

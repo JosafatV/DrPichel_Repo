@@ -1,4 +1,5 @@
 ﻿﻿<form>
+     <div ng-if="banderaDeCliente == null" ng-init="goAgregarCliente()"></div>
     <h1>Ingrese los Datos de su Pedido</h1>
     <div ng-if="verifique == true">
         <div ng-if="recetarioLenght == 0" ng-init="alerteTermino()"></div>
@@ -9,8 +10,11 @@
     </div>
     <div class="container">
 
-        <div class="form-group">
 
+        <div class="form-group">
+            <h4>Seleccione el Cliente del Pedido</h4>
+            <input type="text" data-ng-model="cedulaCliente"/>
+            <button class="btn btn-secondary" data-ng-click="verificarCliente()"> Agregar Cliente </button>
 
             <h4>Seleccione Sucursal de Recojo</h4>
             <div class="btn-block">
@@ -23,20 +27,6 @@
                     </ul>
                 </div>
             </div><br /><br />
-            <h4>Seleccione la Empresa</h4>
-            <div class="btn-block">
-                <div class="btn-group" ng-class='{open: open}'>
-                    <button class="btn ras" ng-click='open=!open'>{{empSelected}}</button>
-                    <button class="btn ras dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat="dato in empList"><a data-ng-click="empresaCambio(dato)" required>{{dato}}</a></li>
-                        <!-- <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>-->
-                    </ul>
-                </div>
-            </div><br />
             <div class="form-group">
                 <h4>Seleccione un Telefono: </h4>
                 <select class="form-control" id="sel1" ng-model="phones">
@@ -87,20 +77,19 @@
         </table><br><br>
         <div>
             <div class="form-group">
-                <h4> Recetas </h4>
+                <!--<h4> Recetas </h4>-->
 
-                <button data-ng-click="goAddReceta()" class="btn btn-primary">Añadir Receta</button>
+                <!--<button data-ng-click="goAddReceta()" class="btn btn-primary">Añadir Receta</button>-->
             </div>
         </div><br>
+        <h3>Fecha y hora de recojo</h3>
         <div class="form-group">
-            <h3>Fecha y hora de recojo</h3>
             <input class="form-control" input type="datetime-local" id="exampleInputQuantity" placeholder="0" data-ng-model="FechaR" required>
         </div>
         <br>
         <div>
             <button class="btn btn-success" data-ng-click="addPedido(FechaR,phones)"> Guardar </button>
             <button class="btn btn-secondary" data-ng-click="cancelar()"> Cancelar </button>
-            <button class="btn btn-secondary" data-ng-click="refreshsss()">Agregar Mas </button>
         </div>
     </div>
 

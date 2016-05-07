@@ -1,16 +1,53 @@
-﻿angular.module('DrPhischelApp').controller("addPedidoController", ["$scope", "$location", "$window", "$routeParams", "doctorResource", "sucursalResource", "medResource", "pedidoResource", "telefonosResource",
-    "JsonResource", "detallePedidoResource", "detalleRecetaResource", "recetasResource", "detalleRecetaResource",
+﻿var pedidoActual = {};
+var clienteActual = 1;
+var empleadoActual = {};
+var listaRecets = [];
+var docActual = "Doctores";
+var medActual = "Medicamentos";
+var sucActual = "Sucursales";
+var listaMedicamentosxPedido = [];
+var listaMedicamentosxReceta = [];
+var listaMedsActuales = [];
+var listaMedsActualesPeds = [];
+var listaMedsActualesRecs = [];
+var newRecetas = [];
+var numSuc = 0;
+var empSelected = "Empresa";
+var docActual = 1;
+angular.module('DrPhischelApp').controller("agregarPedidoController", ["$scope", "$location", "$window", "$routeParams", "doctorResource", "sucursalResource", "medResource", "pedidoResource", "telefonosResource",
+    "JsonResource", "detallePedidoResource", "detalleRecetaResource", "recetasResource", "detalleRecetaResource", 'farmaticaPhischelResource',
 
 function ($scope, $location, $window, $routeParams, doctorResource, sucursalResource, medResource, pedidoResource, telefonosResource, JsonResource, detallePedidoResource
-    , detalleRecetaResource, recetasResource, detalleRecetaResource) {
+    , detalleRecetaResource, recetasResource, detalleRecetaResource, farmaticaPhischelResource) {
+    $scope.banderaDeCliente = false;
     //Este es el nuevo---------------------
     //Recordar cambiar clienteActual !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1111
+    $scope.dochhActual = docActual;
+    listaMedicamentosxReceta.push(listaMedsActuales);
+    listaMedsActuales = [];
+    listaMedsActualesRecs = [];
+    //listaRecets.push({ NoFactura: "", IdCliente: clienteActual, NoDoctor: $scope.numeroDoc });
+
     JsonResource.query().$promise.then(function (data) {
         //$scope.Item = data[parseInt($routeParams.index)];
         $scope.telefonos = telefonosResource.query({ id: clienteActual });
         //$scope.isArray = data instanceof Array;
     });
-    $scope.empSelected = empSelected;
+
+    $scope.verificarCliente = function (cedula) {
+        alert($scope.cedulaCliente);
+        farmaticaPhischelResource.get({ type: 'Client', extension: $scope.cedulaCliente }).$promise.then(function (data) {
+            $scope.banderaDeCliente = data.Cedula;
+            clienteActual = data.IdCliente;
+        });        
+    };
+
+    $scope.goAgregarCliente = function () {
+        $location.path('/DrPhischel/Doctor/CrearPaciente');
+
+    };
+
+    $scope.empSelected = 'P';
     $scope.empList = ["Farmatica", "Phischel"];
     $scope.boolEmpresa = false;
     $scope.empresaBool = "Farmatica";
@@ -111,7 +148,7 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
         //$location.path(typeOfView + "/" +index);
     }
     $scope.cancelar = function () {
-        $location.path("/Item/clientLog");
+        $location.path("/DrPhischel/DoctorMenu");
     }
 
     $scope.refreshsss = function () {
@@ -151,20 +188,16 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
             TelefonoPreferido: phone
         }).$promise.then(function (data) {
             $scope.numFac = data.NoFactura;
-        }).then(function () {
-            //------------------------Guardar  MEDICAMENTOS por PEDIDO---------------------------------------
-            var values = listaMedicamentosxPedido;
-            angular.forEach(values, function (value, key) {
-                value.NoFactura = $scope.numFac;
-                value.NoSucursal = numSuc;
-                //alert(angular.toJson(value));
-                detallePedidoResource.save(value);
-            });
-        })
+        })/*.then(function () {
+            alert(angular.toJson({ NoFactura: $scope.numFac, IdCliente: clienteActual, NoDoctor: $scope.dochhActual }));
+            recetasResource.save({ NoFactura: $scope.numFac, IdCliente: clienteActual, NoDoctor: $scope.dochhActual })
+        })*/
 
         //-----------------------Guardar RECETAS-----------------------------------
-        .then(function () {
-            $scope.recetarioLenght = listaRecets.length;
+         .then(function () {
+             listaRecets.push({ NoFactura: $scope.numFac, IdCliente: clienteActual, NoDoctor: $scope.dochhActual });
+            //recetasResource.save({ NoFactura: $scope.numFac, IdCliente: clienteActual, NoDoctor: $scope.numeroDoc })
+            $scope.recetarioLenght = 1;
             $scope.verifique = true;
             values = listaRecets;
             //alert(angular.toJson(values));
@@ -176,9 +209,12 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
 
                 }).        //-----------------Guardar MEDICAMENTOS por RECETA-------------------------- aqui quede
                     then(function () {
-                        medsdeRec = listaMedicamentosxReceta[key];
+                        medsdeRec = listaMedicamentosxPedido;
                         angular.forEach(medsdeRec, function (medicamento, key2) {
                             medicamento.NoSucursal = numSuc;
+                            alert(angular.toJson({
+                                CodigoMedicamento: medicamento.CodigoMedicamento, NoReceta: listaRecets[key].NoReceta, Cantidad: medicamento.Cantidad, NoSucursal: medicamento.NoSucursal
+                            }));
                             detalleRecetaResource.save({
                                 CodigoMedicamento: medicamento.CodigoMedicamento, NoReceta: listaRecets[key].NoReceta, Cantidad: medicamento.Cantidad, NoSucursal: medicamento.NoSucursal
                             });
@@ -188,3 +224,224 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
         })
     }
 }]);
+
+
+
+var prueba = "http://192.168.1.9:8091/api";
+angular.module('DrPhischelApp').factory('JsonResource', function ($resource) {
+    return $resource(prueba + '/Empleados/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+
+
+
+
+angular.module('DrPhischelApp').factory('doctorResource', function ($resource) {
+    return $resource('http://localhost:8080/api/Doctores/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+angular.module('DrPhischelApp').factory('telefonosResource', function ($resource) {
+    return $resource(prueba  + '/TelefonosClientes/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+angular.module('DrPhischelApp').factory('pedidosResource', function ($resource) {
+    return $resource(prueba + '/Pedido/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+angular.module('DrPhischelApp').factory('recetasResource', function ($resource) {
+    return $resource(prueba + '/Recetas/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+angular.module('DrPhischelApp').factory('editRecetasResource', function ($resource) {
+    return $resource(prueba + '/MedicamentosPorReceta/:cod/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        }
+    });
+});
+
+
+angular.module('DrPhischelApp').factory('casasResource', function ($resource) {
+    return $resource(prueba + '/Recetas/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+angular.module('DrPhischelApp').factory('medResource', function ($resource) {
+    return $resource(prueba + '/Medicamento/:presc/:nosuc/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+
+angular.module('DrPhischelApp').factory('medSucResource', function ($resource) {
+    return $resource(prueba + '/MedicamentoEnSucursal/:id/:nosuc/:cant', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+
+angular.module('DrPhischelApp').factory('sucursalResource', function ($resource) {
+    return $resource(prueba  + '/Sucursal/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+
+angular.module('DrPhischelApp').factory('pedidoResource', function ($resource) {
+    return $resource(prueba +'/Pedido/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+
+
+
+
+angular.module('DrPhischelApp').factory('detallePedidoResource', function ($resource) {
+    return $resource(prueba +  '/MedicamentosPorPedido/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+
+
+
+
+angular.module('DrPhischelApp').factory('detalleRecetaResource', function ($resource) {
+    return $resource(prueba + '/MedicamentosPorReceta/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
+
+angular.module('DrPhischelApp').factory('pedidoRecetaResource', function ($resource) {
+    return $resource(prueba + '/RecetasPorPedido/:id', {}, {
+        query: {
+            method: 'GET',
+            transformResponse: function (data) {
+
+                return angular.fromJson(data);
+            },
+            isArray: true
+        },
+        update: { method: 'PUT' },
+        delete: { method: 'DELETE' }
+    });
+});
