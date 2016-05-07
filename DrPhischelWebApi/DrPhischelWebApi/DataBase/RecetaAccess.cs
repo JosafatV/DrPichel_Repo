@@ -16,12 +16,13 @@ namespace DrPhischelWebApi.DataBase
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand(
-                    "Insert into RECETA (Estado, NoAtencion, NoDoctor) Values ('"+receta.Estado+"','"+receta.NoAtencion+"','"+receta.NoDoctor+"'); select scope_identity()"
+                    "Insert into RECETA (NoReceta , Estado, NoAtencion, NoDoctor)" 
+                    +" Values ('"+receta.NoReceta+"' ,'"+receta.Estado+"','"+receta.NoAtencion+"','"+receta.NoDoctor+"'); select scope_identity()"
                 , con);
                 try
                 {
                     con.Open();
-                    receta.NoReceta = cmd.ExecuteScalar().ToString(); //execute query
+                    cmd.ExecuteNonQuery(); //execute query
                 }
                 catch (SqlException ex)
                 {

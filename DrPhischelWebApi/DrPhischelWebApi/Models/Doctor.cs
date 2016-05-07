@@ -14,6 +14,7 @@ namespace DrPhischelWebApi.Models
         public string Estado;
         public string DireccionConsultorio;
         public string Especialidad;
+        public string NombreEspecialidad;
         public string TarjetaCredito;
         public string CidudadConsultorio;
     }

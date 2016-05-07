@@ -26,6 +26,8 @@ namespace DrPhischelWebApi.Controllers
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
         }
+        [Route("api/User/prueba")]
+        public UserController fdg() { return new UserController(); }
 
     }
 }

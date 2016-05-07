@@ -19,16 +19,16 @@ namespace DrPhischelWebApi.DataBase
                     "EXEC dbo.insert_paciente @cedula = '"+paciente.cedula+"', @password = '"+paciente.password+"', @nombre = '"+paciente.nombre+"', @apellido = '"+paciente.apellido+"',"
                     +" @FechaNacimiento = '"+paciente.FechaNacimiento+"', @Residencia = '"+paciente.Residencia+"', @Estado = '"+paciente.Estado+"', @peso = '"+paciente.peso+"', @altura = '"+paciente.altura+"'"
                     , con);
-                try
-                {
+            //    try
+              //  {
                     con.Open();
                     paciente.idUsuario = cmd.ExecuteScalar().ToString(); //execute query
-                }
-                catch (SqlException ex)
-                { 
-                    Console.WriteLine("Error");
-                    paciente.idUsuario = "Error";
-                }
+               // }
+                //catch (SqlException ex)
+                //{ 
+                  //  Console.WriteLine("Error");
+                  //  paciente.idUsuario = "Error";
+                //}
             }
             return paciente;
         }

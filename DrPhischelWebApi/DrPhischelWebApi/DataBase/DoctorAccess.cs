@@ -42,8 +42,9 @@ namespace DrPhischelWebApi.DataBase
             {
                 SqlCommand cmd = new SqlCommand(
                                 "Select D.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10),FechaNacimiento,120) as Fecha, u.Residencia, u.Estado,"
-                                + " D.DireccionConsultorio, D.Especialidad, D.TarjetaCredito , D.CiudadConsultorio"
-                                + "  from USUARIO as U join DOCTOR AS D  ON D.UserId = U.Id Where U.Estado = '"+Estado+"';"
+                                + " D.DireccionConsultorio, D.Especialidad, E.Nombre as NombreE ,D.TarjetaCredito , D.CiudadConsultorio"
+                                + "  from USUARIO as U join DOCTOR AS D  ON D.UserId = U.Id  Join EspecialidadMedica as E on E.NoEspecialidad = D.Especialidad "
+                                + " Where U.Estado = '"+Estado+"';"
              
                     , con);
                 con.Open();
@@ -62,6 +63,7 @@ namespace DrPhischelWebApi.DataBase
                     doctor.Residencia = rdr["Residencia"].ToString();
                     doctor.TarjetaCredito = rdr["TarjetaCredito"].ToString();
                     doctor.CidudadConsultorio = rdr["CiudadConsultorio"].ToString();
+                    doctor.NombreEspecialidad = rdr["NombreE"].ToString();
                     ListDoctores.Add(doctor);
 
                 }
@@ -76,9 +78,9 @@ namespace DrPhischelWebApi.DataBase
             {
                 SqlCommand cmd = new SqlCommand(
                                 "Select D.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10),FechaNacimiento,120) as Fecha, u.Residencia, u.Estado,"
-                                + " D.DireccionConsultorio, D.Especialidad, D.TarjetaCredito , D.CiudadConsultorio"
-                                + "  from USUARIO as U join DOCTOR AS D  ON D.UserId = U.Id"
-                                +"  where D.CiudadConsultorio = '"+ Ciudad+ "'  AND D.Especialidad = '"+idEspecialidad+ "' and U.Estado = 'A'"
+                                + " D.DireccionConsultorio, D.Especialidad, E.Nombre as NombreE , D.TarjetaCredito , D.CiudadConsultorio"
+                                + "  from USUARIO as U join DOCTOR AS D  ON D.UserId = U.Id join ESPECIALIDADMEDICA as E on E.NoEspecialidad = D.Especialidad"
+                                + "  where D.CiudadConsultorio = '"+ Ciudad+ "'  AND D.Especialidad = '"+idEspecialidad+ "' and U.Estado = 'A' "
                     , con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -96,6 +98,7 @@ namespace DrPhischelWebApi.DataBase
                     doctor.Residencia = rdr["Residencia"].ToString();
                     doctor.TarjetaCredito = rdr["TarjetaCredito"].ToString();
                     doctor.CidudadConsultorio = rdr["CiudadConsultorio"].ToString();
+                    doctor.NombreEspecialidad = rdr["NombreE"].ToString();
                     ListDoctores.Add(doctor);
 
                 }
@@ -184,25 +187,38 @@ namespace DrPhischelWebApi.DataBase
             }
             return doctor;
         }
-
-
-
-
-        
-
-      /*  public void update_especialidad_a_Doctor(string NoEspecialidad, string NoDoctor)
+        public void deleteDoctor(string UserId)
         {
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
-                SqlCommand cmd = new SqlCommand(
-                    " Insert into EspecialidadMedica ( NoEspecialidad , Nombre) VALUES ( '" + especialidad.NoEspecialidad + "', '" + especialidad.Nombre + "' ) ;"
-                , con);
+                string query = "Update Usuario set Estado = 'B'  where Id = '" + UserId + "' ; " ;
+                   
+                SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
                 cmd.ExecuteNonQuery(); //execute query
-            }
-            return especialidad;
 
-        }*/
+
+            }
+        }
+
+
+
+
+
+        /*  public void update_especialidad_a_Doctor(string NoEspecialidad, string NoDoctor)
+          {
+              string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+              using (SqlConnection con = new SqlConnection(cs))
+              {
+                  SqlCommand cmd = new SqlCommand(
+                      " Insert into EspecialidadMedica ( NoEspecialidad , Nombre) VALUES ( '" + especialidad.NoEspecialidad + "', '" + especialidad.Nombre + "' ) ;"
+                  , con);
+                  con.Open();
+                  cmd.ExecuteNonQuery(); //execute query
+              }
+              return especialidad;
+
+          }*/
     }
 }

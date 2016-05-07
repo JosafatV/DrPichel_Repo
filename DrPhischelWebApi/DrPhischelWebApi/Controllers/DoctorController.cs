@@ -61,11 +61,17 @@ namespace DrPhischelWebApi.Controllers
             return databaseAccess.updateDoctor(doctor);
         }
 
+        [HttpDelete]
+        [Route("api/Doctor/{UserId}")]
+        public void deleteDoctor(string UserId)
+        {
+            databaseAccess.deleteDoctor(UserId);
+        }
 
 
         public HttpResponseMessage Options()
         {
-            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
+           return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
         }
     }
 }

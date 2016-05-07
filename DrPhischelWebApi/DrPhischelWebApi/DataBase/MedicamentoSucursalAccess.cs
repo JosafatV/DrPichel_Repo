@@ -127,6 +127,24 @@ namespace DrPhischelWebApi.DataBase
                 }
             }
         }
+        public void deleteSentence(string deleteCmd)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand(deleteCmd, con);
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();//execute query
+                }
+                catch (SqlException ex)
+                {
+                    ;
+                }
+            }
+
+        }
 
     }
 }
