@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 
 using DoctorApp_Android.JSONParser;
+using DoctorApp_Android.Client;
 
 namespace DotorApp_Android
 {
@@ -26,6 +27,7 @@ namespace DotorApp_Android
 
             // Create your application here
             Button btnToCitas = FindViewById<Button>(Resource.Id.btnSeeCitasfromPatient);
+            btnToCitas.Click += (sender, e) =>
             {
                 var scheduleView = new Intent(this, typeof(ScheduleActivity));
                 StartActivity(scheduleView);
@@ -33,6 +35,20 @@ namespace DotorApp_Android
 
             
         }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            //load initial data from DB
+            DateTime dt = new DateTime();
+            string date = dt.ToString();
+            Console.Write(date); //print date to console
+
+            //Populate ListView
+        }
+
+        //Functions
     }
 }
 

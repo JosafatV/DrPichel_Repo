@@ -19,10 +19,10 @@ namespace DotorApp_Android
         {
             base.OnCreate(savedInstanceState);
 
-            //Loads the layout (Patient)
+            //Loads the layout (Historial)
             SetContentView(Resource.Layout.Historial);
 
-            // This string determines to which vew go back
+            // This string determines to which view go back
             string fromView = "PatientsView"; //Intent.Extras.GetString("UserView");
 
             Button btnVolver = FindViewById<Button>(Resource.Id.btnVolverDeHistorial);

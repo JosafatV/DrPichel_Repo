@@ -82,6 +82,13 @@ namespace DoctorApp_Android.JSONParser
             }
         }
 
+        //formats a JSON file into a useful string array for the login values
+        public string JSONtoLogin(string JSON)
+        {
+            //code
+            return JSON;
+        }
+
         //formats a JSON file into a useful string array for the schedule layout
         public string JSONtoCita(string JSON)
         {

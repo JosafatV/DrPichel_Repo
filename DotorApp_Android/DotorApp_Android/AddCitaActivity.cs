@@ -28,13 +28,12 @@ namespace DotorApp_Android
             //ui
             EditText txtNoDoc = FindViewById<EditText>(Resource.Id.txtNombreDoctor);
             EditText txtFecha = FindViewById<EditText>(Resource.Id.txtCitaTimetamp);
+            TextView txtWarning = FindViewById<TextView>(Resource.Id.txtAddCitaWarning);
 
             Button btnAddCita = FindViewById<Button>(Resource.Id.btnAddCita);
             btnAddCita.Click += (sender, e) =>
             {
-                string NoDoc = txtNoDoc.ToString();
-                string Fecha = txtFecha.ToString();
-                executeAddCita(NoDoc, Fecha);
+                executeAddCitaAux(txtNoDoc, txtFecha, txtWarning);
             };
 
             Button btnSeeHistory = FindViewById<Button>(Resource.Id.btnVerHistorial);
@@ -44,6 +43,20 @@ namespace DotorApp_Android
                 HistoryView.PutExtra("PatientView", true); //send return info to next view
                 StartActivity(HistoryView);
             };
+        }
+
+        void executeAddCitaAux(EditText txtNoDoc, EditText txtFecha, TextView txtAddCitaWarning)
+        {
+            string NoDoc = txtNoDoc.ToString();
+            string Fecha = txtFecha.ToString();
+            if (NoDoc.Equals("") || Fecha.Equals(""))
+            {
+                txtAddCitaWarning.SetText(1);
+            } else
+            {
+                executeAddCita(NoDoc, Fecha);
+            }
+            
         }
 
         void executeAddCita (string NoDoctor, string Timestamp)

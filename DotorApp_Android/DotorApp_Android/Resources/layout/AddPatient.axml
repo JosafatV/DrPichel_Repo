@@ -87,7 +87,13 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="92.5dp"
-        android:id="@+id/linearLayout4" />
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddPatientWarning" />
+    </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

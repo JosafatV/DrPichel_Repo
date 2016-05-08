@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Util;
 
 namespace DotorApp_Android
 {
@@ -20,27 +21,38 @@ namespace DotorApp_Android
             base.OnCreate(savedInstanceState);
 
             //Loads the layout (schedule)
+            Log.Info("DotorApp_Android", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Loading Schedule View");
             SetContentView(Resource.Layout.Schedule);
-
+            
             // Movement buttons
             Button btnToAddPatient = FindViewById<Button>(Resource.Id.btnAddPatient);
+            btnToAddPatient.Click += (sender, e) =>
             {
                 var addPatientsView = new Intent(this, typeof(AddPatientActivity));
                 StartActivity(addPatientsView);
             };
-
+            
             Button btnToPatient = FindViewById<Button>(Resource.Id.btnSeePatient);
+            btnToPatient.Click += (sender, e) =>
             {
                 var PatientsView = new Intent(this, typeof(PatientActivity));
                 StartActivity(PatientsView);
             };
-
-            //(do, while)
-            //make POST to retrieve data from the db
-
-            //use an iterative function to fill the view
-
-            //wire the button to refresh
         }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            //load initial data from DB
+            DateTime dt = new DateTime();
+            string date = dt.ToString();
+            Console.Write(date); //print date to console
+
+            //Populate ListView
+        }
+
+        //Functions
+
     }
 }
