@@ -63,6 +63,7 @@ namespace DoctorApp_Android.JSONParser
 
         }
 
+        //turns the values recovered from the addCita view into a JSON
         public string citaToJSON(string _NoDoctor, string _Timestamp)
         {
             JSONObject parent = new JSONObject();
@@ -82,28 +83,45 @@ namespace DoctorApp_Android.JSONParser
             }
         }
 
-        //formats a JSON file into a useful string array for the login values
+        //formats a JSON file into a useful string array with values from the database
+
+            //response from the Login process, the userid and rol
         public string JSONtoLogin(string JSON)
         {
             //code
             return JSON;
         }
 
-        //formats a JSON file into a useful string array for the schedule layout
+            //response from the addCita process
         public string JSONtoCita(string JSON)
         {
             //code
             return JSON;
         }
 
-        //formats a JSON file into a useful string array for the history layout
+            //response from the addPatient process
+            public string JSONtoAddPatient(string JSON)
+        {
+            //code
+            return JSON;
+
+        }
+
+            //data obtained to populate the schedule view
+        public string JSONtoSchedule(string JSON)
+        {
+            //code
+            return JSON;
+        }
+
+            //data to populate a hisory view
         public string JSONtoHistorial(string JSON)
         {
             //code
             return JSON;
         }
 
-        //formats a JSON file into a useful string array for the patient list layout
+            //data to populate the patient list
         public string JSONtoPatientList(string JSON)
         {
             //code

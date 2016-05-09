@@ -41,11 +41,12 @@ namespace DotorApp_Android
 
         void executeLoginAux(EditText txtUsername, EditText txtPassword, TextView txtLoginWarning)
         {
-            string Uname = txtUsername.ToString();
-            string Pword = txtPassword.ToString();
+            string Uname = txtUsername.Text.ToString();
+            string Pword = txtPassword.Text.ToString();
+
             if (Uname.Equals("") || Pword.Equals(""))
             {
-                txtLoginWarning.SetText(1);
+                txtLoginWarning.SetText("Todos los espacios son requeridos", null);
             } else
             {
                 executeLogin(Uname, Pword);
@@ -59,14 +60,15 @@ namespace DotorApp_Android
             //turn arguments into JSON
             JSONParser parser = new JSONParser();
             string json = parser.loginToJSON(Uname, Pword);
+            Log.Info("DotorApp_Android", json);
 
             //send data to DB--
             //ClientService client = new ClientService();
             //string response = client.Post(json);
 
             //get this from DB
-            String Rol = "D";
-            String UserId = "1";
+            string Rol = "D";
+            string UserId = "1";
 
             //enter specific view
             if (Rol.Equals("D"))

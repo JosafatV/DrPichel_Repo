@@ -11,6 +11,9 @@ using Android.Views;
 using Android.Widget;
 using Android.Util;
 
+using DoctorApp_Android.JSONParser;
+using DoctorApp_Android.Client;
+
 namespace DotorApp_Android
 {
     [Activity(Label = "ScheduleActivity")]
@@ -20,8 +23,7 @@ namespace DotorApp_Android
         {
             base.OnCreate(savedInstanceState);
 
-            //Loads the layout (schedule)
-            Log.Info("DotorApp_Android", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Loading Schedule View");
+            //Loads the layout (schedule) Log.Info("DotorApp_Android", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Loading Schedule View");
             SetContentView(Resource.Layout.Schedule);
             
             // Movement buttons
@@ -43,16 +45,32 @@ namespace DotorApp_Android
         protected override void OnStart()
         {
             base.OnStart();
+            populateView();
+        }
 
+        protected override void OnRestart()
+        {
+            base.OnRestart();
+            populateView();
+        }
+
+        private void populateView()
+        {
             //load initial data from DB
+            JSONParser json = new JSONParser();
+            ClientService client = new ClientService();
             DateTime dt = new DateTime();
+
             string date = dt.ToString();
-            Console.Write(date); //print date to console
+
+            Log.Info("DoctorApp_Android", "-----------------------------------------------------------------");
+            Log.Info("DoctorApp_Android", date);
+
+             client.Post(json.requestSchedule() );
+
+            json.JSONtoSchedule();
 
             //Populate ListView
         }
-
-        //Functions
-
     }
 }

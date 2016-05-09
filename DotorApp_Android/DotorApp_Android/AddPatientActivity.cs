@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 
 using DoctorApp_Android.JSONParser;
+using DoctorApp_Android.Client;
 
 namespace DotorApp_Android
 {
@@ -56,30 +57,30 @@ namespace DotorApp_Android
         
         void executeClear(EditText Nombre, EditText Apellido, EditText Cedula, EditText Altura, EditText Peso, EditText Genero, EditText FechaNacimiento, TextView Warning)
         {
-            Nombre.SetText(0);
-            Apellido.SetText(0);
-            Cedula.SetText(0);
-            Altura.SetText(0);
-            Peso.SetText(0);
-            Genero.SetText(0);
-            FechaNacimiento.SetText(0);
-            Warning.SetText(0);
+            Nombre.SetText("", null);
+            Apellido.SetText("", null);
+            Cedula.SetText("", null);
+            Altura.SetText("", null);
+            Peso.SetText("", null);
+            Genero.SetText("", null);
+            FechaNacimiento.SetText("", null);
+            Warning.SetText("", null);
         }
 
         void executeSubmitAux(EditText txtNombre,EditText txtApellido,EditText txtCedula,EditText txtAltura,EditText txtPeso,EditText txtGenero,EditText txtFechaNacimiento,TextView txtWarning)
         {
-            string Nombre = txtNombre.ToString();
-            string Apellido = txtApellido.ToString();
-            string Cedula = txtCedula.ToString();
-            string Altura = txtAltura.ToString();
-            string Peso = txtPeso.ToString();
-            string Genero = txtGenero.ToString();
-            string FechaNacimiento = txtFechaNacimiento.ToString();
+            string Nombre = txtNombre.Text.ToString();
+            string Apellido = txtApellido.Text.ToString();
+            string Cedula = txtCedula.Text.ToString();
+            string Altura = txtAltura.Text.ToString();
+            string Peso = txtPeso.Text.ToString();
+            string Genero = txtGenero.Text.ToString();
+            string FechaNacimiento = txtFechaNacimiento.Text.ToString();
 
             //validate inputs
             if (Nombre.Equals("") || Apellido.Equals("") || Cedula.Equals("") || Altura.Equals("") || Peso.Equals("") || Genero.Equals("") || FechaNacimiento.Equals(""))
             {
-                txtWarning.SetText(1);
+                txtWarning.SetText("Todos los espacios son requeridos", null);
             } else
             {
                 executeSubmit(Nombre, Apellido, Cedula, Altura, Peso, Genero, FechaNacimiento);
@@ -93,6 +94,7 @@ namespace DotorApp_Android
             string json = jsp.patientToJSON(Nombre, Apellido, Cedula, Altura, Peso, Genero, FechaNacimiento);
 
             //post data
+            ClientService client = new ClientService();
         }
     }
 }

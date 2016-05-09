@@ -6,8 +6,7 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
+using Android.Util;
 using Android.Widget;
 
 using DoctorApp_Android.JSONParser;
@@ -51,7 +50,7 @@ namespace DotorApp_Android
             string Fecha = txtFecha.ToString();
             if (NoDoc.Equals("") || Fecha.Equals(""))
             {
-                txtAddCitaWarning.SetText(1);
+                txtAddCitaWarning.SetText("Todos los espacios son requeridos", null);
             } else
             {
                 executeAddCita(NoDoc, Fecha);
@@ -63,10 +62,12 @@ namespace DotorApp_Android
         {
             JSONParser parser = new JSONParser();
             string json = parser.citaToJSON(NoDoctor, Timestamp);
+            Log.Info("DoctorApp_Android", "-----------------------------------------------------");
+            Log.Info("DoctorApp_Android", json);
 
             ClientService client = new ClientService();
             string response = client.Post(json);
-
+            parser.JSONtoCita(response);
         }
 
 

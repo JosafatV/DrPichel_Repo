@@ -32,7 +32,6 @@ namespace DotorApp_Android
                 var scheduleView = new Intent(this, typeof(ScheduleActivity));
                 StartActivity(scheduleView);
             };
-
             
         }
 
