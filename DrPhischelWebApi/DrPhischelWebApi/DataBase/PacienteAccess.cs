@@ -19,16 +19,16 @@ namespace DrPhischelWebApi.DataBase
                     "EXEC dbo.insert_paciente @cedula = '"+paciente.cedula+"', @password = '"+paciente.password+"', @nombre = '"+paciente.nombre+"', @apellido = '"+paciente.apellido+"',"
                     +" @FechaNacimiento = '"+paciente.FechaNacimiento+"', @Residencia = '"+paciente.Residencia+"', @Estado = '"+paciente.Estado+"', @peso = '"+paciente.peso+"', @altura = '"+paciente.altura+"'"
                     , con);
-            //    try
-              //  {
+                try
+                {
                     con.Open();
                     paciente.idUsuario = cmd.ExecuteScalar().ToString(); //execute query
-               // }
-                //catch (SqlException ex)
-                //{ 
-                  //  Console.WriteLine("Error");
-                  //  paciente.idUsuario = "Error";
-                //}
+               }
+                catch (SqlException ex)
+                { 
+                    Console.WriteLine("Error");
+                    paciente.idUsuario = "Error";
+                }
             }
             return paciente;
         }
@@ -62,6 +62,28 @@ namespace DrPhischelWebApi.DataBase
                 }
             }
             return listPacientes;
+        }
+        public Paciente updatePaciente(Paciente paciente, string Nopaciente)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand(
+                    
+                    "Update"
+                    , con);
+                try
+                {
+                    con.Open();
+                    paciente.idUsuario = cmd.ExecuteScalar().ToString(); //execute query
+                }
+                catch (SqlException ex)
+                {
+              
+                }
+            }
+            return paciente;
+
         }
 
     }
