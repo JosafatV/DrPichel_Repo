@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
   <title>Dr.Phischel</title>
   <meta charset="utf-8">
@@ -37,25 +37,42 @@
         <div class="collapse navbar-collapse" id="navegacion-fp">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              <a  class="dropdown-toggle" data-toggle="dropdown" role="button">
                 Ver Sucursales <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Sucursales disponibles para sincronizar</a></li>
+                <li><a >Sucursales disponibles para sincronizar</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Alajuela Centro</a></li>
-                <li><a href="#">San Jose Av. 3</a></li>
-                <li><a href="#">Heredia Paseo de las Flores</a></li>
-                <li><a href="#">Cartago 300 sur Mercado Municipal</a></li>
+                <li data-ng-repeat="suc in listaSuc"><a data-ng-click="llameMeds(suc.NoSucursal,suc.Nombre)" data-ng-model="su">{{suc.Nombre}}</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <h2 data-ng-hide="tablaFlag">Medicamentos de la Sucursal: {{sucActualidad}}</h2>
+    <table class="table table-bordered table-hover table-condensed ip" data-ng-hide="tablaFlag">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <th>Codigo</th>
+                <th>Prescripcion</th>
+                <th>Casa Farmaceutica</th>
+                <th>Costo</th>
+            </tr>
+            <tr data-ng-repeat="med in medsDeSucursalSelected">
+                <td>{{med.Nombre}}</td>
+                <td>{{med.codigo}}</td>                
+                <td>{{med.Prescripcion}}</td>
+                <td>{{med.CasaFarmaceutica}}</td>
+                <td>{{med.Costo}}</td>
+            </tr>
+        </tbody>
+    </table>
 <br><br><br><br><br><br><br><br><br>
     <div class="col-md-3">
-      <a href="#"class="btn btn-primary">Sincronizar</a>
+      <a data-ng-click="sincronizar()" class="btn btn-primary">Sincronizar</a>
+        <a data-ng-click="regresar()" class="btn btn-primary">Regresar</a>              
 
     </div>
 

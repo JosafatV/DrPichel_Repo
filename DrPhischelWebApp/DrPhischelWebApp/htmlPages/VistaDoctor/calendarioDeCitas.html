@@ -2,15 +2,15 @@
 <html>
 <head>
     <title></title>
-    <meta charset="utf-8" />
+	<meta charset="utf-8" />
 </head>
 <body>
     <!--<p ng-bind="dateCita | date:'MM/dd/yyyy'"></p>-->
-  <!--<div class="form-group">
+    <div class="form-group">
         <label for="option">Hora de Inicio</label>
-        <input class="form-control" required type="date" data-ng-model="dateCita" />
-    </div> <br><br>-->
-    <h2>Citas de: {{todayDateFiltered}}</h2>
+        <input class="form-control" required type="date"data-ng-model="dateCita" />
+    </div> <br><br>
+
     <table class="table table-bordered table-hover table-condensed ip" data-ng-hide="tablaCitasFlag">
         <tbody>
             <tr>
@@ -18,7 +18,7 @@
                 <th>Hora de Inicio</th>
                 <th>Estado</th>
             </tr>
-            <tr data-ng-repeat="cita in citas  | filter: search" data-ng-click="goAgregarHistorial($index)">
+            <tr data-ng-repeat="cita in citas  | filter: search"> <!--data-ng-click="goAgregarHistorial($index)"--> 
                 <td>{{cita.NombrePaciente}} {{cita.ApellidoPaciente}}</td>
                 <td>{{cita.HoraInicio}}</td>
                 <td>{{cita.Estado}}</td>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!--<p ng-bind="dateCita | date:'MM/dd/yyyy'"></p>-->
+    <!--<div class="form-group">
+          <label for="option">Hora de Inicio</label>
+          <input class="form-control" required type="date" data-ng-model="dateCita" />
+      </div> <br><br>-->
+    <table class="table table-bordered table-hover table-condensed ip">
+        <tbody>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Aceptar</th>
+            </tr>
+            <tr data-ng-repeat="doc in doctoresPendientes  | filter: search" data-ng-click="goAgregarHistorial($index)">
+                <td>{{doc.cedula}}</td>                
+                <td>{{doc.nombre}}</td>
+                <td>{{doc.apellido}}</td>
+                <td><input type="button" value="Aceptar Doctor" class="btn btn-success" data-ng-click="aceptarDoctor($index)" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-success" data-ng-click="verCitas()">Ver Citas</a>
+</body>
+</html>

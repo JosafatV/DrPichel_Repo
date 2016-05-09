@@ -2,8 +2,11 @@
     $routeProvider
 
      /*--------------------For the views of the Doctors------------------------------*/
-
-    .when('/DrPhischel/Doctor/AgregarHistorial/:index', {
+    .when('/DrPhischel/Doctor/AgregarPedido', {
+        templateUrl: 'VistaDoctor/agregarPedido.html',
+        controller: 'agregarPedidoController'
+    })
+    .when('/DrPhischel/Doctor/AgregarHistorial/:index/:nombre', {
         templateUrl: 'VistaDoctor/agregarHistorial.html',
         controller: 'agregarHistorialController'
     })
@@ -32,8 +35,12 @@
         controller: 'verRecetasDeHistorialController'
     })
     .when('/DrPhischel/DoctorMenu', {
-        templateUrl: 'vistaDoctor.html',
+        templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
+    })
+    .when('/DrPhischel/Doctor/calendarioDeCitas', {
+        templateUrl: 'VistaDoctor/calendarioDeCitas.html',
+        controller: 'calendarioDeCitasController'
     })
 
     /*--------------------For the views of the Patients------------------------------*/
@@ -71,14 +78,20 @@
         controller: 'cobrosController'
     })
 
-    /*.otherwise({
+    /*
+    .otherwise({
         templateUrl: 'VistaPaciente/vistaPaciente.html',
         controller: 'menuPacienteController'
     })*/
+    
     .otherwise({
         templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
-    })
+    })    
+    /*.otherwise({
+        templateUrl: 'VistaAdmin/vistaAdmi.html',
+        controller: 'menuAdminController'
+    })*/
 }]);
 
 angular.module('DrPhischelApp').config(function ($httpProvider) {
