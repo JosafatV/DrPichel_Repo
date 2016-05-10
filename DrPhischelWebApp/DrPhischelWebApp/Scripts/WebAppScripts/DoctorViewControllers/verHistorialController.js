@@ -9,4 +9,7 @@ angular.module('DrPhischelApp').controller('verHistorialController', ['$scope', 
             clienteActual = $scope.listaPacientes[index];
             $location.path('/DrPhischel/Doctor/VerHistorialClienteEspecifico/' + $scope.listaPacientes[index].idUsuario);
         };
+        $scope.back = function () {
+            $location.path('VistaDoctor/vistaDoctor.html');
+        };
     }]);
