@@ -5,38 +5,26 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
-                        <span class="sr-only">Desplegar / Ocultar Menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!--Inicia Menu-->
-                <div class="collapse navbar-collapse " id="navegacion-fp">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><h3> Creación de Pacientes<h3></li>
-                </div>
-        </nav>
-    </header><br><br>
+      <div class="container-fluid">
+        <h2>Creación de pacientes:</h2>
+      </div>
+
+    </header>
     <div class="container">
         <div class="col-md-6">
             <br />
             <form action="" class="">
+              <div class="form-group">
+                  <label for="nombre">Nombre:</label>
+                  <input class="form-control" id="nombre" type="text" placeholder="Nombre:" data-ng-model="nuevoCliente.nombre">
+              </div>
+              <div class="form-group">
+                  <label for="nombre">Apellidos:</label>
+                  <input class="form-control" id="nombre" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellido">
+              </div>
                 <div class="form-group">
                     <label for="cedula">Cedula:</label>
                     <input class="form-control" id="cedula" type="text" placeholder="Cedula:" data-ng-model="nuevoCliente.Cedula">
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Nombre:" data-ng-model="nuevoCliente.nombre">
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Apellidos:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellido">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Fecha Nacimiento:</label>
@@ -61,6 +49,7 @@
                 </div>
                 <br><br>
                 <a ng-click="enviarNuevoCliente()" class="btn btn-success">Guardar Paciente</a>
+                <a href="#"class="btn btn-primary">Regresar</a>
 
 
         </div>
