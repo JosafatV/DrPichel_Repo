@@ -1,4 +1,4 @@
-﻿var urlGeneric = 'http://192.168.1.9:8090/api';
+﻿var urlGeneric = 'http://192.168.2.11:8090/api';
 //var urlGeneric = 'http://localhost:64395/api';
 var urlPaciente = 'Paciente';
 var urlHistorial = 'Historial';
@@ -44,7 +44,7 @@ angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($reso
 
 
 angular.module('DrPhischelApp').factory('farmaticaPhischelResource', function ($resource) {
-    return $resource('http://192.168.1.9:8091/api' + '/:type/:extension/:extension2/:id', {}, {
+    return $resource('http://192.168.2.11:8090/api' + '/:type/:extension/:extension2/:id', {}, {
         query: {
             method: 'GET',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },

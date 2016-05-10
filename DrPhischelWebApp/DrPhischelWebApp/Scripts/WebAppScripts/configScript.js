@@ -83,7 +83,6 @@
         templateUrl: 'VistaPaciente/vistaPaciente.html',
         controller: 'menuPacienteController'
     })*/
-    
     .otherwise({
         templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
@@ -91,6 +90,11 @@
     /*.otherwise({
         templateUrl: 'VistaAdmin/vistaAdmi.html',
         controller: 'menuAdminController'
+    })*/
+        /*
+    .otherwise({
+        templateUrl: 'Login/login.html',
+        controller: 'loginController'
     })*/
 }]);
 
