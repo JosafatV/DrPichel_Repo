@@ -52,6 +52,7 @@
     <Compile Include="AddCitaActivity.cs" />
     <Compile Include="AddPatientActivity.cs" />
     <Compile Include="Classes\ActiveUserClass.cs" />
+    <Compile Include="Classes\ScheduleClass.cs" />
     <Compile Include="HistorialActivity.cs" />
     <Compile Include="PatientActivity.cs" />
     <Compile Include="Services\ClientService.cs" />

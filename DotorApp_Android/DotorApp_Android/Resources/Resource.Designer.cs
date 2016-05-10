@@ -63,104 +63,107 @@ namespace DotorApp_Android
 			// aapt resource value: 0x7f050003
 			public const int btnAddCita = 2131034115;
 			
-			// aapt resource value: 0x7f05001d
-			public const int btnAddPatient = 2131034141;
+			// aapt resource value: 0x7f05001f
+			public const int btnAddPatient = 2131034143;
 			
-			// aapt resource value: 0x7f050010
-			public const int btnClear = 2131034128;
-			
-			// aapt resource value: 0x7f050019
-			public const int btnLogin = 2131034137;
-			
-			// aapt resource value: 0x7f050021
-			public const int btnRefresh = 2131034145;
-			
-			// aapt resource value: 0x7f050006
-			public const int btnSeeCitasfromAddPatient = 2131034118;
+			// aapt resource value: 0x7f050012
+			public const int btnClear = 2131034130;
 			
 			// aapt resource value: 0x7f05001b
-			public const int btnSeeCitasfromPatient = 2131034139;
+			public const int btnLogin = 2131034139;
 			
-			// aapt resource value: 0x7f05001e
-			public const int btnSeePatient = 2131034142;
+			// aapt resource value: 0x7f050022
+			public const int btnRefresh = 2131034146;
 			
-			// aapt resource value: 0x7f050011
-			public const int btnSubmit = 2131034129;
+			// aapt resource value: 0x7f050007
+			public const int btnSeeCitasfromAddPatient = 2131034119;
+			
+			// aapt resource value: 0x7f05001d
+			public const int btnSeeCitasfromPatient = 2131034141;
+			
+			// aapt resource value: 0x7f050020
+			public const int btnSeePatient = 2131034144;
+			
+			// aapt resource value: 0x7f050013
+			public const int btnSubmit = 2131034131;
 			
 			// aapt resource value: 0x7f050004
 			public const int btnVerHistorial = 2131034116;
 			
-			// aapt resource value: 0x7f050015
-			public const int btnVolverDeHistorial = 2131034133;
+			// aapt resource value: 0x7f050017
+			public const int btnVolverDeHistorial = 2131034135;
 			
-			// aapt resource value: 0x7f050016
-			public const int linearLayout0 = 2131034134;
+			// aapt resource value: 0x7f050018
+			public const int linearLayout0 = 2131034136;
 			
 			// aapt resource value: 0x7f050000
 			public const int linearLayout1 = 2131034112;
 			
-			// aapt resource value: 0x7f050005
-			public const int linearLayout2 = 2131034117;
+			// aapt resource value: 0x7f050006
+			public const int linearLayout2 = 2131034118;
+			
+			// aapt resource value: 0x7f050011
+			public const int linearLayout3 = 2131034129;
 			
 			// aapt resource value: 0x7f05000f
-			public const int linearLayout3 = 2131034127;
+			public const int linearLayout4 = 2131034127;
 			
-			// aapt resource value: 0x7f05000e
-			public const int linearLayout4 = 2131034126;
+			// aapt resource value: 0x7f050021
+			public const int lvwCitas = 2131034145;
 			
-			// aapt resource value: 0x7f050020
-			public const int lvwCitas = 2131034144;
+			// aapt resource value: 0x7f05001e
+			public const int lvwPacentes = 2131034142;
 			
-			// aapt resource value: 0x7f05001c
-			public const int lvwPacentes = 2131034140;
+			// aapt resource value: 0x7f050005
+			public const int txtAddCitaWarning = 2131034117;
 			
-			// aapt resource value: 0x7f05001f
-			public const int scrollView1 = 2131034143;
+			// aapt resource value: 0x7f050010
+			public const int txtAddPatientWarning = 2131034128;
 			
-			// aapt resource value: 0x7f05000a
-			public const int txtAltura = 2131034122;
-			
-			// aapt resource value: 0x7f050008
-			public const int txtApellido = 2131034120;
+			// aapt resource value: 0x7f05000b
+			public const int txtAltura = 2131034123;
 			
 			// aapt resource value: 0x7f050009
-			public const int txtCedula = 2131034121;
+			public const int txtApellido = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int txtCedula = 2131034122;
 			
 			// aapt resource value: 0x7f050002
 			public const int txtCitaTimetamp = 2131034114;
 			
-			// aapt resource value: 0x7f050014
-			public const int txtEstudios = 2131034132;
+			// aapt resource value: 0x7f050016
+			public const int txtEstudios = 2131034134;
+			
+			// aapt resource value: 0x7f05000e
+			public const int txtFechaNacimiento = 2131034126;
 			
 			// aapt resource value: 0x7f05000d
-			public const int txtFechaNacimiento = 2131034125;
+			public const int txtGenero = 2131034125;
 			
-			// aapt resource value: 0x7f05000c
-			public const int txtGenero = 2131034124;
+			// aapt resource value: 0x7f050015
+			public const int txtHistorial = 2131034133;
 			
-			// aapt resource value: 0x7f050013
-			public const int txtHistorial = 2131034131;
+			// aapt resource value: 0x7f05001c
+			public const int txtLoginWarning = 2131034140;
 			
-			// aapt resource value: 0x7f05001a
-			public const int txtLoginWarning = 2131034138;
-			
-			// aapt resource value: 0x7f050007
-			public const int txtNombre = 2131034119;
+			// aapt resource value: 0x7f050008
+			public const int txtNombre = 2131034120;
 			
 			// aapt resource value: 0x7f050001
 			public const int txtNombreDoctor = 2131034113;
 			
-			// aapt resource value: 0x7f050012
-			public const int txtNombrePaciente = 2131034130;
+			// aapt resource value: 0x7f050014
+			public const int txtNombrePaciente = 2131034132;
 			
-			// aapt resource value: 0x7f050018
-			public const int txtPassword = 2131034136;
+			// aapt resource value: 0x7f05001a
+			public const int txtPassword = 2131034138;
 			
-			// aapt resource value: 0x7f05000b
-			public const int txtPeso = 2131034123;
+			// aapt resource value: 0x7f05000c
+			public const int txtPeso = 2131034124;
 			
-			// aapt resource value: 0x7f050017
-			public const int txtUsername = 2131034135;
+			// aapt resource value: 0x7f050019
+			public const int txtUsername = 2131034137;
 			
 			static Id()
 			{

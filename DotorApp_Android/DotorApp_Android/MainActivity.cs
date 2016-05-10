@@ -67,13 +67,12 @@ namespace DotorApp_Android
             //string response = client.Post(json);
 
             //get this from DB
-            string Rol = "D";
+            string Rol = "P";
             string UserId = "1";
 
             //enter specific view
             if (Rol.Equals("D"))
             {
-                Log.Info("DotorApp_Android", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> entering DoctorView");
                 var scheduleView = new Intent(this, typeof(ScheduleActivity));
                 scheduleView.PutExtra(UserId, Rol); //send info to next view
                 StartActivity(scheduleView);

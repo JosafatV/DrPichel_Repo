@@ -22,20 +22,18 @@
             android:id="@+id/btnSeePatient"
             android:layout_marginLeft="0.0dp" />
     </LinearLayout>
-    <ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="420.0dp"
-        android:id="@+id/scrollView1"
-        android:layout_marginBottom="10.5dp">
+        android:layout_height="437.0dp"
+        android:id="@+id/linearLayout2">
         <ListView
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lvwCitas" />
-    </ScrollView>
+    </LinearLayout>
     <Button
         android:text="Rerfescar"
         android:layout_width="match_parent"

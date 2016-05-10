@@ -10,12 +10,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace DotorApp_Android
+namespace DotorApp_Android.Classes
 {
-    public class ActiveUserClass
+    class ScheduleClass
     {
-        public string activeUser { set; get; }
-        public string activeRol { set; get; }
+        public string TimeStamp { get; set; }
+        public string Username { get; set; }
+        public string Userlastname { get; set; }
 
     }
 }

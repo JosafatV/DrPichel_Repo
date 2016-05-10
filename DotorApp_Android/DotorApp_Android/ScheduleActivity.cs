@@ -13,6 +13,7 @@ using Android.Util;
 
 using DoctorApp_Android.JSONParser;
 using DoctorApp_Android.Client;
+using DotorApp_Android.Classes;
 
 namespace DotorApp_Android
 {
@@ -56,21 +57,41 @@ namespace DotorApp_Android
 
         private void populateView()
         {
-            //load initial data from DB
-            JSONParser json = new JSONParser();
-            ClientService client = new ClientService();
             DateTime dt = new DateTime();
-
             string date = dt.ToString();
 
-            Log.Info("DoctorApp_Android", "-----------------------------------------------------------------");
+            Log.Info("DoctorApp_Android", "------------------------------------------------------------------------schedulestartdate:");
             Log.Info("DoctorApp_Android", date);
 
-             client.Post(json.requestSchedule() );
-
-            json.JSONtoSchedule();
+            //client.Post(json.requestSchedule() );
+            List<ScheduleClass> citas = new List<ScheduleClass>();
+            citas = getData();
 
             //Populate ListView
+            ListView lvwcitas = FindViewById<ListView>(Resource.Id.lvwCitas);
+            lvwcitas.ItemLongClick += Lvwcitas_ItemLongClick; //enable::do on long click
+
+
+
+        }
+
+        private void Lvwcitas_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            //code goes here
+            Log.Info("DoctorApp_Android", "---------------------------------------------------------------------argsfromlistviewschedule:");
+            //Log.Info("DoctorApp_Android", sender);
+        }
+
+        private List<ScheduleClass> getData()
+        {
+            List<ScheduleClass> citas = new List<ScheduleClass>();
+            JSONParser json = new JSONParser();
+            ClientService client = new ClientService();
+
+            //request from DB and convert to schedulaclass array
+            //citas.Add(new ScheduleClass() { });
+
+            return citas;
         }
     }
 }

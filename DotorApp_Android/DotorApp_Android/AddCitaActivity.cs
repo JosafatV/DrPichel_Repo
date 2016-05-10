@@ -46,8 +46,8 @@ namespace DotorApp_Android
 
         void executeAddCitaAux(EditText txtNoDoc, EditText txtFecha, TextView txtAddCitaWarning)
         {
-            string NoDoc = txtNoDoc.ToString();
-            string Fecha = txtFecha.ToString();
+            string NoDoc = txtNoDoc.Text.ToString();
+            string Fecha = txtFecha.Text.ToString();
             if (NoDoc.Equals("") || Fecha.Equals(""))
             {
                 txtAddCitaWarning.SetText("Todos los espacios son requeridos", null);

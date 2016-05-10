@@ -6,8 +6,7 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
+using Android.Util;
 using Android.Widget;
 
 using DoctorApp_Android.JSONParser;
@@ -92,6 +91,7 @@ namespace DotorApp_Android
             //Parse data into json format
             JSONParser jsp = new JSONParser();
             string json = jsp.patientToJSON(Nombre, Apellido, Cedula, Altura, Peso, Genero, FechaNacimiento);
+            Log.Info("DoctoApp_Android", json);
 
             //post data
             ClientService client = new ClientService();
