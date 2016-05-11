@@ -8,8 +8,8 @@
         $scope.pacienteDisponible = false;
         $scope.adminDisponible = false;
         $scope.pediLosRoles = false;
-        $scope.cedula = 0;
-        $scope.contra = 0;
+        //$scope.cedula = 0;
+        //$scope.contra = 0;
         $scope.ingresar = function () {
             $scope.listaRoles = '';
             $scope.doctorDisponible = false;
