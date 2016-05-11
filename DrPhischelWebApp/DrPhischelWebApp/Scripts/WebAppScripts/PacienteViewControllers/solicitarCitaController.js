@@ -1,6 +1,6 @@
 ﻿angular.module('DrPhischelApp').controller('solicitarCitaController', ['$scope', '$routeParams', '$location', 'drPhischelApiResource',
     function ($scope, $routeParams, $location, drPhischelApiResource) {
-        $scope.idPaciente = '1';
+        $scope.idPaciente = usuarioActual;
         $scope.checked = true;
         $scope.ciudadFlag = false;
         $scope.espeFlag = false;
@@ -28,7 +28,6 @@
         };
         $scope.cambiarDoctorActual = function () {
             $scope.doctorActual = $scope.docSelected;
-            alert(angular.toJson($scope.doctorActual));
         };
         $scope.alerteErrorCita = function () {
             alert('Horario de cita ocupado, escoja otro horario')
@@ -40,7 +39,6 @@
 
             //alert(date);
             date = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
-
             $scope.nuevaSolicitud = {
                 NoDoctor: $scope.doctorActual.idUsuario, FechaHora: date, Estado: 'P',
                 idPaciente: $scope.idPaciente
@@ -48,7 +46,6 @@
             drPhischelApiResource.save({ type: 'Cita' }, $scope.nuevaSolicitud).$promise.then(function (data) {
                 //alert(angular.toJson(data));
                 $scope.citaResponse = data.NoCita;
-                alert(data.NoCita)
             });
 
         };

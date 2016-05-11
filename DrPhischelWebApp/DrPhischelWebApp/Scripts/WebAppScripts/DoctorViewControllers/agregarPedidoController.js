@@ -13,7 +13,6 @@ var listaMedsActualesRecs = [];
 var newRecetas = [];
 var numSuc = 0;
 var empSelected = "Empresa";
-var docActual = 1;
 angular.module('DrPhischelApp').controller("agregarPedidoController", ["$scope", "$location", "$window", "$routeParams", "doctorResource", "sucursalResource", "medResource", "pedidoResource", "telefonosResource",
     "JsonResource", "detallePedidoResource", "detalleRecetaResource", "recetasResource", "detalleRecetaResource", 'farmaticaPhischelResource',
 
@@ -227,7 +226,7 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
 
 
 
-var prueba = "http://192.168.1.9:8091/api";
+var prueba =urlGeneric +  ':8091/api';
 angular.module('DrPhischelApp').factory('JsonResource', function ($resource) {
     return $resource(prueba + '/Empleados/:id', {}, {
         query: {

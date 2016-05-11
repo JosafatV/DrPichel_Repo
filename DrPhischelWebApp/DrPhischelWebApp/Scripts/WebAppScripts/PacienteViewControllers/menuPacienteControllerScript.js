@@ -1,5 +1,4 @@
-﻿var usuarioActual = 1;
-angular.module('DrPhischelApp').controller('menuPacienteController', ['$scope', '$routeParams',
+﻿angular.module('DrPhischelApp').controller('menuPacienteController', ['$scope', '$routeParams',
     '$location', function ($scope,$routeParams,$location) {
         
         //Changed the view to the Historial Medico

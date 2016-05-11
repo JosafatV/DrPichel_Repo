@@ -1,5 +1,4 @@
 //This controller is used to controll the menu of the doctors
-var docActual = 6;
 angular.module('DrPhischelApp').controller("menuDoctorController", ["$scope", "$routeParams",
     "$location", "drPhischelApiResource", function ($scope, $routeParams, $location, drPhischelApiResource) {
 

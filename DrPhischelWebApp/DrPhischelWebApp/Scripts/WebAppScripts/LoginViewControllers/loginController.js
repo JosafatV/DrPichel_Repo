@@ -1,4 +1,6 @@
-﻿angular.module('DrPhischelApp').controller('loginController', ['$scope', '$routeParams', 'drPhischelApiResource',
+﻿var usuarioActual = '';
+var docActual = '';
+angular.module('DrPhischelApp').controller('loginController', ['$scope', '$routeParams', 'drPhischelApiResource',
     '$location', 'farmaticaPhischelResource', function ($scope, $routeParams, drPhischelApiResource, $location, farmaticaPhischelResource) {
         $scope.contra = '';
         $scope.cedula = '';
@@ -7,7 +9,7 @@
         $scope.doctorDisponible = false;
         $scope.pacienteDisponible = false;
         $scope.adminDisponible = false;
-        $scope.pediLosRoles = false;
+        $scope.pediLosRoles = false;        
         //$scope.cedula = 0;
         //$scope.contra = 0;
         $scope.ingresar = function () {
@@ -17,14 +19,14 @@
             $scope.adminDisponible = false;
             drPhischelApiResource.query({type:'LogInUser',extension:'Cedula',extension2:$scope.cedula,
                 extension3: 'Password', extension4: $scope.contra
-            }).$promise.then(function (data) {
+            }).$promise.then(function (data) {                
                 $scope.listaRolesLength = data.length;
                 $scope.listaRoles = data;
                 $scope.pediLosRoles = true;
             });
         };
         $scope.alerteNoRegistrado = function () {
-            alert('no esta registrado idiota');
+            alert('No es un usuario registrado');
         };
         $scope.esPaciente = function (rol) {
             return rol === '1';
@@ -37,12 +39,18 @@
         };
         $scope.activeDoctor = function () {
             $scope.doctorDisponible = true;
+            docActual = $scope.listaRoles[0].id;
+            usuarioActual = $scope.listaRoles[0].id;
         };
         $scope.activePaciente = function () {
             $scope.pacienteDisponible = true;
+            docActual = $scope.listaRoles[0].id;
+            usuarioActual = $scope.listaRoles[0].id;
         };
         $scope.activeAdmin = function () {
             $scope.adminDisponible = true;
+            docActual = $scope.listaRoles[0].id;
+            usuarioActual = $scope.listaRoles[0].id;
         };
         $scope.goAdminView = function () {
             $location.path('/DrPhischel/Admin');
