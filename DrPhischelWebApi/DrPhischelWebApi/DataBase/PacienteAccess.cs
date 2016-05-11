@@ -41,7 +41,6 @@ namespace DrPhischelWebApi.DataBase
                 SqlCommand cmd = new SqlCommand(
                         "Select p.UserId, U.Cedula, u.Nombre, u.Apellido, CONVERT(VARCHAR(10), FechaNacimiento, 120) as Fecha, u.Residencia, u.Estado, p.Altura, p.Peso"
                         + " from USUARIO as U join PACIENTE as p   ON P.UserId = U.Id Where u.Estado = 'A' ;"
-
                     , con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();

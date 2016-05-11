@@ -68,6 +68,12 @@ namespace DrPhischelWebApi.Controllers
             databaseAccess.deleteDoctor(UserId);
         }
 
+        [HttpGet]
+        [Route("api/Doctor/Cobros/{Date}")]
+        public List<Cobros> getCobros(string Date)
+        {
+            return databaseAccess.getCobros(Date);
+        }
 
         public HttpResponseMessage Options()
         {

@@ -25,6 +25,8 @@ namespace DrPhischelWebApi.Controllers
             return databaseAccess.addAtencion(atencion, idPaciente);
         }
 
+        [HttpOptions]
+        [Route("api/Historial/Atenciones/Paciente/{idPaciente}")]
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };

@@ -95,16 +95,18 @@ Go
 
 
 
-CREATE PROCEDURE SP_Cobro_Doctores @DoctorId INT, @PacienteId INT , @Mes Decimal(2,0) , @Anio Decimal(4,0)
+CREATE PROCEDURE SP_Cobro_Doctores  @PacienteId INT , @FechaRequested Date
 	AS
-		SELECT NoDoctor ,  Count(IdPaciente) as NumeroPacientes, count(IdPaciente)*500 as MontoAlCobro
+		SELECT NoDoctor , Count(IdPaciente) as NumeroPacientes, count(IdPaciente)*500 as MontoAlCobro
 		 from PACIENTE_POR_DOCTOR join USUARIO on NoDoctor = Id 
-			where IdPaciente =  @PacienteId AND NoDoctor = @DoctorId  AND Month(Fecha) = @Mes AND Year(Fecha) = @Anio
+			where IdPaciente =  @PacienteId   AND Month(Fecha) = Month(@FechaRequested) 
+			AND Year(Fecha) = Year(@FechaRequested)
 			group by (NoDoctor)
 
 
 
-exec SP_Cobro_Doctores  @DoctorId =2 , @PacienteId =1 , @Mes=5 , @Anio = 2016
+
+--exec SP_Cobro_Doctores  @DoctorId =2 , @PacienteId =1 , @Mes=5 , @Anio = 2016
 
 
 		--declare @x decimal(2,0) 

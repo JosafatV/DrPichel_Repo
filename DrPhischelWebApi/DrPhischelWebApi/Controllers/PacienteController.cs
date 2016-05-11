@@ -9,6 +9,7 @@ using System.Net;
 
 
 
+
 namespace DrPhischelWebApi.Controllers
 {
     public class PacienteController : ApiController
@@ -23,9 +24,6 @@ namespace DrPhischelWebApi.Controllers
         {
             return databaseAccess.getPacientes();
         }
-
-
-
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };

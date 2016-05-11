@@ -22,12 +22,14 @@ namespace DrPhischelWebApi.Controllers
         {
             databaseAccess.setRolUsuario(IdUsuario, IdRol);
         }
+
+        [HttpOptions]
+        [Route("api/LogInUser/Cedula/{Cedula}/Password/{Password}")]
+        [Route("api/User/{IdUsuario}/Rol/{IdRol}")]
         public HttpResponseMessage Options()
         {
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
         }
-        [Route("api/User/prueba")]
-        public UserController fdg() { return new UserController(); }
-
+      
     }
 }
