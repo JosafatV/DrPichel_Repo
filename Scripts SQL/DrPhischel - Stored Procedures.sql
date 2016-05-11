@@ -93,7 +93,17 @@ AS
 	end
 Go
 
+CREATE PROCEDURE dbo.insert_excel
+AS
+	INSERT INTO USUARIO (Password, Cedula, Nombre, Apellido, FechaNacimiento, Residencia, Estado)
+	SELECT S.Password, S.Cedula, S.Nombre, S.Apellido, S.FechaNacimiento, S.Residencia, S.Estado
+	FROM Sheet1$ AS S
 
+	INSERT INTO PACIENTE (Peso, Altura, UserId)
+	SELECT S.Peso, S.Altura, U.Id
+	FROM Sheet1$ AS S, USUARIO AS U
+	WHERE S.Cedula = U.Cedula
+Go
 
 CREATE PROCEDURE SP_Cobro_Doctores  @PacienteId INT , @FechaRequested Date
 	AS
@@ -112,4 +122,5 @@ CREATE PROCEDURE SP_Cobro_Doctores  @PacienteId INT , @FechaRequested Date
 		--declare @x decimal(2,0) 
 		--select @x = 5
 --Select Month(getdate()) as mes where Month(getdate()) = @x
+
 
