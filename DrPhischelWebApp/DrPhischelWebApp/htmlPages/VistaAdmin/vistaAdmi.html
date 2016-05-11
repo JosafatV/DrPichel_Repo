@@ -8,44 +8,36 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
-            <span class="sr-only">Desplegar / Ocultar Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
         <!--Inicia Menu-->
-        <div class="collapse navbar-collapse " id="navegacion-fp">
-          <ul class="nav navbar-nav">
-            <li class="active"><h3>Administrador<h3></li>
+        <div class="container-fluid">
+          <h2>Administrador</h2>
+        </div> <br><br>
+        <div class="container">
+          <nav class="navbar  navbar-static-top finta" role="navigation">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
+                  <span class="sr-only">Desplegar / Ocultar Menu</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <!--Inicia Menu-->
+              <div class="collapse navbar-collapse" id="navegacion-fp">
+                <ul class="nav navbar-nav">
+                  <li><a data-ng-click="goAgregarPaciente()">Agregar Pacientes</a></li>
+                  <li><a data-ng-click="goVerDoctoresPendientes()">Ver Doctores pendientes</a></li>
+                  <li><a data-ng-click="goSincronizarMedicamentos()"> Medicamentos</a></li>
+                  <li><a data-ng-click="goCobros()">Cobros</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
         </div>
 
-    </nav>
-    <nav class="navbar  navbar-static-top finta" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
-            <span class="sr-only">Desplegar / Ocultar Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <!--Inicia Menu-->
-        <div class="collapse navbar-collapse" id="navegacion-fp">
-          <ul class="nav navbar-nav">
-            <li><a data-ng-click="goAgregarPaciente()">Agregar Pacientes</a></li>
-            <li><a data-ng-click="goVerDoctoresPendientes()">Ver Doctores pendientes</a></li>
-            <li><a data-ng-click="goSincronizarMedicamentos()"> Medicamentos</a></li>
-            <li><a data-ng-click="goCobros()">Cobros</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+
   </header>
 
 
