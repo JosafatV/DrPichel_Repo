@@ -12,7 +12,6 @@ angular.module('DrPhischelApp').controller('agregarHistorialTablaController', ['
             extension3: 'Doctor', id: $scope.idDoctorActual
         }).$promise.then(function (data) {
             $scope.citas = data;
-            alert($scope.citas);
         });
 
 

@@ -83,19 +83,18 @@
         templateUrl: 'VistaPaciente/vistaPaciente.html',
         controller: 'menuPacienteController'
     })*/
-    .otherwise({
+    /*.otherwise({
         templateUrl: 'VistaDoctor/vistaDoctor.html',
         controller: 'menuDoctorController'
-    })    
+    })*/  
     /*.otherwise({
         templateUrl: 'VistaAdmin/vistaAdmi.html',
         controller: 'menuAdminController'
     })*/
-        /*
     .otherwise({
         templateUrl: 'Login/login.html',
         controller: 'loginController'
-    })*/
+    })
 }]);
 
 angular.module('DrPhischelApp').config(function ($httpProvider) {

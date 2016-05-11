@@ -5,9 +5,21 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-    <h5>Cedula</h5>
-    <input type="text" data-ng-model="cedula" />
-    <h5>Contraseña</h5>
-    <input type="text" data-ng-model="contra"/>
+        <div ng-if="pediLosRoles">
+            <div ng-repeat="rol in listaRoles">
+                <div ng-if="esDoctor(rol.rol)" ng-init="activeDoctor()"></div>
+                <div ng-if="esPaciente(rol.rol)" ng-init="activePaciente()"></div>
+                <div ng-if="esAdmin(rol.rol)" ng-init="activeAdmin()"></div>
+            </div>
+        </div>
+        <h5>Cedula</h5>
+        <input type="text" data-ng-model="cedula" />
+        <h5>Contraseña</h5>
+        <input type="text" data-ng-model="contra" />
+        <button data-ng-click="ingresar()" class="btn btn-default">Ingresar</button>
+        <button data-ng-click="goPacienteView()" class="btn btn-default" data-ng-hide="!pacienteDisponible">Paciente</button>
+        <button data-ng-click="goDoctorView()" class="btn btn-default" data-ng-hide="!doctorDisponible">Doctor</button>
+        <button data-ng-click="goAdminView()" class="btn btn-default" data-ng-hide="!adminDisponible">Admin</button>
+        <div ng-if="listaRolesLength == 0" ng-init="alerteNoRegistrado()"></div>
 </body>
 </html>
