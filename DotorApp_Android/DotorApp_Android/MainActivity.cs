@@ -17,7 +17,7 @@ using DoctorApp_Android.Client;
 
 namespace DotorApp_Android
 {
-    [Activity(Label = "DotorApp_Android", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "DotorApp_Android", MainLauncher = true, Icon = "@drawable/Prime_helix")]
     public class MainActivity : Activity
     {
         //variables

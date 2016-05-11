@@ -23,7 +23,6 @@ namespace DotorApp_Android
 
             //Loads the layout (Patient)
             SetContentView(Resource.Layout.AddCita);
-           // List<string> patientValues = (List<string>) Intent.GetStringArrayListExtra("patientValues");
 
             //ui
             EditText txtNoDoc = FindViewById<EditText>(Resource.Id.txtNombreDoctor);
@@ -40,7 +39,6 @@ namespace DotorApp_Android
             btnSeeHistory.Click += (sender, e) =>
             {
                 var HistoryView = new Intent(this, typeof(HistorialActivity));
-                //HistoryView.PutStringArrayListExtra("fromView", fromViewP); //send return info to next view
                 StartActivity(HistoryView);
             };
         }
@@ -70,7 +68,5 @@ namespace DotorApp_Android
             //string response = client.Post(json);
             //parser.JSONtoCita(response);
         }
-
-
     }
 }

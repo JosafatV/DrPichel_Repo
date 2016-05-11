@@ -15,6 +15,7 @@ namespace DotorApp_Android
     [Activity(Label = "HistorialActivity")]
     public class HistorialActivity : Activity
     {
+        string fromView = "patientView";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -22,13 +23,10 @@ namespace DotorApp_Android
             //Loads the layout (Historial)
             SetContentView(Resource.Layout.Historial);
 
-            // This string determines to which view go back
-            IList<string> fromView = Intent.GetStringArrayListExtra("userValues");
-
             Button btnVolver = FindViewById<Button>(Resource.Id.btnVolverDeHistorial);
             btnVolver.Click += (sender, e) =>
             {
-                executeVolver("DoctorView");
+                executeVolver("PatientView");
             };
         }
 
