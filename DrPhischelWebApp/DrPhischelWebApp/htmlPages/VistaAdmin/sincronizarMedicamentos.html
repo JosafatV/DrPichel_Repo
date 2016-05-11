@@ -7,49 +7,44 @@
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
-          <span class="sr-only">Desplegar / Ocultar Menu</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <!--Inicia Menu-->
-      <div class="collapse navbar-collapse" id="navegacion-fp">
-        <ul class="nav navbar-nav">
-          <li class="active"><h3>Sincronizar Sucursales<h3></li>
-      </div>
-    </nav>
-    <nav class="navbar  navbar-static-top finta" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
-            <span class="sr-only">Desplegar / Ocultar Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+  <div class="container-fluid">
+    <h2>Sincronizar Sucursales:</h2>
+  </div>
+  <br><br>
+  <div class="container-fluid">
+    <div class="col-md-3">
+      <nav class="navbar  navbar-static-top finta" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fp">
+              <span class="sr-only">Desplegar / Ocultar Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!--Inicia Menu-->
+          <div class="collapse navbar-collapse" id="navegacion-fp">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a  class="dropdown-toggle" data-toggle="dropdown" role="button">
+                  Ver Sucursales <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a >Sucursales disponibles para sincronizar</a></li>
+                  <li class="divider"></li>
+                  <li data-ng-repeat="suc in listaSuc"><a data-ng-click="llameMeds(suc.NoSucursal,suc.Nombre)" data-ng-model="su">{{suc.Nombre}}</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-        <!--Inicia Menu-->
-        <div class="collapse navbar-collapse" id="navegacion-fp">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a  class="dropdown-toggle" data-toggle="dropdown" role="button">
-                Ver Sucursales <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a >Sucursales disponibles para sincronizar</a></li>
-                <li class="divider"></li>
-                <li data-ng-repeat="suc in listaSuc"><a data-ng-click="llameMeds(suc.NoSucursal,suc.Nombre)" data-ng-model="su">{{suc.Nombre}}</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      </nav>
+
+    </div>
+
+  </div>
+
     <h2 data-ng-hide="tablaFlag">Medicamentos de la Sucursal: {{sucActualidad}}</h2>
     <table class="table table-bordered table-hover table-condensed ip" data-ng-hide="tablaFlag">
         <tbody>
@@ -62,7 +57,7 @@
             </tr>
             <tr data-ng-repeat="med in medsDeSucursalSelected">
                 <td>{{med.Nombre}}</td>
-                <td>{{med.codigo}}</td>                
+                <td>{{med.codigo}}</td>
                 <td>{{med.Prescripcion}}</td>
                 <td>{{med.CasaFarmaceutica}}</td>
                 <td>{{med.Costo}}</td>
@@ -71,8 +66,8 @@
     </table>
 <br><br><br><br><br><br><br><br><br>
     <div class="col-md-3">
-      <a data-ng-click="sincronizar()" class="btn btn-primary">Sincronizar</a>
-        <a data-ng-click="regresar()" class="btn btn-primary">Regresar</a>              
+      <a data-ng-click="sincronizar()" class="btn btn-success">Sincronizar</a>
+        <a data-ng-click="regresar()" class="btn btn-primary">Regresar</a>
 
     </div>
 
