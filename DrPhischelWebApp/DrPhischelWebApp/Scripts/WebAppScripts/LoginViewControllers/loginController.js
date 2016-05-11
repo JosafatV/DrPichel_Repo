@@ -53,7 +53,7 @@ angular.module('DrPhischelApp').controller('loginController', ['$scope', '$route
             usuarioActual = $scope.listaRoles[0].id;
         };
         $scope.goAdminView = function () {
-            $location.path('/DrPhischel/Admin');
+            $location.path('/DrPhischel/Admin/Menu');
         };
         $scope.goDoctorView = function () {
             $location.path('/DrPhischel/DoctorMenu');

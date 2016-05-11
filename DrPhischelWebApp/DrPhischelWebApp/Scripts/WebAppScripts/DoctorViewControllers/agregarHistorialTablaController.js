@@ -22,7 +22,7 @@ angular.module('DrPhischelApp').controller('agregarHistorialTablaController', ['
         //Change the view for the insert of a historial
         $scope.goAgregarHistorial = function (index) {
             $location.path('DrPhischel/Doctor/AgregarHistorial/' + $scope.citas[index].idPaciente + '/' + $scope.citas[index].NombrePaciente
-                + ' ' + $scope.citas[index].ApellidoPaciente);
+                + ' ' + $scope.citas[index].ApellidoPaciente + '/' + $scope.citas[index].NoCita);
         };
 
 

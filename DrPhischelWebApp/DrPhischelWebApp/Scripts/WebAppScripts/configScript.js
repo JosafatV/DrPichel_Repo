@@ -6,7 +6,7 @@
         templateUrl: 'VistaDoctor/agregarPedido.html',
         controller: 'agregarPedidoController'
     })
-    .when('/DrPhischel/Doctor/AgregarHistorial/:index/:nombre', {
+    .when('/DrPhischel/Doctor/AgregarHistorial/:index/:nombre/:cita', {
         templateUrl: 'VistaDoctor/agregarHistorial.html',
         controller: 'agregarHistorialController'
     })
@@ -61,7 +61,7 @@
 
 
     /*-----------------For the views of the Admin---------------------------*/
-    .when('/DrPhischel/Admin', {
+    .when('/DrPhischel/Admin/Menu', {
         templateUrl: 'VistaAdmin/vistaAdmi.html',
         controller: 'menuAdminController'
     })
