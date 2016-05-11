@@ -1,6 +1,8 @@
 ﻿﻿<form>
      <div ng-if="banderaDeCliente == null" ng-init="goAgregarCliente()"></div>
-    <h1>Ingrese los Datos de su Pedido</h1>
+     <div class="container-fluid">
+       <h1>Ingrese los Datos de su Pedido:</h1>
+     </div>
     <div ng-if="verifique == true">
         <div ng-if="recetarioLenght == 0" ng-init="alerteTermino()"></div>
     </div>
@@ -9,56 +11,54 @@
         <div ng-if="empresaBool == 'Phischel'" ng-init="cambieEmpresa('P')"></div>
     </div>
     <div class="container">
-
-
-        <div class="form-group">
-            <h4>Seleccione el Cliente del Pedido</h4>
-            <input type="text" data-ng-model="cedulaCliente"/>
-            <button class="btn btn-secondary" data-ng-click="verificarCliente()"> Agregar Cliente </button>
-
-            <h4>Seleccione Sucursal de Recojo</h4>
+      <div class="form-group">
+            <h4>Escriba el número de cédula del cliente:</h4>
+            <input type="text" data-ng-model="cedulaCliente"/><br><br>
+            <button class="btn btn-success" data-ng-click="verificarCliente()"> Agregar Cliente </button>
+            <br><br>
+            <h4>Seleccione Sucursal de Recojo:</h4>
             <div class="btn-block">
                 <div class="btn-group" ng-class='{open: open}'>
                     <button class="btn ras" ng-click='open=!open'>{{sucActual}}</button>
                     <button class="btn ras  dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button><br />
                     <ul class="dropdown-menu">
                         <li ng-repeat="datos in recList"><a data-ng-click="addNoSuc(datos.NoSucursal,datos.Nombre)" required>{{datos.Nombre}}</a></li>
-
-                    </ul>
-                </div>
-            </div><br /><br />
-            <div class="form-group">
-                <h4>Seleccione un Telefono: </h4>
-                <select class="form-control" id="sel1" ng-model="phones">
-                    <option ng-repeat="x in telefonos" value="{{x.Telefono}}" selected="selected">{{x.Telefono}}</option>
-                </select>
-            </div><br><br>
-
-        </div>
-        <h1>Seleccione sus Medicamentos y Recetas</h1>
-        <div>
-            <h3>Medicamentos</h3>
-            <br>
-            <div class="form-group">
-                <label for="exampleInputResidencia">Cantidad</label>
-                <input class="form-control" id="exampleInputCantidad" maxlength="45" placeholder="Cantidad" data-ng-model="cantidad">
-            </div> <br>
-            <div class="btn-block">
-                <div class="btn-group" ng-class='{open: open}'>
-                    <button class="btn ras">{{medActual}}</button>
-                    <button class="btn ras dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat="datos in medListP"><a data-ng-click="addMedPed(cantidad,datos.codigo,datos.Nombre,datos.Costo)">{{datos.Nombre}}</a></li>
-                        <!-- <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>-->
                     </ul>
                 </div>
             </div>
             <br>
+            <div class="form-group">
+              <h4>Seleccione un Telefono: </h4>
+              <div class="col-md-6">
+                <select class="form-control" id="sel1" ng-model="phones">
+                  <option ng-repeat="x in telefonos" value="{{x.Telefono}}" selected="selected">{{x.Telefono}}</option>
+                </select>
+              </div>
+            </div>
+          </div><br><br>
+      </div>
+      <div class="container-fluid">
+        <h1>Seleccione sus Medicamentos y Recetas:</h1>
+      </div>
+    <div class="container">
+        <div class="form-group">
+            <label for="exampleInputResidencia">Cantidad de medicamentos deseados:</label>
+            <div class="container-fluid">
+              <div class="col-md-2">
+                <input class="form-control" id="exampleInputCantidad" maxlength="45" placeholder="Cantidad" data-ng-model="cantidad">
+              </div>
+            </div>
         </div><br><br>
-        <h3>Medicamentos en el pedido: </h3>
+        <div class="btn-block">
+            <div class="btn-group" ng-class='{open: open}'>
+                <button class="btn ras">{{medActual}}</button>
+                <button class="btn ras dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="datos in medListP"><a data-ng-click="addMedPed(cantidad,datos.codigo,datos.Nombre,datos.Costo)">{{datos.Nombre}}</a></li>
+                </ul>
+            </div>
+        </div><br>
+        <h4>Medicamentos en el pedido: </h4>
         <table class="table table-bordered table-hover table-condensed ip">
             <tbody>
                 <tr>
@@ -74,23 +74,25 @@
                     <td><input type="button" value="Borrar" class="btn btn-danger" data-ng-click="borrarMedPed($index)" /></td>
                 </tr>
             </tbody>
-        </table><br><br>
+        </table><br>
         <div>
             <div class="form-group">
-                <!--<h4> Recetas </h4>-->
-
-                <!--<button data-ng-click="goAddReceta()" class="btn btn-primary">Añadir Receta</button>-->
             </div>
-        </div><br>
-        <h5>Fecha y hora de recojo</h5>
-        <div class="form-group">
-            <input class="form-control" input type="datetime-local" id="exampleInputQuantity" placeholder="0" data-ng-model="FechaR" required>
         </div>
-        <br>
-        <div>
-            <button class="btn btn-success" data-ng-click="addPedido(FechaR,phones)"> Guardar </button>
-            <button class="btn btn-secondary" data-ng-click="cancelar()"> Cancelar </button>
+        <h4>Fecha y hora de recojo:</h4>
+        <div class="container-fluid">
+          <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" input type="datetime-local" id="exampleInputQuantity" placeholder="0" data-ng-model="FechaR" required>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-success" data-ng-click="addPedido(FechaR,phones)"> Guardar </button>
+                <button class="btn btn-secondary" data-ng-click="cancelar()"> Cancelar </button>
+            </div>
+          </div>
         </div>
-    </div>
 
-</form>
+
+    </form>
+    </div>
