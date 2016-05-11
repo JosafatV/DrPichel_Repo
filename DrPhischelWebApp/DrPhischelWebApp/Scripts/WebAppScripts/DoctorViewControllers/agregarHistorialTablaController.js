@@ -25,6 +25,14 @@ angular.module('DrPhischelApp').controller('agregarHistorialTablaController', ['
                 + ' ' + $scope.citas[index].ApellidoPaciente + '/' + $scope.citas[index].NoCita);
         };
 
+        $scope.terminarCita = function (cita) {
+            $scope.nuevoJson = { NoCita: cita.NoCita, NoDoctor: cita.NoDoctor, FechaHora: cita.Fecha, Estado: 'C', idPaciente: cita.idPaciente };
+            alert(angular.toJson($scope.nuevoJson));
+            drPhischelApiResource.update({ type: 'Cita' }, $scope.nuevoJson);
+            //alert(angular.toJson(cita));
+            //drPhischelApiResource({ type: 'Cita' }, {NoCita: noCita, NoDoctor: docActual, });
+        };
+
 
 
 
