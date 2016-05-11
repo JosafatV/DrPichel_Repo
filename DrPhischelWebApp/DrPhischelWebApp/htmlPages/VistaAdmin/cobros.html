@@ -18,7 +18,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <h4>Escoja el cobro a mostrar</h4>
-                <input type="date" data-ng-model="dateCobro" /><br><br>
+                <input type="month" data-ng-model="dateCobro" /><br><br>
 
                 <table class="table table-bordered table-hover table-condensed ip" data-ng-hide="tablaCitasFlag">
                     <tbody>
@@ -35,7 +35,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <input type="button" value="Ver Cobros de Este Mes" class="btn btn-success" data-ng-click="verCobros()" data-ng-hide="dateCobro" />
+                <input type="button" value="Ver Cobros de Este Mes" class="btn btn-success" data-ng-click="verCobros()" data-ng-hide="!dateCobro" />
                 <!--<label for="option">Doctores</label>
                         <select class="form-control" name="" id="option">
                           <option value="">Ramiro Gonzalez Fernadez</option>
