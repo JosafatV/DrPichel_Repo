@@ -3,7 +3,6 @@
         $scope.nombrePaciente = $routeParams.nombre;
         $scope.checked = true;
         $scope.Especialidades = drPhischelApiResource.query({ type: 'Doctor', extension: 'Especialidades' });
-        alert($routeParams.index);
         //$scope.newHistorial = {Descripcion:'s',Estudios:'d',NoCita:'1'};
         $scope.sendHistorial = function () {
             //alert(angular.toJson($scope.Especialidades));
@@ -18,7 +17,10 @@
                 NoCita: $routeParams.cita
             }).$promise.then(function (data) {
                 $scope.atencionActual = data.NoAtencion;
-                drPhischelApiResource.save({ type: 'Receta' }, {NoAtencion: $scope.atencionActual, NoDoctor:});
+                alert(angular.toJson({ NoAtencion: $scope.atencionActual, NoDoctor: docActual, Estado: 'A' }));
+                drPhischelApiResource.save({ type: 'Receta' }, { NoAtencion: $scope.atencionActual, NoDoctor: docActual, Estado: 'A' }).$promise.then(function (data) {
+                    alert(angular.toJson(data));
+                    });
             });
         };
         $scope.agregarMedicamentos = function () {
