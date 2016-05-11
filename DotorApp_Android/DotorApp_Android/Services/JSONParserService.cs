@@ -88,7 +88,7 @@ namespace DoctorApp_Android.JSONParser
             //response from the Login process, the userid and rol
         public string JSONtoLogin(string JSON)
         {
-            //code
+            
             return JSON;
         }
 

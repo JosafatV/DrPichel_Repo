@@ -25,7 +25,8 @@ namespace DotorApp_Android
             //Loads the layout (Patient)
             SetContentView(Resource.Layout.Patient);
 
-            // Create your application here
+            // Binf the ui
+            ListView lvwPatient = FindViewById<ListView>(Resource.Id.lvwPacentes);
             Button btnToCitas = FindViewById<Button>(Resource.Id.btnSeeCitasfromPatient);
             btnToCitas.Click += (sender, e) =>
             {
@@ -38,12 +39,6 @@ namespace DotorApp_Android
         protected override void OnStart()
         {
             base.OnStart();
-
-            //load initial data from DB
-            DateTime dt = new DateTime();
-            string date = dt.ToString();
-            Console.Write(date); //print date to console
-
             //Populate ListView
         }
 

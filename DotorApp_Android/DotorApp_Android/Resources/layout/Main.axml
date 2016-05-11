@@ -62,4 +62,23 @@
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:id="@+id/txtLoginWarning" />
+    <RadioGroup
+        p1:layout_width="fill_parent"
+        p1:layout_height="110.5dp"
+        p1:orientation="vertical">
+        <RadioButton
+            p1:text="Vista Doctor"
+            p1:layout_width="166.5dp"
+            p1:layout_height="37.5dp"
+            p1:onClick="onRadioButtonClicked"
+            p1:id="@+id/rdbDoctor"
+            p1:layout_marginLeft="50.0dp" />
+        <RadioButton
+            p1:text="Vista Paciente"
+            p1:layout_width="181.0dp"
+            p1:layout_height="35.0dp"
+            p1:onClick="onRadioButtonClicked"
+            p1:id="@+id/rdbPatient"
+            p1:layout_marginLeft="49.5dp" />
+    </RadioGroup>
 </LinearLayout>

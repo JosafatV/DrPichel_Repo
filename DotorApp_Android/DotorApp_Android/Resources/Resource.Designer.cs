@@ -47,6 +47,9 @@ namespace DotorApp_Android
 			// aapt resource value: 0x7f020000
 			public const int Icon = 2130837504;
 			
+			// aapt resource value: 0x7f020001
+			public const int Prime_helix = 2130837505;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -63,8 +66,8 @@ namespace DotorApp_Android
 			// aapt resource value: 0x7f050003
 			public const int btnAddCita = 2131034115;
 			
-			// aapt resource value: 0x7f05001f
-			public const int btnAddPatient = 2131034143;
+			// aapt resource value: 0x7f050021
+			public const int btnAddPatient = 2131034145;
 			
 			// aapt resource value: 0x7f050012
 			public const int btnClear = 2131034130;
@@ -72,17 +75,17 @@ namespace DotorApp_Android
 			// aapt resource value: 0x7f05001b
 			public const int btnLogin = 2131034139;
 			
-			// aapt resource value: 0x7f050022
-			public const int btnRefresh = 2131034146;
+			// aapt resource value: 0x7f050024
+			public const int btnRefresh = 2131034148;
 			
 			// aapt resource value: 0x7f050007
 			public const int btnSeeCitasfromAddPatient = 2131034119;
 			
-			// aapt resource value: 0x7f05001d
-			public const int btnSeeCitasfromPatient = 2131034141;
+			// aapt resource value: 0x7f05001f
+			public const int btnSeeCitasfromPatient = 2131034143;
 			
-			// aapt resource value: 0x7f050020
-			public const int btnSeePatient = 2131034144;
+			// aapt resource value: 0x7f050022
+			public const int btnSeePatient = 2131034146;
 			
 			// aapt resource value: 0x7f050013
 			public const int btnSubmit = 2131034131;
@@ -108,11 +111,17 @@ namespace DotorApp_Android
 			// aapt resource value: 0x7f05000f
 			public const int linearLayout4 = 2131034127;
 			
-			// aapt resource value: 0x7f050021
-			public const int lvwCitas = 2131034145;
+			// aapt resource value: 0x7f050023
+			public const int lvwCitas = 2131034147;
+			
+			// aapt resource value: 0x7f050020
+			public const int lvwPacentes = 2131034144;
+			
+			// aapt resource value: 0x7f05001d
+			public const int rdbDoctor = 2131034141;
 			
 			// aapt resource value: 0x7f05001e
-			public const int lvwPacentes = 2131034142;
+			public const int rdbPatient = 2131034142;
 			
 			// aapt resource value: 0x7f050005
 			public const int txtAddCitaWarning = 2131034117;
