@@ -1,6 +1,10 @@
 ﻿angular.module('DrPhischelApp').config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-
+    /*--------------------For the views of the Doctors------------------------------*/
+    .when('/DrPhischel/Login/CrearPerfil', {
+        templateUrl: 'Login/creacionUsuario.html',
+        controller: 'creacionUsuarioController'
+    })
      /*--------------------For the views of the Doctors------------------------------*/
     .when('/DrPhischel/Doctor/AgregarPedido', {
         templateUrl: 'VistaDoctor/agregarPedido.html',
