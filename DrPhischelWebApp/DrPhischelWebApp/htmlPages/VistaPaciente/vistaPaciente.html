@@ -5,42 +5,35 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
-            <span class="sr-only">Desplegar / Ocultar Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <!--Inicia Menu-->
-        <div class="collapse navbar-collapse " id="navegacion-fp">
-          <ul class="nav navbar-nav">
-            <li class="active"><h3>Paciente<h3></li>
-        </div>
+    <h2>Pacientes:</h2><br>
+    <div class="container-fluid">
+      <div class="col-md-6">
+        <nav class="navbar  navbar-static-top finta" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
+                <span class="sr-only">Desplegar / Ocultar Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <!--Inicia Menu-->
+            <div class="collapse navbar-collapse" id="navegacion-fp">
+              <ul class="nav navbar-nav">
+                <li><a data-ng-click="goVerHistorial()">Ver Historial Médico</a></li>
+                <li><a data-ng-click="goSolicitarCita()">Solicitar Cita</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-    </nav>
-    <nav class="navbar  navbar-static-top finta" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
-            <span class="sr-only">Desplegar / Ocultar Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <!--Inicia Menu-->
-        <div class="collapse navbar-collapse" id="navegacion-fp">
-          <ul class="nav navbar-nav">
-            <li><a data-ng-click="goVerHistorial()">Ver Historial Médico</a></li>
-            <li><a data-ng-click="goSolicitarCita()">Solicitar Cita</a></li>
-          </ul>
-        </div>
+
       </div>
-    </nav>
+
+
+    </div>
+
   </header>
 </body>
 </html>
