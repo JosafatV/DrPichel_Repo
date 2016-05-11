@@ -31,10 +31,11 @@
                             <td>{{cita.NoDoctor}}</td>
                             <td>{{cita.NumeroPacientes}}</td>
                             <td>{{cita.MontoAlCobro}}</td>
-                            <td><input type="button" value="TerminarCita" class="btn btn-success" data-ng-click="terminarCita(cita)" /></td>
+                            <!--<td><input type="button" value="TerminarCita" class="btn btn-success" data-ng-click="terminarCita(cita)" /></td>-->
                         </tr>
                     </tbody>
                 </table>
+                <input type="button" value="Ver Cobros de Este Mes" class="btn btn-success" data-ng-click="verCobros()" data-ng-hide="dateCobro" />
                 <!--<label for="option">Doctores</label>
                         <select class="form-control" name="" id="option">
                           <option value="">Ramiro Gonzalez Fernadez</option>

@@ -34,7 +34,7 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
     });
 
     $scope.verificarCliente = function (cedula) {
-        alert($scope.cedulaCliente);
+        //alert($scope.cedulaCliente);
         farmaticaPhischelResource.get({ type: 'Client', extension: $scope.cedulaCliente }).$promise.then(function (data) {
             $scope.banderaDeCliente = data.Cedula;
             clienteActual = data.IdCliente;
@@ -211,9 +211,9 @@ function ($scope, $location, $window, $routeParams, doctorResource, sucursalReso
                         medsdeRec = listaMedicamentosxPedido;
                         angular.forEach(medsdeRec, function (medicamento, key2) {
                             medicamento.NoSucursal = numSuc;
-                            alert(angular.toJson({
-                                CodigoMedicamento: medicamento.CodigoMedicamento, NoReceta: listaRecets[key].NoReceta, Cantidad: medicamento.Cantidad, NoSucursal: medicamento.NoSucursal
-                            }));
+                            //alert(angular.toJson({
+                              //  CodigoMedicamento: medicamento.CodigoMedicamento, NoReceta: listaRecets[key].NoReceta, Cantidad: medicamento.Cantidad, NoSucursal: medicamento.NoSucursal
+                            //}));
                             detalleRecetaResource.save({
                                 CodigoMedicamento: medicamento.CodigoMedicamento, NoReceta: listaRecets[key].NoReceta, Cantidad: medicamento.Cantidad, NoSucursal: medicamento.NoSucursal
                             });
