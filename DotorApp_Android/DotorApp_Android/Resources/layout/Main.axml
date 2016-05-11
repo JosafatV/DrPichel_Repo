@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout0">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="180.0dp"
+        p1:id="@+id/linearLayout1"
+        p1:layout_marginLeft="8.0dp" />
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout2"
+        p1:layout_marginLeft="8.0dp">
+        <EditText
+            p1:text="Usuario:"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtUsername" />
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout3"
+        p1:layout_marginLeft="8.0dp">
+        <EditText
+            p1:inputType="textPassword"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtPassword" />
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="360.5dp"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout4"
+        p1:layout_marginLeft="8.0dp">
+        <Button
+            p1:text="Login"
+            p1:layout_width="130.0dp"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnLogin"
+            p1:layout_marginLeft="113.5dp"
+            p1:layout_marginRight="110.5dp" />
+    </LinearLayout>
+    <TextView
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/txtLoginWarning" />
+    <RadioGroup
+        p1:layout_width="fill_parent"
+        p1:layout_height="110.5dp"
+        p1:orientation="vertical">
+        <RadioButton
+            p1:text="Vista Doctor"
+            p1:layout_width="166.5dp"
+            p1:layout_height="37.5dp"
+            p1:onClick="onRadioButtonClicked"
+            p1:id="@+id/rdbDoctor"
+            p1:layout_marginLeft="50.0dp" />
+        <RadioButton
+            p1:text="Vista Paciente"
+            p1:layout_width="181.0dp"
+            p1:layout_height="35.0dp"
+            p1:onClick="onRadioButtonClicked"
+            p1:id="@+id/rdbPatient"
+            p1:layout_marginLeft="49.5dp" />
+    </RadioGroup>
+</LinearLayout>
