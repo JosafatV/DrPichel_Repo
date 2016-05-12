@@ -18,7 +18,6 @@ function ($scope, $routeParams, $location, $http, drPhischelApiResource, farmati
 
     //Function that send the doctor information to the database to be saved
     $scope.enviarNuevoCliente = function () {
-        alert(angular.toJson($scope.nuevoCliente))
         drPhischelApiResource.save({ type: 'Doctor' }, $scope.nuevoCliente);
         //farmaticaPhischelResource.save({ type: 'Client' }, $scope.nuevoCliente);
 

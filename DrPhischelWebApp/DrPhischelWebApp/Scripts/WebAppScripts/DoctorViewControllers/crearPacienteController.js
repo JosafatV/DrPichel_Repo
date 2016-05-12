@@ -7,7 +7,7 @@ function ($scope, $routeParams, $location, $http, drPhischelApiResource, farmati
     //Function that change the sex when the user choose Female or Male
     $scope.cambieSexo = function (nuevoSexo) {
         //$scope.nuevoCliente.sexo = nuevoSexo;
-        alert(angular.toJson($scope.nuevoCliente));
+        //alert(angular.toJson($scope.nuevoCliente));
     };
 
     //Function that send the client information to the database to be saved
