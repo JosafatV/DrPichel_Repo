@@ -133,7 +133,7 @@ namespace DrPhischelWebApi.DataBase
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand(
-                    " Update Cita set NoDoctor = '"+cita.NoDoctor+"' Fecha = '"+cita.FechaHora+"', idPaciente = '"+cita.idPaciente+"' where NoCita = '"+cita.NoCita+"' "
+                    " Update Cita set Estado = '"+cita.Estado+"', NoDoctor = '"+cita.NoDoctor+"' , Fecha = '"+cita.FechaHora+"', idPaciente = '"+cita.idPaciente+"' where NoCita = '"+cita.NoCita+"' "
                 , con);
                 con.Open();
                 cmd.ExecuteNonQuery();
