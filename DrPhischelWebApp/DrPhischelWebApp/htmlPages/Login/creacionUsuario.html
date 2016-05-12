@@ -18,19 +18,19 @@
             <form action="" class="">
               <div class="form-group">
                   <label for="nombre">Nombre:</label>
-                  <input class="form-control" id="nombre" type="text" placeholder="Nombre:" data-ng-model="nuevoCliente.nombre">
+                  <input class="form-control" id="nombre" maxlength="15" type="text" placeholder="Nombre:" data-ng-model="nuevoCliente.nombre">
               </div>
               <div class="form-group">
                   <label for="nombre">Apellidos:</label>
-                  <input class="form-control" id="nombre" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellido">
+                  <input class="form-control" id="nombre" maxlength="15" type="text" placeholder="Apellidos:" data-ng-model="nuevoCliente.apellido">
               </div>
                 <div class="form-group">
                     <label for="cedula">Cedula:</label>
-                    <input class="form-control" id="cedula" type="text" placeholder="Cedula:" data-ng-model="nuevoCliente.cedula">
+                    <input class="form-control" id="cedula" max="99999999999" min="100000000" type="number" placeholder="Cedula:" data-ng-model="nuevoCliente.cedula">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Contraseña:</label>
-                    <input class="form-control" id="nombre" type="text" placeholder="Password:" data-ng-model="nuevoCliente.password">
+                    <input class="form-control" id="nombre" maxlength="20" type="password" placeholder="Password:" data-ng-model="nuevoCliente.password">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Fecha Nacimiento:</label>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label for="Residencia">Residencia:</label>
-                    <input class="form-control" id="Residencia" type="text" step="any" min="0" placeholder="Residencia:" data-ng-model="nuevoCliente.Residencia">
+                    <input class="form-control" id="Residencia" maxlength="45" type="text" step="any" min="0" placeholder="Residencia:" data-ng-model="nuevoCliente.Residencia">
                 </div>
                 <div class="form-group">
                     <label for="option">Especialidad</label>
@@ -46,11 +46,11 @@
                 </div>
                 <div class="form-group">
                     <label for="Especialidad">Tarjeta de Credito:</label>
-                    <input class="form-control" id="Residencia" type="text" step="any" min="0" placeholder="Tarjeta de Credito:" data-ng-model="nuevoCliente.TarjetaCredito">
+                    <input class="form-control" id="Residencia" max="9999999999999999" onforminput="1000000000000000" type="number" step="any" min="0" placeholder="Tarjeta de Credito:" data-ng-model="nuevoCliente.TarjetaCredito">
                 </div>
                 <div class="form-group">
                     <label for="Dirección del consultorio">Dirección del consultorio:</label>
-                    <input class="form-control" id="Residencia" type="text" step="any" min="0" placeholder="Dirección del consultorio:" data-ng-model="nuevoCliente.DireccionConsultorio">
+                    <input class="form-control" id="Residencia" maxlenght="45" type="text" step="any" min="0" placeholder="Dirección del consultorio:" data-ng-model="nuevoCliente.DireccionConsultorio">
 
                 <br><br>
                 <a data-ng-disable="!espeSelected"  data-ng-click="enviarNuevoCliente()" class="btn btn-success">Enviar Solicitud</a>

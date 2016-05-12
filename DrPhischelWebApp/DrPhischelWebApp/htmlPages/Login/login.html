@@ -14,9 +14,9 @@
         </div>
         <div class="container-fluid">
           <h4>Cédula</h4>
-          <input type="text" data-ng-model="cedula" />
+          <input type="number" min="100000000" max="909990999" data-ng-model="cedula" />
           <h4>Contraseña</h4>
-          <input type="password" data-ng-model="contra" /><br><br>
+          <input type="password" maxlength="20" data-ng-model="contra" /><br><br>
           <button data-ng-click="ingresar()" class="btn btn-success" data-ng-disabled="!cedu && !contra">Ingresar</button>
           <button class="btn btn-danger" data-ng-click="goSolicitarCreacion()">Solicitar creación de perfil de Doctor</button><br><br>
           <button data-ng-click="goPacienteView()" class="btn btn-primary" data-ng-hide="!pacienteDisponible">Paciente</button>
