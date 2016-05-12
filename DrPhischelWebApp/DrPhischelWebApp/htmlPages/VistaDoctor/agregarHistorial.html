@@ -41,11 +41,7 @@
       <textarea class="form-control" id="mensaje" placeholder="Escriba su mensaje" data-ng-model="estudios"></textarea>
     </div>
       <!-------------------------Parte para agregar los medicamentos a una receta--------------------------->
-      <h4 data-ng-hide="checked">Seleccione los medicamentos del paciente</h4>
-      <div class="form-group">
-          <label for="option" data-ng-hide="checked">Medicamentos</label>
-          <select data-ng-hide="checked" ng-options="med.nombre for med in meds" class="form-control" data-ng-model="docSelected" data-ng-change="cambiarDoctorActual()"></select>
-      </div>
+
 
     <br><br>
       <a data-ng-hide="!checked" ng-click="agregarMedicamentos()" class="btn btn-success">Agregar Medicamentos</a>
