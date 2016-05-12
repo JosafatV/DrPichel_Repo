@@ -14,6 +14,10 @@ GO
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_Cobro_Doctores')
 	DROP Procedure SP_Cobro_Doctores
 GO
+ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'insert_excel')
+	DROP Procedure  dbo.insert_excel
+GO
+
 
 
 
