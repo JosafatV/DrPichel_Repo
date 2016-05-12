@@ -14,7 +14,7 @@ angular.module('DrPhischelApp').controller('agregarHistorialTablaController', ['
             $scope.citas = data;
         });
 
-
+        //Change the view for the ver Cliente Especifico
         $scope.goAgregarHistorialClienteEspecifico = function (index) {
             $location.path('/DrPhischel/Doctor/AgregarHistorial/' + $scope.listaPacientes[index].idUsuario);
         };

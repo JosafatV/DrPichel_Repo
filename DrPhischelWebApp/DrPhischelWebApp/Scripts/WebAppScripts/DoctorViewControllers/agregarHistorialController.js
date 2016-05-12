@@ -3,7 +3,7 @@
         $scope.nombrePaciente = $routeParams.nombre;
         $scope.checked = true;
         $scope.Especialidades = drPhischelApiResource.query({ type: 'Doctor', extension: 'Especialidades' });
-        //$scope.newHistorial = {Descripcion:'s',Estudios:'d',NoCita:'1'};
+        //This function is used to send a Historial to the web api to be saved.
         $scope.sendHistorial = function () {
             //alert(angular.toJson($scope.Especialidades));
             /*alert(angular.toJson({
@@ -23,6 +23,7 @@
                     });
             });
         };
+        //This is used to put the checked variable true
         $scope.agregarMedicamentos = function () {
             $scope.checked = false;
         };

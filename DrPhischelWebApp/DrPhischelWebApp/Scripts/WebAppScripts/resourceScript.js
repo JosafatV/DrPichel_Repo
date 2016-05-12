@@ -1,7 +1,8 @@
-﻿var urlGeneric = 'http://172.26.101.144';
-//var urlGeneric = 'http://localhost:64395/api';
+﻿//Var used to save the URL 
+var urlGeneric = 'http://172.19.12.255';
 var urlPaciente = 'Paciente';
 var urlHistorial = 'Historial';
+//This script is the resource that is used to connect to the web Api od DrPhischel
 angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($resource) {
     return $resource(urlGeneric + ':8090/api/:type/:extension/:extension2/:extension3/:extension4/:extension5/:id', {}, {
         query: {
@@ -42,7 +43,7 @@ angular.module('DrPhischelApp').factory('drPhischelApiResource', function ($reso
     });
 });
 
-
+//This script is the resource that is used to connect to the web Api od FarmaticaPhischel
 angular.module('DrPhischelApp').factory('farmaticaPhischelResource', function ($resource) {
     return $resource(urlGeneric +':8091/api/:type/:extension/:extension2/:id', {}, {
         query: {

@@ -18,7 +18,7 @@
           <h4>Contraseña</h4>
           <input type="password" data-ng-model="contra" /><br><br>
           <button data-ng-click="ingresar()" class="btn btn-success" data-ng-disabled="!cedu && !contra">Ingresar</button>
-          <button class="btn btn-danger">Solicitar creación de perfil de Doctor</button><br><br>
+          <button class="btn btn-danger" data-ng-click="goSolicitarCreacion()">Solicitar creación de perfil de Doctor</button><br><br>
           <button data-ng-click="goPacienteView()" class="btn btn-primary" data-ng-hide="!pacienteDisponible">Paciente</button>
           <button data-ng-click="goDoctorView()" class="btn btn-primary" data-ng-hide="!doctorDisponible">Doctor</button>
           <button data-ng-click="goAdminView()" class="btn btn-primary" data-ng-hide="!adminDisponible">Administrador</button>

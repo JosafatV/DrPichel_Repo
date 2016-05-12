@@ -2,20 +2,23 @@ angular.module('DrPhischelApp').controller('sincronizarMedicamentosController', 
     '$location', 'farmaticaPhischelResource', function ($scope, $routeParams, drPhischelApiResource, $location, farmaticaPhischelResource) {
         $scope.listaSuc = '';
         $scope.tablaFlag = true;
+        //Here I delete the medicamentos por sucursal before sincronize
         drPhischelApiResource.delete({ type: 'MedicamentoPorSucursal' }, {});
         farmaticaPhischelResource.query({ type: 'Sucursal' }).$promise.then(function (data) {
             $scope.listaSuc = data;
         });
+        //This function is used to sincronize and save every table of the database
         $scope.sincronizar = function () {
+            //ask for sucursales
             farmaticaPhischelResource.query({ type: 'Sucursal' }).$promise.then(function (data) {
                 $scope.listaSuc = data;
                 drPhischelApiResource.saveList({ type: 'Sucursal', extension: 'List' }, data);
             });
-
+            //ask for medicamentos
             farmaticaPhischelResource.query({ type: 'Medicamento' }).$promise.then(function (data) {
                 drPhischelApiResource.saveList({ type: 'Medicamento', extension: 'List' }, data);
             });
-
+            //ask for medicamentos por sucursal
             farmaticaPhischelResource.query({ type: 'MedicamentoPorSucursal' }).$promise.then(function (data) {
                 angular.forEach(data, function (value, key) {
                     //alert(angular.toJson(value));

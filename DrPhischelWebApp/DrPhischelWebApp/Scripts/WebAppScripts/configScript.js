@@ -6,6 +6,10 @@
         controller: 'creacionUsuarioController'
     })
      /*--------------------For the views of the Doctors------------------------------*/
+    .when('/DrPhischel/Doctor/solicitarCreacion', {
+        templateUrl: 'VistaDoctor/creacionUsuario.html',
+        controller: 'creacionUsuarioController'
+    })
     .when('/DrPhischel/Doctor/AgregarPedido', {
         templateUrl: 'VistaDoctor/agregarPedido.html',
         controller: 'agregarPedidoController'

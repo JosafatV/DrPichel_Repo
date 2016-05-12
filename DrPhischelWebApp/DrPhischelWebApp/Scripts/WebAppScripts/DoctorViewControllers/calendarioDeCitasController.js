@@ -4,7 +4,7 @@
         $scope.tablaCitasFlag = true;
         $scope.dateCita = ''
         $scope.citas = '';
-
+        //Change the view to agregarHistorial
         $scope.goAgregarHistorial = function (index) {
             $location.path('DrPhischel/Doctor/AgregarHistorial/' + $scope.citas[index].idPaciente + '/' + $scope.citas[index].NombrePaciente
                 +' ' + $scope.citas[index].ApellidoPaciente);
